@@ -1,0 +1,83 @@
+---
+import Image from '~/components/common/Image.astro';
+
+interface Props {
+  images?: string[] | any;
+}
+
+const { images } = Astro.props;
+let count = 1;
+// const changeId = (element, newId) => {
+//   element.id = newId;
+// };
+const changeDivId = (num, len) => {
+  console.log(num);
+  const divElement = document.getElementById('slide' + num);
+  if (divElement) {
+    divElement.id = 'slide' + num + 1;
+  }
+};
+
+// Astro frontmatter where you can define JavaScript functions
+const handleClick = (event, len) => {
+  // Prevent the default anchor behavior
+  event.preventDefault();
+  changeDivId(count, len);
+  count++;
+  console.log('test');
+};
+---
+
+<section>
+  <div class="carousel w-full h-screen">
+    {
+      Array.isArray(images) &&
+        images.map((image, index) => (
+          <div id={`slide${index + 1}`} class="carousel-item relative w-full">
+            {typeof image === 'string' ? (
+              <Fragment set:html={image} />
+            ) : (
+              <Image
+                class="mx-auto rounded-md w-full"
+                widths={[400, 768, 1024, 2040]}
+                sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                loading="eager"
+                width={1024}
+                height={576}
+                {...image}
+              />
+            )}
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href={`#slide${((index + 1) % images.length) + 1}`} class="btn btn-circle">
+                ❮
+              </a>
+              <a href={`#slide${((index + images.length - 1) % images.length) + 1}`} class="btn btn-circle">
+                ❯
+              </a>
+            </div>
+          </div>
+        ))
+    }
+  </div>
+</section>
+
+<!-- <section>
+  <div class="carousel w-full h-screen">
+    <div id="slide1" class="carousel-item relative w-full">
+      <img src="https://placeimg.com/800/200/arch" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"></div>
+    </div>
+    <div id="slide2" class="carousel-item relative w-full">
+      <img src="https://placeimg.com/800/200/arch" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"></div>
+    </div>
+    <div id="slide3" class="carousel-item relative w-full">
+      <img src="https://placeimg.com/800/200/arch" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"></div>
+    </div>
+    <div id="slide4" class="carousel-item relative w-full">
+      <img src="https://placeimg.com/800/200/arch" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"></div>
+    </div>
+  </div>
+</section> -->
