@@ -2,8 +2,6 @@
 dist/
 .output/
 
-README.md
-
 # dependencies
 node_modules/
 

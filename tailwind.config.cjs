@@ -19,19 +19,6 @@ module.exports = {
       },
     },
   },
-  plugins: [typographyPlugin,
-    require('daisyui')
-  ],
+  plugins: [typographyPlugin],
   darkMode: 'class',
-  // daisyUI config (optional)
-	daisyui: {
-		styled: true,
-		themes: ["garden", "dark"],
-		base: true,
-		utils: true,
-		logs: false,
-		rtl: false,
-		prefix: "",
-		darkTheme: "dark",
-	},
 };

@@ -11,8 +11,6 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
-import Carousel from '~/components/widgets/Carousel.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -23,14 +21,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Carousel
-    images={[
-      { src: '~/assets/images/hero-image.png', alt: 'Picture 1' },
-      { src: '~/assets/images/app-store.png', alt: 'Picture 2' },
-      { src: '~/assets/images/hero-image.png', alt: 'Picture 3' },
-    ]}
-  />
-  <HeroCarousel
+  <Hero
     actions={[
       {
         variant: 'primary',
@@ -57,7 +48,7 @@ const metadata = {
       Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
       Blogs.
     </Fragment>
-  </HeroCarousel>
+  </Hero>
 
   <!-- Note Widget ******************* -->
 
