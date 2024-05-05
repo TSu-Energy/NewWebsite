@@ -11,11 +11,18 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Carousel2 from '~/components/widgets/Carousel2.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
   ignoreTitleTemplate: true,
 };
+
+// const images=[
+//       { src: '~/assets/images/hero-image.png', alt: 'Picture 1' },
+//       { src: '~/assets/images/app-store.png', alt: 'Picture 2' },
+//       { src: '~/assets/images/hero-image.png', alt: 'Picture 3' },
+//     ]
 ---
 
 <Layout metadata={metadata}>
@@ -50,6 +57,8 @@ const metadata = {
       and renewable energy sectors. -->
     </Fragment>
   </Hero>
+
+  <Carousel2 />
 
   <!-- Note Widget ******************* -->
 
