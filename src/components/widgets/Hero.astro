@@ -26,10 +26,10 @@ const {
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="max-w-full relative mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row max-w-full mx-auto py-12 md:py-">
+      <div class="text-center content-center pb-10 md:pb-16 max-w-5xl mr-2 w-1/2">
         {
           tagline && (
             <p
@@ -66,7 +66,8 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div>
+      <!-- <div class="mb-8"></div> -->
+      <div class="md:w-1/2 justify-center content-center ml-2">
         {
           image && (
             <div class="relative m-auto max-w-5xl">
@@ -74,12 +75,12 @@ const {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto rounded-md w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  class="mx-auto rounded-md"
+                  widths={[600, 850, 1024, 2040]}
+                  sizes="(max-width: 849px) 600px, (max-width: 1023px) 850px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
-                  width={1024}
-                  height={576}
+                  width={850}
+                  height={435}
                   {...image}
                 />
               )}

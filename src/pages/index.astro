@@ -39,7 +39,10 @@ const metadata = {
       },
       { text: 'Learn more', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{
+      src: '~/assets/images/hero/Future-Energy-System.png',
+      alt: 'AstroWind Hero Image',
+    }}
   >
     <Fragment slot="title">
       Electrochemistry Energy Storage Device <span class="text-accent dark:text-white highlight">
@@ -58,7 +61,20 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <Carousel2 />
+  <!-- 分割线 -->
+  <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Downloads', amount: '132K' },
+      { title: 'Stars', amount: '24.8K' },
+      { title: 'Forks', amount: '10.3K' },
+      { title: 'Users', amount: '48.4K' },
+    ]}
+  />
+
+  <!-- <Carousel2 /> -->
 
   <!-- Note Widget ******************* -->
 
@@ -370,17 +386,6 @@ const metadata = {
         description:
           "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
       },
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
     ]}
   />
 
