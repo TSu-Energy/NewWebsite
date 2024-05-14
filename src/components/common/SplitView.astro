@@ -1,0 +1,31 @@
+---
+// SplitView.astro
+// import './SplitView.css';
+---
+
+<div class="flex flex-col sm:flex-row">
+  <div class="flex-1 p-4 h-screen">
+    <p>This is the first paragraph.</p>
+  </div>
+  <!-- <div class=" sm:block md:w-1 md:h-full bg-black"></div> -->
+  <svg class="absolute h-full w-full overflow-visible">
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style={{ stopColor: '#DC3A2B', stopOpacity: 1 }}></stop>
+        <stop offset="100%" style={{ stopColor: '#E18510', stopOpacity: 1 }}></stop>
+      </linearGradient>
+    </defs>
+    <path id="border-path" fill="none" stroke="url(#gradient)" stroke-width="4"></path>
+  </svg>
+  <div class="flex-1 p-4 h-screen">
+    <p>This is the second paragraph.</p>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 100px) {
+    .md\:w-1 {
+      display: none;
+    }
+  }
+</style>

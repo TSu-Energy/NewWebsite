@@ -11,6 +11,9 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 // import Carousel2 from '~/components/widgets/Carousel2.astro';
 import HeroContainer from '~/components/widgets/HeroContainer.astro';
 
+import RollingViews from '~/components/widgets/RollingViews.astro';
+import { Image } from 'astro:assets';
+
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
   ignoreTitleTemplate: true,
@@ -24,12 +27,35 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
   <!-- HeroContainer ***************** -->
 
   <HeroContainer />
 
+  <!-- Steps Widget ****************** -->
 
+  <RollingViews
+    title="天苏十条"
+    items={[
+      {
+        title: '<span class="font-medium">天苏十条第100期</span>',
+        date: '2024-06-01',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:news',
+        image: {
+          src: '~/assets/images/hero-image.png',
+          alt: 'Steps image',
+        },
+      },
+      {
+        title: '<span class="font-medium">天苏十条第99期</span>',
+        date: '2024-06-01',
+        description:
+          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+        icon: 'tabler:news-off',
+      },
+    ]}
+  />
 
   <!-- Features Widget *************** -->
 
