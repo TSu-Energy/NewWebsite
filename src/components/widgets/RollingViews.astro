@@ -5,6 +5,7 @@ import Headline from '~/components/ui/Headline.astro';
 // import Image from '~/components/common/Image.astro';
 import type { Steps as Props } from '~/types';
 import Timeline2 from '../ui/Timeline2.astro';
+import '~/assets/styles/RollingViews.css';
 
 const {
   title = await Astro.slots.render('title'),
@@ -38,8 +39,7 @@ const {
         items={items}
         classes={{
           container: 'max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 grid grid-flow-col auto-cols-max',
-          panel:
-            'rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6',
+          panel: 'panel',
           ...(classes?.items as Record<string, never>),
         }}
       />

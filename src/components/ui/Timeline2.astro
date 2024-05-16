@@ -1,4 +1,5 @@
 ---
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
 import type { Item } from '~/types';
@@ -41,10 +42,14 @@ const {
             </div>
             {index !== items.length - 1 && <div class="w-px h-full bg-black/10 dark:bg-slate-400/50" />}
           </div>
-          <div class={twMerge('max-w-screen-xl box-border grid md:grid-cols-2',panelClass, itemClasses?.panel)}>
+          <div class={twMerge('max-w-screen-xl box-border grid md:grid-cols-2', panelClass, itemClasses?.panel)}>
             <div>
-              {title && <p class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />}
-              {date && <p class={twMerge('text-xl font-bold', dateClass, itemClasses?.date)} set:html={date} />}
+              {title && (
+                <p class={twMerge('text-primary text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />
+              )}
+              {date && (
+                <p class={twMerge('text-secondary text-xl font-bold', dateClass, itemClasses?.date)} set:html={date} />
+              )}
               {description && (
                 <p
                   class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
@@ -52,20 +57,19 @@ const {
                 />
               )}
             </div>
-            
+
             {image && (
-              <a class="relative block group">
+              <a class="relative md:basis-1/2">
                 <div class={twMerge(imageClass)}>
                   {typeof image === 'string' ? (
                     <Fragment set:html={image} />
                   ) : (
                     <Image
                       class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
-                      class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
                       widths={[400, 768]}
                       sizes="(max-width: 768px) 100vw, 432px"
-                      width={432}
-                      height={768}
+                      width={609}
+                      height={360}
                       layout="cover"
                       src={image?.src}
                       alt={image?.alt}
@@ -93,6 +97,7 @@ const {
                   <Fragment set:html={image} />
                 ) : (
                   <Image
+                                // class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
                     class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
                     widths={[400, 768]}
                     sizes="(max-width: 768px) 100vw, 432px"

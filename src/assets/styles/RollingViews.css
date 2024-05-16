@@ -1,0 +1,81 @@
+/* 初始卡片样式 */
+.div-card {
+  /* 您已有的类 */
+  /* rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-blue dark:bg-slate-900 p-6 mb-6; */
+  
+  /* 添加过渡效果 */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+
+/* 鼠标悬停时的样式 */
+.div-card:hover {
+  /* 上浮效果 */
+  transform: translateY(-10px);
+  
+  /* 扩大效果，可以根据需要调整 scale() 中的值 */
+  transform: scale(1.05);
+  
+  /* 增加阴影大小以增强上浮效果 */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Container styles */
+.container {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 600px; /* Adjust this value based on your design */
+  scroll-behavior: smooth;
+}
+
+/* Panel styles */
+.panel {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background-color: bg-white;/*#2563eb; /* bg-blue */
+  color: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.panel:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.panel:hover.dark:shadow {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+.panel.large {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.panel.small {
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+/* Image styles */
+.image {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background-color: #718096; /* bg-gray-400 */
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Icon styles */
+.icon {
+  color: #3b82f6; /* text-primary */
+  border-color: #3b82f6; /* border-primary */
+  border-width: 2px;
+}
