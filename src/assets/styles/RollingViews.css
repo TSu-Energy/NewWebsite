@@ -21,14 +21,21 @@
 
 
 /* Container styles */
-.container {
-  max-width: 100%;
+.scroll-container {
+  max-width: fit-content;
   margin: auto;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   max-height: 600px; /* Adjust this value based on your design */
   scroll-behavior: smooth;
+  overflow-y: scroll; /* 保持滚动功能 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
 
 /* Panel styles */
@@ -79,3 +86,14 @@
   border-color: #3b82f6; /* border-primary */
   border-width: 2px;
 }
+
+/* Scroll styles*/
+/* .scroll-container {
+  overflow-y: scroll; 
+  max-height: 600px;
+} */
+
+/* .item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+} */

@@ -1,9 +1,13 @@
 ---
-import { useEffect, useRef, useState } from 'react';
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
 import type { Item } from '~/types';
 import Image from '~/components/common/Image.astro';
+import Button from '~/react-components/Button';
+import '~/assets/styles/RollingViews.css';
+
+import React from 'react';
+// import ScrollableComponent from '~/react-components/ScrollableComponent';
 
 export interface Props {
   items?: Array<Item>;
@@ -25,13 +29,20 @@ const {
 } = classes;
 ---
 
-{
+<div class="scroll-container">
+  {
   items && items.length && (
-    <div>
-      {items.map(({ title, date, description, icon, classes: itemClasses = {}, image }, index = 0) => (
+  <div>
+    {
+      /* <p>
+        <Button client:load>Hello 十条</Button>
+      </p> */
+    }
+    {
+      items.map(({ title, date, description, icon, classes: itemClasses = {}, image }, index = 0) => (
         // <div class={twMerge('flex', panelClass, itemClasses?.panel)}>
         <div class={twMerge('flex', containerClass)}>
-          <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4 w-1/6">
+          <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4">
             <div class="flex">
               {(icon || defaultIcon) && (
                 <Icon
@@ -112,7 +123,9 @@ const {
             )}
           </div> */}
         </div>
-      ))}
-    </div>
+      ))
+    }
+  </div>
   )
 }
+</div>

@@ -1,11 +1,12 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Timeline from '~/components/ui/Timeline.astro';
+// import Timeline from '~/components/ui/Timeline.astro';
 import Headline from '~/components/ui/Headline.astro';
 // import Image from '~/components/common/Image.astro';
 import type { Steps as Props } from '~/types';
 import Timeline2 from '../ui/Timeline2.astro';
 import '~/assets/styles/RollingViews.css';
+import ScrollableComponent from '~/react-components/ScrollableComponent';
 
 const {
   title = await Astro.slots.render('title'),
@@ -30,11 +31,15 @@ const {
         subtitle={subtitle}
         tagline={tagline}
         classes={{
-          container: 'text-left rtl:text-right',
-          title: 'text-3xl lg:text-4xl',
+          // container: 'text-left rtl:text-right',
+          // title: 'text-3xl lg:text-4xl',
           ...((classes?.headline as object) ?? {}),
         }}
       />
+      <!-- <div>
+        <h1 class="text-4xl font-bold">Scrollable Component</h1>
+        <ScrollableComponent items={items} client:load />
+      </div> -->
       <Timeline2
         items={items}
         classes={{

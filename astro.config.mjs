@@ -29,7 +29,9 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
-
+  renderers: [
+    '@astrojs/renderer-react'
+  ],
   integrations: [
     tailwind({
       applyBaseStyles: false,
