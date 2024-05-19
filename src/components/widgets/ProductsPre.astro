@@ -1,0 +1,39 @@
+---
+import React from 'react';
+import NavigationModule from './NavigationModule';
+
+import type { Features as Props } from '~/types';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  columns = 3,
+  defaultIcon,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const items = [
+  // 这里的图片地址是public下的地址
+  { title: '产品 1', imageUrl: '/images/products/module1.jpg', content: 'Content for item 1' },
+  { title: '产品 2', imageUrl: '/images/products/module2.jpeg', content: 'Content for item 2' },
+  { title: '产品 3', imageUrl: '/images/products/module3.jpg', content: 'Content for item 3' },
+  // Add more items as needed
+];
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <NavigationModule items={items} client:load />
+</WidgetWrapper>
+<!-- <style>
+  /* 可以在这里添加自定义的CSS */
+</style>
+
+<script>
+  // 可以在此处添加JavaScript逻辑
+</script> -->

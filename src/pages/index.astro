@@ -18,6 +18,11 @@ import Note from '~/components/widgets/Note.astro';
 
 import RollingViews from '~/components/widgets/RollingViews.astro';
 import { Image } from 'astro:assets';
+import NavigationModule from '~/components/widgets/ProductsPre.astro';
+import ProductsPre from '~/components/widgets/ProductsPre.astro';
+import IntroPre from '~/components/widgets/IntroPre.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import type { loadAll } from 'js-yaml';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -29,6 +34,12 @@ const metadata = {
 //       { src: '~/assets/images/app-store.png', alt: 'Picture 2' },
 //       { src: '~/assets/images/hero-image.png', alt: 'Picture 3' },
 //     ]
+const stats = [
+    { title: 'Downloads', amount: 132, unit: 'K', id: 'downloads-id' },
+    { title: 'Stars', amount: 24, unit: 'K', id: 'starts-id' },
+    { title: 'Forks', amount: 10, unit: 'K', id: 'forks-id' },
+    { title: 'Users', amount: 48, unit: 'K', id: 'users-id' },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -72,14 +83,8 @@ const metadata = {
   <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
   <!-- Stats Widget ****************** -->
 
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
+  <Stats2
+    stats={stats} />
 
   <!-- <Carousel2 /> -->
   <!-- 分割线 -->
@@ -91,6 +96,91 @@ const metadata = {
   <!-- Note Widget ******************* -->
 
   <Note />
+
+  <!-- Intro Widget **************** -->
+
+  <IntroPre
+    isReversed
+    tagline="Analystics"
+    title="能源行业趋势分析"
+    items={[
+      {
+        title: '可再生能源的增长',
+        description:
+          '随着全球对减少温室气体排放的关注，可再生能源（如风能、太阳能、水能等）的使用正在迅速增长。政府政策和补贴推动了可再生能源技术的发展和成本的降低。',
+      },
+      {
+        title: '能源效率的提升',
+        description:
+          '能源效率的提升是降低能源消耗和减少排放的关键途径。智能技术的应用，如智能家居、智能电网和能效管理，正在帮助提高能源使用效率。',
+      },
+      {
+        title: '电力市场的自由化',
+        description:
+          '许多国家正在推动电力市场的自由化，允许更多的竞争和消费者选择。这促进了创新和新技术的采用，如分布式发电和储能技术。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/analystics/global_clean_energy_mkt.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">能源行业趋势的分析：</h3>
+      能源行业是一个复杂且不断变化的领域，涉及到多个方面，包括但不限于政策、技术、市场、环境和社会因素。
+    </Fragment>
+
+    <Fragment>
+      <!-- // slot="bg" -->
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </IntroPre>
+
+  <!-- Intro Widget **************** -->
+
+  <!-- Services Widget ************** -->
+
+  <Features2
+    tagline="Our Services"
+    title="我们的产品与服务"
+    subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
+    items={[
+      {
+        title: 'Installation Instructions',
+        description:
+          'Offer clear instructions on how to download the purchased templates and install them on various website platforms or content management systems.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Demo and Previews',
+        description:
+          'Provide interactive demos and previews that allow customers to see how their chosen template will look and function before making a purchase.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Technical Support',
+        description:
+          'Providing customer support for any technical issues related to the templates or their implementation.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Services Widget ************** -->
+
+  <!-- Product Nav Widget ************** -->
+
+  <ProductsPre>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ProductsPre>
+
+  <!-- Product Nav Widget ************** -->
 
   <!-- Steps Widget ****************** -->
 
@@ -118,7 +208,11 @@ const metadata = {
         icon: 'tabler:news-off',
       },
     ]}
-  />
+  >
+    <!-- <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment> -->
+  </RollingViews>
 
   <!-- Features Widget *************** -->
 
