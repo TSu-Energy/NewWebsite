@@ -14,7 +14,6 @@ import astrowind from './vendor/integration';
 
 import react from '@astrojs/react';
 
-
 import {
   readingTimeRemarkPlugin,
   responsiveTablesRehypePlugin,
@@ -29,9 +28,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
-  renderers: [
-    '@astrojs/renderer-react'
-  ],
+  renderers: ['@astrojs/renderer-react'],
   integrations: [
     tailwind({
       applyBaseStyles: false,

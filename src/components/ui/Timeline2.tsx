@@ -56,12 +56,7 @@ const Timeline2 = () => {
       {items.map(({ title, date, description, icon, classes: itemClasses = {}, image }, index) => (
         <div
           key={index}
-          class={twMerge(
-            'flex',
-            panelClass,
-            itemClasses?.panel,
-            index === activeIndex ? 'large' : 'small'
-          )}
+          class={twMerge('flex', panelClass, itemClasses?.panel, index === activeIndex ? 'large' : 'small')}
         >
           <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4 w-1/6">
             <div class="flex">
@@ -79,7 +74,10 @@ const Timeline2 = () => {
               {title && <p class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />}
               {date && <p class={twMerge('text-xl font-bold', dateClass, itemClasses?.date)} set:html={date} />}
               {description && (
-                <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
+                <p
+                  class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
+                  set:html={description}
+                />
               )}
             </div>
             {image && (

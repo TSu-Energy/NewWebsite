@@ -6,7 +6,7 @@ import Headline from '~/components/ui/Headline.astro';
 import type { Steps as Props } from '~/types';
 import Timeline2 from '../ui/Timeline2.astro';
 import '~/assets/styles/RollingViews.css';
-import ScrollableComponent from '~/react-components/ScrollableComponent';
+// import ScrollableComponent from '~/react-components/ScrollableComponent';
 
 const {
   title = await Astro.slots.render('title'),
@@ -25,7 +25,7 @@ const {
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl p-4 ${classes?.container ?? ''}`} bg={bg}>
   <div class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, 'md:flex-row']}>
-    <div class:list={['md:py-4 md:self-center', 'md:full']}>
+    <div class:list={['md:p-4 md:self-center md:m-2', 'md:full', 'w-full']}>
       <Headline
         title={title}
         subtitle={subtitle}

@@ -43,4 +43,3 @@ const NavigationModule = ({ items }) => {
 };
 
 export default NavigationModule;
-

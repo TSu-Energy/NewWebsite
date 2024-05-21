@@ -31,69 +31,72 @@ const {
 
 <div class="scroll-container">
   {
-  items && items.length && (
-  <div>
-    {
-      /* <p>
+    items && items.length && (
+      <div>
+        {/* <p>
         <Button client:load>Hello 十条</Button>
-      </p> */
-    }
-    {
-      items.map(({ title, date, description, icon, classes: itemClasses = {}, image }, index = 0) => (
-        // <div class={twMerge('flex', panelClass, itemClasses?.panel)}>
-        <div class={twMerge('flex', containerClass)}>
-          <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4">
-            <div class="flex">
-              {(icon || defaultIcon) && (
-                <Icon
-                  name={icon || defaultIcon}
-                  class={twMerge('w-10 h-10 p-2 rounded-full border-2', defaultIconClass, itemClasses?.icon)}
-                />
-              )}
+      </p> */}
+        {items.map(({ title, date, description, icon, classes: itemClasses = {}, image }, index = 0) => (
+          // <div class={twMerge('flex', panelClass, itemClasses?.panel)}>
+          <div class={twMerge('flex', containerClass)}>
+            <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4">
+              <div class="flex">
+                {(icon || defaultIcon) && (
+                  <Icon
+                    name={icon || defaultIcon}
+                    class={twMerge('w-10 h-10 p-2 rounded-full border-2', defaultIconClass, itemClasses?.icon)}
+                  />
+                )}
+              </div>
+              {index !== items.length - 1 && <div class="w-px h-full bg-black/10 dark:bg-slate-400/50" />}
             </div>
-            {index !== items.length - 1 && <div class="w-px h-full bg-black/10 dark:bg-slate-400/50" />}
-          </div>
-          <div class={twMerge('max-w-screen-xl box-border grid md:grid-cols-2', panelClass, itemClasses?.panel)}>
-            <div>
-              {title && (
-                <p class={twMerge('text-primary text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />
-              )}
-              {date && (
-                <p class={twMerge('text-secondary text-xl font-bold', dateClass, itemClasses?.date)} set:html={date} />
-              )}
-              {description && (
-                <p
-                  class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
-                  set:html={description}
-                />
-              )}
-            </div>
+            <div class={twMerge('max-w-screen-xl box-border grid md:grid-cols-2', panelClass, itemClasses?.panel)}>
+              <div>
+                {title && (
+                  <p
+                    class={twMerge('text-primary text-xl font-bold', titleClass, itemClasses?.title)}
+                    set:html={title}
+                  />
+                )}
+                {date && (
+                  <p
+                    class={twMerge('text-secondary text-xl font-bold', dateClass, itemClasses?.date)}
+                    set:html={date}
+                  />
+                )}
+                {description && (
+                  <p
+                    class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
+                    set:html={description}
+                  />
+                )}
+              </div>
 
-            {image && (
-              <a class="relative md:basis-1/2">
-                <div class={twMerge(imageClass)}>
-                  {typeof image === 'string' ? (
-                    <Fragment set:html={image} />
-                  ) : (
-                    <Image
-                      class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
-                      widths={[400, 768]}
-                      sizes="(max-width: 768px) 100vw, 432px"
-                      width={609}
-                      height={360}
-                      layout="cover"
-                      src={image?.src}
-                      alt={image?.alt}
-                      aspectRatio="16:9"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  )}
-                </div>
-              </a>
-            )}
-          </div>
-          {/* <div class={`flex flex-col pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
+              {image && (
+                <a class="relative md:basis-1/2">
+                  <div class={twMerge(imageClass)}>
+                    {typeof image === 'string' ? (
+                      <Fragment set:html={image} />
+                    ) : (
+                      <Image
+                        class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
+                        widths={[400, 768]}
+                        sizes="(max-width: 768px) 100vw, 432px"
+                        width={609}
+                        height={360}
+                        layout="cover"
+                        src={image?.src}
+                        alt={image?.alt}
+                        aspectRatio="16:9"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                  </div>
+                </a>
+              )}
+            </div>
+            {/* <div class={`flex flex-col pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
             {title && <p class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />}
             {date && <p class={twMerge('text-xl font-bold', dateClass, itemClasses?.date)} set:html={date} />}
             {description && (
@@ -122,10 +125,9 @@ const {
               </div>
             )}
           </div> */}
-        </div>
-      ))
-    }
-  </div>
-  )
-}
+          </div>
+        ))}
+      </div>
+    )
+  }
 </div>

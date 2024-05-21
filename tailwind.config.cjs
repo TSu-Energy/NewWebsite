@@ -18,8 +18,8 @@ module.exports = {
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
       gridTemplateColumns: {
-        'custom': 'repeat(2, minmax(0, 1fr 7fr))', 
-      }
+        custom: 'repeat(2, minmax(0, 1fr 7fr))',
+      },
     },
   },
   plugins: [typographyPlugin],

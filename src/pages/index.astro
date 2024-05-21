@@ -35,10 +35,10 @@ const metadata = {
 //       { src: '~/assets/images/hero-image.png', alt: 'Picture 3' },
 //     ]
 const stats = [
-    { title: 'Downloads', amount: 132, unit: 'K', id: 'downloads-id' },
-    { title: 'Stars', amount: 24, unit: 'K', id: 'starts-id' },
-    { title: 'Forks', amount: 10, unit: 'K', id: 'forks-id' },
-    { title: 'Users', amount: 48, unit: 'K', id: 'users-id' },
+  { title: 'Downloads', amount: 132, unit: 'K', id: 'downloads-id' },
+  { title: 'Stars', amount: 24, unit: 'K', id: 'starts-id' },
+  { title: 'Forks', amount: 10, unit: 'K', id: 'forks-id' },
+  { title: 'Users', amount: 48, unit: 'K', id: 'users-id' },
 ];
 ---
 
@@ -80,22 +80,32 @@ const stats = [
   </Hero>
 
   <!-- 分割线 -->
-  <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
+  <hr class="mt-12 border-t border-gray-200 dark:border-gray-800" />
   <!-- Stats Widget ****************** -->
 
   <Stats2
-    stats={stats} />
+    title="Discover the impressive impact"
+    subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve." 
+    stats={stats}
+  >
+    <!-- <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment> -->
+  </Stats2>
 
-  <!-- <Carousel2 /> -->
   <!-- 分割线 -->
-  <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
+  <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
 
   <!-- Brands Gray Widget ************ -->
   <BrandsGray />
 
+  <!-- 分割线 -->
+  <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
+  <!-- <Carousel2 /> -->
+
   <!-- Note Widget ******************* -->
 
-  <Note />
+  <!-- <Note /> -->
 
   <!-- Intro Widget **************** -->
 
@@ -207,6 +217,28 @@ const stats = [
           "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
         icon: 'tabler:news-off',
       },
+      {
+        title: '<span class="font-medium">天苏十条第98期</span>',
+        date: '2024-06-01',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:news',
+        image: {
+          src: '~/assets/images/hero-image.png',
+          alt: 'Steps image',
+        },
+      },
+      {
+        title: '<span class="font-medium">天苏十条第97期</span>',
+        date: '2024-06-01',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:news',
+        image: {
+          src: '~/assets/images/hero-image.png',
+          alt: 'Steps image',
+        },
+      },
     ]}
   >
     <!-- <Fragment slot="bg">
@@ -216,7 +248,7 @@ const stats = [
 
   <!-- Features Widget *************** -->
 
-  <Features
+  <!-- <Features
     id="features"
     tagline="Features"
     title="What you get with AstroWind"
@@ -259,11 +291,11 @@ const stats = [
         icon: 'tabler:bulb',
       },
     ]}
-  />
+  /> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     tagline="Inside template"
     title="AstroWind's Blueprint: Fun Meets Functionality!"
@@ -297,11 +329,11 @@ const stats = [
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isAfterContent
     items={[
       {
@@ -334,11 +366,11 @@ const stats = [
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     isAfterContent
     items={[
@@ -372,11 +404,11 @@ const stats = [
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
+  <!-- <Steps
     title="Get your dream website up and running in no time with AstroWind."
     items={[
       {
@@ -406,7 +438,7 @@ const stats = [
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
-  />
+  /> -->
 
   <!-- Features2 Widget ************** -->
 
@@ -475,16 +507,14 @@ const stats = [
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
+    title="天苏辑录"
+    information={`
                 `}
   />
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <!-- <FAQs
     title="Frequently Asked Questions"
     subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
     tagline="FAQs"
@@ -521,7 +551,7 @@ const stats = [
           "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
       },
     ]}
-  />
+  /> -->
 
   <!-- CallToAction Widget *********** -->
 
@@ -529,19 +559,19 @@ const stats = [
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: 'Get Contact',
+        href: 'https://',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:mail',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      TSuEnergy  = 能源&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">科技</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+      欢迎联系我们 <br class="hidden md:inline" />Don't
       waste more time! :P
     </Fragment>
   </CallToAction>

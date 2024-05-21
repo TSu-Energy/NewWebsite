@@ -23,8 +23,11 @@ console.log('Original stats data:', stats);
   <div class="flex flex-wrap justify-center -m-4 text-center">
     {
       stats &&
-        stats.map(({ amount, title, icon, id }) => (
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500" key={id}>
+        stats.map(({ amount, title, unit, icon, id }) => (
+          <div
+            class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500"
+            key={id}
+          >
             {icon && (
               <div class="flex items-center justify-center mx-auto mb-4 text-primary">
                 <Icon name={icon} class="w-10 h-10" />
@@ -32,7 +35,10 @@ console.log('Original stats data:', stats);
             )}
             {amount && (
               <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
-                <p id={id}>0</p>
+                <p id={id}>
+                  {amount}
+                  {unit}
+                </p>
               </div>
             )}
             {title && (
@@ -46,8 +52,7 @@ console.log('Original stats data:', stats);
   </div>
 </WidgetWrapper>
 
-
-<script define:vars={{stats}}>
+<script define:vars={{ stats }}>
   function incrementCounter(selector, current, target, duration, letter = '') {
     let counter = document.getElementById(selector);
     let stepTime = Math.abs(Math.floor(duration / target));

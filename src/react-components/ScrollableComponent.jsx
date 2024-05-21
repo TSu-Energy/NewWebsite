@@ -1,10 +1,10 @@
 // Import necessary hooks and components
 import React, { useRef, useEffect } from 'react';
-import '~/assets/styles/RollingViews.css'
+import '~/assets/styles/RollingViews.css';
 import Timeline2 from '~/components/ui/Timeline2.astro';
 
 // Define the ScrollableComponent
-const ScrollableComponent = ({items}) => {
+const ScrollableComponent = ({ items }) => {
   // Create a ref to the scroll container
   const scrollContainerRef = useRef(null);
 
@@ -25,7 +25,7 @@ const ScrollableComponent = ({items}) => {
     };
   }, []);
 
-//   const classes = {}
+  //   const classes = {}
 
   return (
     <div className="scroll-container" ref={scrollContainerRef}>
@@ -34,7 +34,7 @@ const ScrollableComponent = ({items}) => {
         classes={{
           container: 'max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 grid grid-flow-col auto-cols-max',
           panel: 'panel',
-        //   ...(classes?.items as Record<string, never>),
+          //   ...(classes?.items as Record<string, never>),
         }}
       />
     </div>
@@ -42,7 +42,6 @@ const ScrollableComponent = ({items}) => {
 };
 
 export default ScrollableComponent;
-
 
 // // src/components/ScrollableComponent.js
 // import React, { useState, useEffect } from 'react';

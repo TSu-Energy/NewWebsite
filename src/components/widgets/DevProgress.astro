@@ -1,0 +1,69 @@
+---
+import Timeline from '~/react-components/Timeline';
+---
+
+<section>
+  <Timeline client:load />
+</section>
+
+<!-- ---
+// Timeline.astro
+import { useState } from 'react';
+---
+
+<html>
+  <head>
+    <title>Timeline Component</title>
+    <link rel="stylesheet" href="/src/assets/styles/devprogress.css" />
+  </head>
+  <body>
+    <section class="timeline-container">
+      <div class="timeline">
+        <div class="timeline-header">
+          <h2 class="title">发展历程</h2>
+          <div class="timeline-line">
+            <div class="event" style="left: 20%">2023.5</div>
+            <div class="event" style="left: 40%">2023.6</div>
+            <div class="event" style="left: 60%">2023.8</div>
+            <div class="event" style="left: 80%">2023.10</div>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <button class="nav-button left-button" onClick={() => slide('left')}>←</button>
+          <div class="events">
+            <div class="event-content" data-date="2023.5">
+              <h3>2023.5</h3>
+              <p>开源多模态对话模型VisualGLM-6B (CogVLM)</p>
+            </div>
+            <div class="event-content" data-date="2023.6">
+              <h3>2023.6</h3>
+              <p>发布全面升级的ChatGLM2模型矩阵，多样尺寸，丰富场景，模型能力登顶C-Eval榜单</p>
+            </div>
+            <div class="event-content" data-date="2023.8">
+              <h3>2023.8</h3>
+              <p>作为国内首批通过备案的大模型产品，AI生成式助手“智谱清言”正式上线</p>
+            </div>
+            <div class="event-content" data-date="2023.10">
+              <h3>2023.10</h3>
+              <p>描述10月份的大事记内容</p>
+            </div>
+          </div>
+          <button class="nav-button right-button" onClick={() => slide('right')}>→</button>
+        </div>
+      </div>
+    </section>
+    <script>
+      function slide(direction) {
+        const eventsContainer = document.querySelector('.events');
+        const eventWidth = document.querySelector('.event-content').offsetWidth;
+        const currentScroll = eventsContainer.scrollLeft;
+        if (direction === 'left') {
+          eventsContainer.scrollLeft = currentScroll - eventWidth;
+        } else {
+          eventsContainer.scrollLeft = currentScroll + eventWidth;
+        }
+      }
+    </script>
+  </body>
+</html>
+ -->

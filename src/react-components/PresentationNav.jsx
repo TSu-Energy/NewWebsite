@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-
 const NavigationModule = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-//   const handleItemClick = (index) => {
-//     setActiveIndex(index);
-//   };
+  //   const handleItemClick = (index) => {
+  //     setActiveIndex(index);
+  //   };
 
   const handlePrevClick = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? children.length - 1 : prevIndex - 1));
@@ -30,17 +29,16 @@ const NavigationModule = ({ children }) => {
         ))}
       </div> */}
       <div className="flex items-center justify-center mb-4">
-        <button onClick={handlePrevClick} className="px-4 py-2 bg-gray-300 text-black rounded-l-md">
+        {/* <button onClick={handlePrevClick} className="px-4 py-2 bg-gray-300 text-black rounded-l-md">
           &lt;
-        </button>
+        </button> */}
         {children}
-        <button onClick={handleNextClick} className="px-4 py-2 bg-gray-300 text-black rounded-r-md">
+        {/* <button onClick={handleNextClick} className="px-4 py-2 bg-gray-300 text-black rounded-r-md">
           &gt;
-        </button>
+        </button> */}
       </div>
     </nav>
   );
 };
 
 export default NavigationModule;
-

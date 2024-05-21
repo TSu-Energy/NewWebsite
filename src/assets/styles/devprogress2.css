@@ -1,0 +1,54 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+.timeline-container {
+  @apply flex flex-col items-center bg-gray-100 py-10;
+}
+
+.timeline {
+  @apply w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden;
+}
+
+.timeline-header {
+  @apply bg-blue-900 text-white py-6 text-center relative;
+}
+
+.title {
+  @apply text-2xl font-semibold;
+}
+
+.timeline-line {
+  @apply absolute bottom-0 left-0 w-full h-1 bg-gray-300 flex justify-between items-center;
+}
+
+.year {
+  @apply flex-shrink w-full max-w-xs bottom-0 bg-blue-500 text-white py-1 px-5 mx-4 rounded-full shadow-lg;
+}
+
+.timeline-content {
+  @apply flex items-center py-6 px-4;
+}
+
+.nav-button {
+  @apply text-2xl text-blue-500 cursor-pointer mx-2;
+}
+
+.events {
+  @apply flex w-full overflow-x-scroll no-scrollbar;
+}
+
+.event-content {
+  @apply flex-shrink-0 w-full max-w-xs bg-white p-6 rounded-lg shadow-lg mx-2;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

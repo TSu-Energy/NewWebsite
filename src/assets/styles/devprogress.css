@@ -1,0 +1,120 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.timeline-container {
+  @apply flex flex-col items-center bg-gray-100 py-10;
+}
+
+.timeline {
+  @apply w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden;
+}
+
+.timeline-header {
+  @apply bg-blue-900 text-white py-6 text-center relative;
+}
+
+.years-list {
+  @apply flex justify-between items-center relative;
+}
+
+.years-list li {
+  @apply inline-block py-2 px-4 bg-gray-200 rounded-full m-2 text-gray-700;
+}
+
+.years-list li.on {
+  @apply bg-blue-500 text-white;
+}
+
+.arrowBox {
+  @apply flex justify-center my-4;
+}
+
+.arrow {
+  @apply flex;
+}
+
+.arrowLeft,
+.arrowRight {
+  @apply text-2xl text-blue-500 cursor-pointer mx-2;
+}
+
+.yearsCard {
+  @apply flex overflow-x-scroll no-scrollbar;
+}
+
+.list {
+  @apply flex transition-all duration-300 ease-in-out;
+}
+
+.item {
+  @apply flex-shrink-0 w-full max-w-xs bg-white p-6 rounded-lg shadow-lg mx-2;
+}
+
+.item.on {
+  @apply bg-blue-100;
+}
+
+.divider {
+  @apply my-2 border-t border-gray-300;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 自定义样式 */
+/* .timeline-container {
+  @apply flex flex-col items-center bg-gray-100 py-10;
+}
+
+.timeline {
+  @apply w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden;
+}
+
+.timeline-header {
+  @apply bg-blue-900 text-white py-6 text-center relative;
+}
+
+.title {
+  @apply text-2xl font-semibold;
+}
+
+.timeline-line {
+  @apply absolute bottom-0 left-0 w-full h-1 bg-gray-300 flex justify-between items-center;
+}
+
+.event {
+  @apply absolute bottom-0 transform translate-y-1/2 bg-blue-500 text-white py-1 px-3 rounded-full;
+}
+
+.timeline-content {
+  @apply flex items-center py-6 px-4;
+}
+
+.nav-button {
+  @apply text-2xl text-blue-500 cursor-pointer mx-2;
+}
+
+.events {
+  @apply flex overflow-x-scroll no-scrollbar;
+}
+
+.event-content {
+  @apply flex-shrink-0 w-full max-w-xs bg-white p-6 rounded-lg shadow-lg mx-2;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} */

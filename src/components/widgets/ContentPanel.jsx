@@ -7,13 +7,11 @@ const ContentPanel = ({ item }) => {
   const imageHeight = 'md'; // 定义图片的高度，例如 'md' 对应于 Tailwind 中的 5rem
 
   return (
-    <div className={`flex items-center gap-4 p-8 bg-white rounded-lg shadow-md w-full max-w-${moduleWidth} dark:bg-slate-900`}>
+    <div
+      className={`flex items-center gap-4 p-8 bg-white rounded-lg shadow-md w-full max-w-${moduleWidth} dark:bg-slate-900`}
+    >
       <div className="w-1/2">
-        <img 
-          src={item.imageUrl} 
-          alt={item.title} 
-          className={`rounded-lg h-${imageHeight} w-full object-cover`}
-        />
+        <img src={item.imageUrl} alt={item.title} className={`rounded-lg h-${imageHeight} w-full object-cover`} />
       </div>
       <div className="w-1/2">
         <h2 className="text-xl font-bold mb-2">{item.title}</h2>
