@@ -30,21 +30,20 @@ const Timeline = () => {
             <div className="event" style={{ left: '40%' }}>2022.6</div>
             <div className="event" style={{ left: '60%' }}>2023.8</div>
             <div className="event" style={{ left: '80%' }}>2024.1</div> */}
-            <div className='events' ref={yearsContainerRef}>
-              {/* <button className="nav-button left-button" onClick={() => slide('left')}>←</button> */}
-            <div className="year">2021.5</div>
-            <div className="year">2022.6</div>
-            <div className="year">2023.8</div>
-            <div className="year">2024.1</div>
-            {/* <button className="nav-button right-button" onClick={() => slide('right')}>→</button> */}
-            </div>
+            {/* <div className='events' ref={yearsContainerRef}>
+              <div className="year">2021.5</div>
+              <div className="year">2022.6</div>
+              <div className="year">2023.8</div>
+              <div className="year">2024.1</div>
+            </div> */}
           </div>
         </div>
         <div className="timeline-content">
           <button className="nav-button left-button" onClick={() => slide('left')}>←</button>
           <div className="events" ref={eventsContainerRef}>
             <div className="event-content" data-date="2023.5">
-              <h3>2021.5</h3>
+              <div className="year-inline">2021.5</div>
+              {/* <h3>2021.5</h3> */}
               <p>正式建立团队</p>
             </div>
             <div className="event-content" data-date="2023.6">

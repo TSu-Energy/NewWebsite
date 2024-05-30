@@ -30,6 +30,11 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
+// const images=[
+//       { src: '~/assets/images/hero-image.png', alt: 'Picture 1' },
+//       { src: '~/assets/images/app-store.png', alt: 'Picture 2' },
+//       { src: '~/assets/images/hero-image.png', alt: 'Picture 3' },
+//     ]
 const stats = [
   { title: 'Downloads', amount: 132, unit: 'K', id: 'downloads-id' },
   { title: 'Stars', amount: 24, unit: 'K', id: 'starts-id' },
@@ -42,7 +47,7 @@ const stats = [
   <!-- HeroContainer ***************** -->
 
   <!-- <HeroContainer /> -->
-  <!-- <Hero
+  <Hero
     actions={[
       {
         variant: 'primary',
@@ -69,36 +74,38 @@ const stats = [
         <span class="font-semibold">TSuEnergy</span> is committed to revolutionizing the energy landscape by developing innovative
         and sustainable energy solutions that benefit both our customers and the planet.</span
       >
+      <!-- <span class="block mb-1 sm:hidden font-bold text-blue-600">TSuEnergy: Production-ready.</span> -->
+      <!-- Our solutions are versatile and can benefit a wide range of industries, including commercial, industrial, residential,
+      and renewable energy sectors. -->
     </Fragment>
-  </Hero> -->
+  </Hero>
 
   <HeroCarousel
     actions={[
       {
         variant: 'primary',
-        text: 'GitHub Repo',
-        href: 'https://github.com/TS-energy',
+        text: 'Get template',
+        href: 'https://github.com/onwidget/astrowind',
         target: '_blank',
-        icon: 'tabler:link',
+        icon: 'tabler:download',
       },
       { text: 'Learn more', href: '#features' },
     ]}
-    image={{
-      src: '~/assets/images/hero/Future-Energy-System.png',
-      alt: 'AstroWind Hero Image',
-    }}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      Electrochemistry Energy Storage Device <span class="text-accent dark:text-white highlight">
-        Modelling and Management
-      </span>
+      Free template for <span class="hidden xl:inline">creating websites with</span>
+      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">TSuEnergy</span> is committed to revolutionizing the energy landscape by developing innovative
-        and sustainable energy solutions that benefit both our customers and the planet.</span
+        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
+        + Tailwind CSS.</span
       >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
+      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
+      Blogs.
     </Fragment>
   </HeroCarousel>
 

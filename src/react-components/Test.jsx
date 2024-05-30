@@ -63,6 +63,11 @@ const Timeline = () => {
         </div>
         <div className="yearsCard">
           <div className="list" ref={eventsContainerRef} style={{ left: '-2660px' }}>
+            <div className='yearsItem'>
+              <span>
+                2020.10
+              </span>
+            </div>
             <div className="item">
               <h3>2019</h3>
               <div className="divider" role="separator"></div>

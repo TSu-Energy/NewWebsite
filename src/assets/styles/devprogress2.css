@@ -28,6 +28,14 @@
   @apply flex-shrink w-full max-w-xs bottom-0 bg-blue-500 text-white py-1 px-5 mx-4 rounded-full shadow-lg;
 }
 
+  /* .year-inline {
+    @apply justify-items-start text-center w-full mb-6 top-0 bg-blue-500 text-white py-1 px-5 mx-4 rounded-full shadow-lg;
+  } */
+
+.year-inline {
+  @apply text-center w-full mb-6 bg-blue-500 text-white py-1 px-5 mx-4 rounded-full shadow-lg;
+}
+
 .timeline-content {
   @apply flex items-center py-6 px-4;
 }
@@ -40,8 +48,13 @@
   @apply flex w-full overflow-x-scroll no-scrollbar;
 }
 
+/* .event-content {
+  @apply flex-shrink-0 w-full max-w-xs bg-white px-6 pb-6 rounded-lg shadow-lg mx-2 justify-center;
+   @apply w-40 items-center bg-white px-6 pb-6 rounded-lg shadow-lg mx-2;
+} */
+
 .event-content {
-  @apply flex-shrink-0 w-full max-w-xs bg-white p-6 rounded-lg shadow-lg mx-2;
+  @apply flex flex-col items-start justify-center w-full max-w-xs bg-white px-6 pb-6 rounded-lg shadow-lg mx-2;
 }
 
 .no-scrollbar::-webkit-scrollbar {
