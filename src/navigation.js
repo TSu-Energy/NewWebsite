@@ -3,7 +3,7 @@ import { getPermalink, getBlogPermalink, getProjPermalink, getAsset } from './ut
 export const headerData = {
   links: [
     {
-      text: 'Home',
+      text: '主页',
       href: getPermalink('/'),
       links: [
         // {
@@ -28,12 +28,12 @@ export const headerData = {
     //   text: 'Team',
     //   href: '',
     // },
+    // {
+    //   text: 'Pricing',
+    //   href: getPermalink('/pricing'),
+    // },
     {
-      text: 'Pricing',
-      href: getPermalink('/pricing'),
-    },
-    {
-      text: 'About',
+      text: '关于',
       links: [
         // {
         //   text: 'Features (Anchor Link)',
@@ -44,21 +44,21 @@ export const headerData = {
         //   href: getPermalink('/services'),
         // },
         {
-          text: 'About us',
+          text: '关于我们',
           href: getPermalink('/about'),
         },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
+        // {
+        //   text: 'Contact',
+        //   href: getPermalink('/contact'),
+        // },
+        // {
+        //   text: 'Terms',
+        //   href: getPermalink('/terms'),
+        // },
+        // {
+        //   text: 'Privacy policy',
+        //   href: getPermalink('/privacy'),
+        // },
       ],
     },
     // {
@@ -91,16 +91,17 @@ export const headerData = {
     //   ],
     // },
     {
-      text: '天苏栏目',
+      text: '天苏面板',
+      href: getBlogPermalink(),
       links: [
-        {
-          text: '天苏十条',
-          href: getBlogPermalink(),
-        },
-        {
-          text: '天苏辑录',
-          href: getProjPermalink(),
-        },
+        // {
+        //   text: '',
+        //   href: getBlogPermalink(),
+        // },
+        // {
+        //   text: '',
+        //   href: getProjPermalink(),
+        // },
         // {
         //   text: 'Article',
         //   href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
@@ -109,10 +110,14 @@ export const headerData = {
         //   text: 'Article (with MDX)',
         //   href: getPermalink('markdown-elements-demo-post', 'post'),
         // },
-        // {
-        //   text: 'Category Page',
-        //   href: getPermalink('tutorials', 'category'),
-        // },
+        {
+          text: '天苏十条',
+          href: getPermalink('tian1-su1-shi2-tiao2','category'),
+        },
+        {
+          text: '天苏辑录',
+          href: getPermalink('tian1-su1-ji2-lu4','category'),
+        },
         // {
         //   text: 'Tag Page',
         //   href: getPermalink('astro', 'tag'),
