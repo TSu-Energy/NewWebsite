@@ -54,8 +54,8 @@ console.log('Original stats data:', stats);
 
 <script define:vars={{ stats }}>
   function incrementCounter(selector, current, target, duration, letter = '') {
-    let counter = document.getElementById(selector);
-    let stepTime = Math.abs(Math.floor(duration / target));
+    const counter = document.getElementById(selector);
+    const stepTime = Math.abs(Math.floor(duration / target));
     if (current < target && counter) {
       current++;
       counter.innerText = current.toString() + letter;

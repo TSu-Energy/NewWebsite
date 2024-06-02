@@ -1,9 +1,10 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
+// import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+// import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import DevProgress from '~/components/widgets/DevProgress.astro';
 import Values from '~/components/widgets/Values.astro';
@@ -37,13 +38,13 @@ const metadata = {
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
+  <Stats2
     title="Statistics about us"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Offices', amount: '3', id: 'offices-id' },
+      { title: 'Employees', amount: '32', id: 'employees-id' },
+      { title: 'Scientists', amount: '12', id: 'scientists-id' },
+      { title: 'Papers/Patents', amount: '24', id: 'papers-id' },
     ]}
   />
 
@@ -189,25 +190,21 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Our locations"
+    title="公司地址"
     tagline="Find us"
-    columns={4}
+    columns={3}
     items={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
+        title: 'China',
+        description: 'Floor 1, No. 223 Jianghan Road, Minhang District, Shanghai',
       },
       {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
+        title: 'UK',
+        description: 'London',
       },
       {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        title: 'China',
+        description: 'Xi`an',
       },
     ]}
   />
@@ -215,20 +212,18 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Technical Support"
+    title="技术咨询"
     tagline="Contact us"
     columns={2}
     items={[
       {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+        title: 'E-mail us',
+        description: 'tsuenergy@outlook.com; Haotianteemo@outlook.com',
+        icon: 'tabler:mail',
       },
       {
         title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
+        description: '+10000000',
         icon: 'tabler:headset',
       },
     ]}
