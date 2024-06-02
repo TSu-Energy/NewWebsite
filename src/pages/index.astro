@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Features2 from '~/components/widgets/Features2.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { onVisible } from 'astro/client';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import BrandsGray from '~/components/widgets/BrandsGray.astro';
 
@@ -94,7 +94,7 @@ const stats = [
   <hr class="mt-12 border-t border-gray-200 dark:border-gray-800" />
   <!-- Stats Widget ****************** -->
 
-  <Stats2
+  <Stats2 client:visible
     title="Discover the impressive impact"
     subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
     stats={stats}
@@ -108,7 +108,7 @@ const stats = [
   <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
 
   <!-- Brands Gray Widget ************ -->
-  <BrandsGray />
+  <BrandsGray client:visible/>
 
   <!-- 分割线 -->
   <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
@@ -167,21 +167,21 @@ const stats = [
     subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
     items={[
       {
-        title: 'Installation Instructions',
+        title: '电池安全评估服务',
         description:
-          'Offer clear instructions on how to download the purchased templates and install them on various website platforms or content management systems.',
+          '提供全面的锂离子电池安全评估，包括热失控风险分析和事故原因调查; 利用数值模拟和实验测试，帮助客户优化电池设计，提高电池系统的安全性。',
         icon: 'flat-color-icons:document',
       },
       {
-        title: 'Demo and Previews',
+        title: '电池管理系统（BMS）优化服务',
         description:
-          'Provide interactive demos and previews that allow customers to see how their chosen template will look and function before making a purchase.',
+          '根据电池热失控模型，为电池管理系统提供定制化的优化方案; 通过实时监控和预警机制，提高电池运行的安全性和效率。',
         icon: 'flat-color-icons:template',
       },
       {
-        title: 'Technical Support',
+        title: '储能系统安全设计咨询',
         description:
-          'Providing customer support for any technical issues related to the templates or their implementation.',
+          '针对储能系统特有的安全要求，提供专业的安全设计咨询服务。结合电池热失控传播和气体扩散模型，帮助客户设计更安全的储能解决方案。',
         icon: 'flat-color-icons:voice-presentation',
       },
     ]}
@@ -227,7 +227,6 @@ const stats = [
         description:
           "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
         icon: 'tabler:news-off',
-        
       },
       {
         title: '<span class="font-medium">天苏十条第98期</span>',
