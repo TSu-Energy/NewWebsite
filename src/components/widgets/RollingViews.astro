@@ -3,13 +3,11 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 // import Timeline from '~/components/ui/Timeline.astro';
 import Headline from '~/components/ui/Headline.astro';
 // import Image from '~/components/common/Image.astro';
-import type { Steps as Props } from '~/types';
-import Timeline2 from '../ui/Timeline2.astro';
+// import type { Steps as Props } from '~/types';
 import Item from '../blog/GridItem2.astro';
 import '~/assets/styles/RollingViews.css';
 // import ScrollableComponent from '~/react-components/ScrollableComponent';
 import { APP_BLOG } from 'astrowind:config';
-import { getBlogPermalink } from '~/utils/permalinks';
 import { findLatestPosts } from '~/utils/blog';
 
 const count = 6;
@@ -17,7 +15,7 @@ const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
-  items = [],
+  // items = [],
   //   image = await Astro.slots.render('image'),
   isReversed = false,
 
@@ -63,8 +61,7 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
                   post={post}
                   classes={{
                     container: 'max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 grid grid-flow-col auto-cols-max',
-                    panel: 'panel',
-                    ...(classes?.items as Record<string, never>),
+                    panel: 'panel'
                   }}
                 />
             ))}
