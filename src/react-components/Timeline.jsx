@@ -31,20 +31,10 @@ const Timeline = () => {
         <div className="timeline-header">
           <h2 className="title">发展历程</h2>
           <div className="timeline-line">
-            {/* <div className="event" style={{ left: '20%' }}>2021.5</div>
-            <div className="event" style={{ left: '40%' }}>2022.6</div>
-            <div className="event" style={{ left: '60%' }}>2023.8</div>
-            <div className="event" style={{ left: '80%' }}>2024.1</div> */}
-            {/* <div className='events' ref={yearsContainerRef}>
-              <div className="year">2021.5</div>
-              <div className="year">2022.6</div>
-              <div className="year">2023.8</div>
-              <div className="year">2024.1</div>
-            </div> */}
           </div>
         </div>
         <div className="timeline-content">
-          <button className=" nav-button left-button" onClick={() => slide('left')}>
+          <button className="nav-button left-button" onClick={() => slide('left')}>
             <FontAwesomeIcon className="mx-2" icon={faArrowLeft} />
           </button>
           <div className="events" ref={eventsContainerRef}>

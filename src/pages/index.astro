@@ -94,7 +94,8 @@ const stats = [
   <hr class="mt-12 border-t border-gray-200 dark:border-gray-800" />
   <!-- Stats Widget ****************** -->
 
-  <Stats2 client:visible
+  <Stats2
+    client:visible
     title="Discover the impressive impact"
     subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
     stats={stats}
@@ -108,7 +109,7 @@ const stats = [
   <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
 
   <!-- Brands Gray Widget ************ -->
-  <BrandsGray client:visible/>
+  <BrandsGray />
 
   <!-- 分割线 -->
   <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
@@ -164,24 +165,28 @@ const stats = [
   <Features2
     tagline="Our Services"
     title="我们的产品与服务"
-    subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
+    subtitle=""
     items={[
       {
         title: '电池安全评估服务',
-        description:
+        description: [
           '提供全面的锂离子电池安全评估，包括热失控风险分析和事故原因调查; 利用数值模拟和实验测试，帮助客户优化电池设计，提高电池系统的安全性。',
+          '系统支持远程数据访问和控制，便于大规模电池网络的管理。',
+        ],
         icon: 'flat-color-icons:document',
       },
       {
         title: '电池管理系统（BMS）优化服务',
-        description:
+        description:[
           '根据电池热失控模型，为电池管理系统提供定制化的优化方案; 通过实时监控和预警机制，提高电池运行的安全性和效率。',
+          '该模块通过优化电池材料和结构，减少了热失控的风险，并提高了电池的使用寿命。'],
         icon: 'flat-color-icons:template',
       },
       {
         title: '储能系统安全设计咨询',
-        description:
+        description:[
           '针对储能系统特有的安全要求，提供专业的安全设计咨询服务。结合电池热失控传播和气体扩散模型，帮助客户设计更安全的储能解决方案。',
+          '软件提供了从单电池到电池系统级别的详细模拟，帮助用户理解热失控的传播机制，并优化电池设计。'],
         icon: 'flat-color-icons:voice-presentation',
       },
     ]}

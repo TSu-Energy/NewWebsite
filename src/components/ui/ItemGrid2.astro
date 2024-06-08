@@ -38,9 +38,21 @@ const {
             <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
           )}
           <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
-          )}
+          {description &&
+            (typeof description === 'string' ? (
+              <p
+                class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
+                set:html={description}
+              />
+            ) : (
+              <div class={twMerge('mt-2', itemClasses?.description)}>
+                {description.map((desc) => (
+                  <p class={twMerge('text-muted', descriptionClass, itemClasses?.descriptionItem)}>
+                    {desc}
+                  </p>
+                ))}
+              </div>
+            ))}
           {callToAction && (
             <div class="mt-2">
               <Button {...callToAction} />
