@@ -22,11 +22,14 @@ import {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const LIVE_URL = 'https://tsuenergy.com';
+
 const hasExternalScripts = false;
 const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  site: LIVE_URL,
   output: 'static',
   renderers: ['@astrojs/renderer-react'],
   integrations: [
