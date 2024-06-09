@@ -21,12 +21,12 @@
 
 /* Container styles */
 .scroll-container {
-  max-width: fit-content;
+  max-width: full;
   margin: auto;
   display: flex;
   flex-direction: column;
   /* overflow-y: auto; */
-  max-height: 600px; /* Adjust this value based on your design */
+  max-height: 800px; /* Adjust this value based on your design */
   scroll-behavior: smooth;
   overflow-y: scroll; /* 保持滚动功能 */
   -ms-overflow-style: none; /* IE and Edge */
@@ -40,6 +40,7 @@
 /* Panel styles */
 .panel {
   border-radius: 0.5rem;
+  width: 90%;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.16);

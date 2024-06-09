@@ -57,13 +57,13 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
           /> */}
           <div class="scroll-container">
             {posts.map((post) => (
-                <Item
-                  post={post}
-                  classes={{
-                    container: 'max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 grid grid-flow-col auto-cols-max',
-                    panel: 'panel'
-                  }}
-                />
+              <Item
+                post={post}
+                classes={{
+                  container: 'max-w-xl mx-auto md:max-w-none grid gap-6 md:gap-8 grid-flow-col auto-cols-max',
+                  panel: 'panel',
+                }}
+              />
             ))}
           </div>
         </div>
