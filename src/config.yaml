@@ -1,6 +1,6 @@
 site:
   name: TSuEnergy
-  site: 'https://astrowind.vercel.app'
+  site: 'https://tsuenergy.com'
   base: '/'
   trailingSlash: false
 
@@ -11,20 +11,20 @@ metadata:
   title:
     default: TSuEnergy
     template: '%s — TSuEnergy'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "Electrochemistry Energy Storage Device Modelling and Management"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: TSuEnergy
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/logo/ts-logo.jpeg'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@'
+    site: '@'
     cardType: summary_large_image
 
 i18n:
@@ -58,13 +58,13 @@ apps:
       isEnabled: true
       pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
-        index: false
+        index: true
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
   proj:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
