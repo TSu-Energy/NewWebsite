@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Features2 from '~/components/widgets/Features2.astro';
-import { onVisible } from 'astro/client';
+// import { onVisible } from 'astro/client';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import BrandsGray from '~/components/widgets/BrandsGray.astro';
 
@@ -10,7 +10,7 @@ import RollingViews from '~/components/widgets/RollingViews.astro';
 import ProductsPre from '~/components/widgets/ProductsPre.astro';
 import IntroPre from '~/components/widgets/IntroPre.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
-import type { loadAll } from 'js-yaml';
+// import type { loadAll } from 'js-yaml';
 import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
 
 const metadata = {
@@ -59,51 +59,49 @@ const stats = [
       >
     </Fragment>
   </Hero> -->
+  <section class="hero-section">
+    <HeroCarousel
+      actions={[
+        {
+          variant: 'primary',
+          text: 'GitHub Repo',
+          href: 'https://github.com/TS-energy',
+          target: '_blank',
+          icon: 'tabler:link',
+        },
+        { text: 'Learn more', href: '/about' },
+      ]}
+      image={{
+        src: '~/assets/images/hero/2.png',
+        alt: 'Hero Image',
+      }}
+    >
+      <Fragment slot="title">
+        Electrochemistry Energy Storage Device <span class="text-accent dark:text-white highlight">
+          Modelling and Management
+        </span>
+      </Fragment>
 
-  <HeroCarousel
-    actions={[
-      {
-        variant: 'primary',
-        text: 'GitHub Repo',
-        href: 'https://github.com/TS-energy',
-        target: '_blank',
-        icon: 'tabler:link',
-      },
-      { text: 'Learn more', href: '/about' },
-    ]}
-    image={{
-      src: '~/assets/images/hero/2.png',
-      alt: 'AstroWind Hero Image',
-    }}
-  >
-    <Fragment slot="title">
-      Electrochemistry Energy Storage Device <span class="text-accent dark:text-white highlight">
-        Modelling and Management
-      </span>
-    </Fragment>
+      <Fragment slot="subtitle">
+        <span class="hidden sm:inline">
+          <span class="font-semibold">TSuEnergy</span> is committed to revolutionizing the energy landscape by developing
+          innovative and sustainable energy solutions that benefit both our customers and the planet.</span
+        >
+      </Fragment>
+    </HeroCarousel>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">TSuEnergy</span> is committed to revolutionizing the energy landscape by developing innovative
-        and sustainable energy solutions that benefit both our customers and the planet.</span
-      >
-    </Fragment>
-  </HeroCarousel>
-
-  <!-- 分割线 -->
-  <hr class="mt-12 border-t border-gray-200 dark:border-gray-800" />
-  <!-- Stats Widget ****************** -->
-
-  <Stats2
-    title="Discover the impressive impact"
-    subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
-    stats={stats}
-  >
-    <!-- <Fragment slot="bg">
+    <!-- 分割线 -->
+    <hr class="relative mt-0 border-t border-gray-200 dark:border-gray-800" />
+    <!-- Stats Widget ****************** -->
+    <Stats2
+      title="Discover the impressive impact"
+      subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
+      stats={stats}
+    />
+  </section>
+  <!-- <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment> -->
-  </Stats2>
-
   <!-- 分割线 -->
   <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
 
@@ -119,19 +117,6 @@ const stats = [
   <!-- <Note /> -->
 
   <!-- Intro Widget **************** -->
-
-  <!-- 电动汽车和储能系统的快速增长：
-  文件显示全球对电动汽车的需求正在增长，同时预计到2025年，新安装的储能容量将超过300GWh。这表明电动汽车和储能系统将成为能源行业的重要组成部分。
-  电池安全性的重点关注：
-  随着锂离子电池在电动汽车和储能系统中的广泛应用，电池安全问题，尤其是热失控现象，已成为行业发展的关键关注点。电池制造商和研究机构正在投入资源开发更安全的电池技术和管理系统。
-  多尺度和多物理场建模的重要性：
-  文件中提到的从单电池到电池系统的多尺度建模表明，理解和预测电池行为需要考虑不同尺度下的物理过程。这种综合方法对于设计更高效、更安全的电池系统至关重要。
-  数值模拟在电池设计中的应用：
-  数值模拟和计算流体动力学（CFD）模型在电池设计和安全评估中发挥着越来越重要的作用。这些工具可以帮助研究人员和工程师在实际制造之前预测电池的性能和潜在风险。
-  热失控管理和缓解策略的发展：
-  文件中讨论了热失控的传播、气体扩散和火灾管理等问题，这表明行业正在寻求更有效的热失控管理和缓解策略，以提高电池系统的安全性和可靠性。
-  对高效计算方法的需求增加：
-  随着电池模型变得更加复杂，对高效计算方法的需求也在增加。文件中提到的模型加速、云计算和机器学习等技术，预示着能源行业将越来越多地依赖这些先进的计算技术来优化电池设计和操作。 -->
 
   <IntroPre
     isReversed
@@ -160,9 +145,7 @@ const stats = [
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        我们提供全面的解决方案
-      </h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">我们提供全面的解决方案</h3>
       能源行业是一个复杂且不断变化的领域，涉及到多个方面，包括但不限于政策、技术、市场、环境和社会因素。能源行业在电池技术、安全性和计算方法方面的快速发展。
     </Fragment>
 
@@ -361,3 +344,26 @@ const stats = [
     </Fragment>
   </CallToAction>
 </Layout>
+
+<style>
+  .hero-section {
+    height: 100vh;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-section::before {
+    content: '';
+    background: url('~/assets/images/hero/2.png') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: -1;
+  }
+</style>
