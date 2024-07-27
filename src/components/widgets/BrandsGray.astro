@@ -1,3 +1,168 @@
+<!-- 1. scoll 方式 --><!-- ScrollContainer.astro -->
+<section>
+  <div class="scroll-container">
+    <div class="scrolling-wrapper">
+      <img src="./images/clients/huawei-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
+      <img src="./images/clients/stategr-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
+      <img src="./images/clients/xiaopeng-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
+      <img src="./images/clients/huawei-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
+      <img src="./images/clients/stategr-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
+      <img src="./images/clients/xiaopeng-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
+      
+      <!-- 可以添加更多logo -->
+    </div>
+  </div>
+</section>
+
+<style>
+  .scroll-container {
+    overflow: hidden;
+    width: 200%; /* 或根据需要调整 */
+    height: auto;
+    display: flex;
+  }
+
+  .scrolling-wrapper {
+    white-space: nowrap;
+    display: flex;
+    animation: scroll-left 10s linear infinite;
+  }
+
+  .scrolling-wrapper2 {
+    white-space: nowrap;
+    display: flex;
+    animation: scroll-right 10s linear infinite;
+  }
+
+  .scrolling-wrapper .logo {
+    height: 80px; /* 根据需求调整 */
+    margin-right: 30%; /* logo之间的间隔 */
+  }
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%); /* 滚动至第一组logo的末尾 */
+    }
+  }
+
+  @keyframes scroll-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(50%); /* 滚动至第一组logo的末尾 */
+    }
+  }
+</style>
+
+<!-- 2. swiper 方式 -->
+
+<!-- If you don't want to include Swiper files in your project, you may use it from CDN. The following files are available:
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+If you use ES modules in browser, there is a CDN version for that too:
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+  const swiper = new Swiper(...)
+</script> -->
+
+<!-- <section>
+  <div class="swiper-body">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="./images/clients/huawei-2.svg"
+            class="h-20 w-full mx-auto"
+            loading="lazy"
+            alt="client logo"
+            width=""
+            height=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="./images/clients/stategr-2.svg"
+            class="h-20 w-full mx-auto"
+            loading="lazy"
+            alt="client logo"
+            width=""
+            height=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="./images/clients/xiaopeng-2.svg"
+            class="h-20 w-full mx-auto"
+            loading="lazy"
+            alt="client logo"
+            width=""
+            height=""
+          />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <style>
+  .swiper-body {
+    position: relative;
+    height: 600px;full
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 10%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  } 
+</style> -->
+
+<!-- <script src="../../libs/swiper_auto.js"></script> -->
+
+<!-- 3. 静态方式 -->
+
+<!-- 
 <section>
   <div class="relative">
     <div class="grid sm:grid-cols-3 max-h-fit">
@@ -31,38 +196,6 @@
           height=""
         />
       </div>
-
-
-      <!-- <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-        <img
-          src="./images/clients/ge.svg"
-          class="h-12 w-auto mx-auto"
-          loading="lazy"
-          alt="client logo"
-          width=""
-          height=""
-        />
-      </div>
-      <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-        <img
-          src="./images/clients/netflix.svg"
-          class="h-8 w-auto m-auto"
-          loading="lazy"
-          alt="client logo"
-          width=""
-          height=""
-        />
-      </div>
-      <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-        <img
-          src="./images/clients/google-cloud.svg"
-          class="h-12 w-auto mx-auto"
-          loading="lazy"
-          alt="client logo"
-          width=""
-          height=""
-        />
-      </div> -->
     </div>
   </div>
-</section>
+</section> -->
