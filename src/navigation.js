@@ -133,7 +133,7 @@ export const headerData = {
         // },
         {
           text: '淘宝',
-          href: getPermalink('/landing/sales'),
+          href: getPermalink('/sales'),
         },
         // {
         //   text: 'Click-Through',
