@@ -5,11 +5,11 @@
 
 /* 自定义样式 */
 .timeline-container {
-  @apply flex flex-col items-center bg-gray-100 py-10 w-full;
+  @apply flex flex-col items-center bg-inherit py-10 w-full;
 }
 
 .timeline {
-  @apply w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden;
+  @apply w-full max-w-6xl bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden;
 }
 
 .timeline-header {
@@ -21,7 +21,7 @@
 }
 
 .timeline-line {
-  @apply absolute bottom-0 left-0 w-full h-1 bg-gray-300 flex justify-between items-center;
+  @apply absolute bottom-0 left-0 w-full h-1 bg-white dark:bg-slate-900 flex justify-between items-center;
 }
 
 .year {
@@ -54,7 +54,7 @@
 } */
 
 .event-content {
-  @apply flex-shrink-0 max-w-40 min-w-20 bg-white px-6 pb-6 rounded-lg shadow-lg mx-2 max-h-80 overflow-hidden;
+  @apply flex-shrink-0 max-w-40 min-w-20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 px-6 pb-6 rounded-lg shadow-lg mx-2 max-h-80 overflow-hidden;
 }
 
 .no-scrollbar::-webkit-scrollbar {

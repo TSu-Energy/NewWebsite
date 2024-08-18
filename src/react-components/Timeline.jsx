@@ -26,9 +26,9 @@ const Timeline = () => {
   };
 
   return (
-    <section className="timeline-container">
-      <div className="timeline">
-        <div className="timeline-header">
+    <section className="timeline-container bg-inherit">
+      <div className="timeline bg-inherit">
+        <div className="timeline-header bg-inherit">
           <h2 className="title">发展历程</h2>
           <div className="timeline-line">
           </div>

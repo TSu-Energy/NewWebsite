@@ -1,141 +1,163 @@
-<section class="w-full py-12 px-4 bg-white dark:bg-muted-900 overflow-hidden">
-  <div class="w-full max-w-7xl mx-auto">
-    <div class="w-full max-w-2xl mx-auto text-center space-y-4 py-6">
-      <!-- <span
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  columns = 3,
+  defaultIcon,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <section class="w-full py-12 px-4 bg-inherit dark:bg-muted-900 overflow-hidden">
+    <div class="w-full max-w-7xl mx-auto">
+      <div class="w-full max-w-2xl mx-auto text-center space-y-4 py-6">
+        <!-- <span
         class="whitespace-nowrap inline-block font-sans text-md py-1.5 px-3 m-1 rounded-full bg-blue-300 text-emerald-50 dark:bg-blue-500 dark:text-white"
       >
         Our Values
       </span> -->
-      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase" set:html={'Our Values'} />
+        <p
+          class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+          set:html={'Our Values'}
+        />
 
-      <h2 class="font-heading font-bold text-4xl md:text-5xl text-muted-800 dark:text-white">价值观</h2><p
-        class="font-sans text-lg text-muted-500 dark:text-muted-400"
-      >
-        创新&amp;贡献精神——我们怀着对能源和未来的创造之心，我们相信，只要坚持做正确的事情，即使前途未明，终将会有好的回报。
-      </p>
-    </div>
-    <div>
-      <div class="relative w-full max-w-6xl mx-auto py-6">
-        <div class="relative flex flex-col md:flex-row shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10 z-10">
-          <div
-            class="group flex-1 bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 text-center px-6 py-10"
-          >
+        <h2 class="font-heading font-bold text-4xl md:text-5xl text-muted-800 dark:text-white">价值观</h2><p
+          class="font-sans text-lg text-muted-500 dark:text-muted-400"
+        >
+          创新&amp;贡献精神——我们怀着对能源和未来的创造之心，我们相信，只要坚持做正确的事情，即使前途未明，终将会有好的回报。
+        </p>
+      </div>
+      <div>
+        <div class="relative w-full max-w-6xl mx-auto py-6">
+          <div class="relative flex flex-col md:flex-row shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10 z-10">
             <div
-              class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300"
+              class="group flex-1 bg-inherit dark:bg-muted-800 border border-muted-200 dark:border-muted-700 text-center px-6 py-10"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                role="img"
-                width="1em"
-                height="1em"
-                viewBox="0 0 512 512"
-                data-icon="game-icons:royal-love"
-                class="block mx-auto iconify w-8 h-8 iconify--game-icons"
-                ><path
-                  fill="currentColor"
-                  d="M368.916 38.908c-15.49.145-31.22 3.356-46.316 9.82c-40.01 25.788-50.568 67.182-60.502 109.32c44.02-10.522 87.27-21.872 112.422-65.44l.005 145.12c-25.506-44.172-68.58-55.153-112.44-65.492c10.338 43.86 21.32 86.932 65.493 112.436l-145.12-.002c43.563-25.152 54.914-68.402 65.435-112.42c-43.837 10.336-86.88 21.325-112.375 65.48l.002-145.12c25.14 43.545 68.36 54.902 112.357 65.417c-9.795-40.978-20.336-81.273-56.916-106.922c-75.954-34.415-171.507 8.28-168.19 112.21c4.593 143.862 210.47 227.71 232.626 310.408c20.28-75.672 236.27-172.54 231.944-310.407h.002C484.876 84.78 430.587 39.92 372.01 38.92q-1.544-.026-3.094-.012M255.094 306.645c15.93 0 28.844 12.913 28.844 28.843s-12.914 28.846-28.844 28.846s-28.844-12.916-28.844-28.846s12.914-28.843 28.844-28.843"
-                ></path></svg
+              <div
+                class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300"
               >
-            </div><h3
-              class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
-            >
-              诚信
-            </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
-              我们每一位员工在工作中以诚信和责任感为先，注重过程中的每一个细节，而不仅仅是结果。
-              <!-- 我们相信，只要坚持做正确的事情，即使前途未明，终将会有好的回报。 -->
-            </p>
-          </div><div
-            class="group flex-1 bg-white dark:bg-muted-800 border md:border-l-0 md:border-r-0 border-muted-200 dark:border-muted-700 text-center px-6 py-10"
-          >
-            <div
-              class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-yellow-100 text-yellow-500 dark:bg-yellow-500/10 dark:text-yellow-500 group-hover:bg-yellow-500 group-hover:text-white transition-colors duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                role="img"
-                width="1em"
-                height="1em"
-                viewBox="0 0 256 256"
-                data-icon="ph:sparkle-duotone"
-                class="block mx-auto iconify w-8 h-8 iconify--ph"
-                ><g fill="currentColor"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  role="img"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                  data-icon="game-icons:royal-love"
+                  class="block mx-auto iconify w-8 h-8 iconify--game-icons"
                   ><path
-                    d="m194.82 151.43l-55.09 20.3l-20.3 55.09a7.92 7.92 0 0 1-14.86 0l-20.3-55.09l-55.09-20.3a7.92 7.92 0 0 1 0-14.86l55.09-20.3l20.3-55.09a7.92 7.92 0 0 1 14.86 0l20.3 55.09l55.09 20.3a7.92 7.92 0 0 1 0 14.86"
-                    opacity=".2"></path><path
-                    d="M197.58 129.06L146 110l-19-51.62a15.92 15.92 0 0 0-29.88 0L78 110l-51.62 19a15.92 15.92 0 0 0 0 29.88L78 178l19 51.62a15.92 15.92 0 0 0 29.88 0L146 178l51.62-19a15.92 15.92 0 0 0 0-29.88ZM137 164.22a8 8 0 0 0-4.74 4.74L112 223.85L91.78 169a8 8 0 0 0-4.78-4.78L32.15 144L87 123.78a8 8 0 0 0 4.78-4.78L112 64.15L132.22 119a8 8 0 0 0 4.74 4.74L191.85 144ZM144 40a8 8 0 0 1 8-8h16V16a8 8 0 0 1 16 0v16h16a8 8 0 0 1 0 16h-16v16a8 8 0 0 1-16 0V48h-16a8 8 0 0 1-8-8m104 48a8 8 0 0 1-8 8h-8v8a8 8 0 0 1-16 0v-8h-8a8 8 0 0 1 0-16h8v-8a8 8 0 0 1 16 0v8h8a8 8 0 0 1 8 8"
-                  ></path></g
-                ></svg
+                    fill="currentColor"
+                    d="M368.916 38.908c-15.49.145-31.22 3.356-46.316 9.82c-40.01 25.788-50.568 67.182-60.502 109.32c44.02-10.522 87.27-21.872 112.422-65.44l.005 145.12c-25.506-44.172-68.58-55.153-112.44-65.492c10.338 43.86 21.32 86.932 65.493 112.436l-145.12-.002c43.563-25.152 54.914-68.402 65.435-112.42c-43.837 10.336-86.88 21.325-112.375 65.48l.002-145.12c25.14 43.545 68.36 54.902 112.357 65.417c-9.795-40.978-20.336-81.273-56.916-106.922c-75.954-34.415-171.507 8.28-168.19 112.21c4.593 143.862 210.47 227.71 232.626 310.408c20.28-75.672 236.27-172.54 231.944-310.407h.002C484.876 84.78 430.587 39.92 372.01 38.92q-1.544-.026-3.094-.012M255.094 306.645c15.93 0 28.844 12.913 28.844 28.843s-12.914 28.846-28.844 28.846s-28.844-12.916-28.844-28.846s12.914-28.843 28.844-28.843"
+                  ></path></svg
+                >
+              </div><h3
+                class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
               >
-            </div><h3
-              class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
+                诚信
+              </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
+                我们每一位员工在工作中以诚信和责任感为先，注重过程中的每一个细节，而不仅仅是结果。
+                <!-- 我们相信，只要坚持做正确的事情，即使前途未明，终将会有好的回报。 -->
+              </p>
+            </div><div
+              class="group flex-1 bg-inherit dark:bg-muted-800 border md:border-l-0 md:border-r-0 border-muted-200 dark:border-muted-700 text-center px-6 py-10"
             >
-              创新
-            </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
-              天苏的核心竞争力来自于STEM（科学、技术、工程和数学）领域的专业人才。我们致力于建立一个以工程师文化为核心的企业环境，鼓励创新和技术进步，不断推动企业在能源技术领域的前沿发展。
-            </p>
-          </div><div
-            class="group flex-1 bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 text-center px-6 py-10"
-          >
-            <div
-              class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-emerald-100 text-emerald-500 dark:bg-emerald-500/20 dark:text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300"
+              <div
+                class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-yellow-100 text-yellow-500 dark:bg-yellow-500/10 dark:text-yellow-500 group-hover:bg-yellow-500 group-hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  role="img"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  data-icon="ph:sparkle-duotone"
+                  class="block mx-auto iconify w-8 h-8 iconify--ph"
+                  ><g fill="currentColor"
+                    ><path
+                      d="m194.82 151.43l-55.09 20.3l-20.3 55.09a7.92 7.92 0 0 1-14.86 0l-20.3-55.09l-55.09-20.3a7.92 7.92 0 0 1 0-14.86l55.09-20.3l20.3-55.09a7.92 7.92 0 0 1 14.86 0l20.3 55.09l55.09 20.3a7.92 7.92 0 0 1 0 14.86"
+                      opacity=".2"></path><path
+                      d="M197.58 129.06L146 110l-19-51.62a15.92 15.92 0 0 0-29.88 0L78 110l-51.62 19a15.92 15.92 0 0 0 0 29.88L78 178l19 51.62a15.92 15.92 0 0 0 29.88 0L146 178l51.62-19a15.92 15.92 0 0 0 0-29.88ZM137 164.22a8 8 0 0 0-4.74 4.74L112 223.85L91.78 169a8 8 0 0 0-4.78-4.78L32.15 144L87 123.78a8 8 0 0 0 4.78-4.78L112 64.15L132.22 119a8 8 0 0 0 4.74 4.74L191.85 144ZM144 40a8 8 0 0 1 8-8h16V16a8 8 0 0 1 16 0v16h16a8 8 0 0 1 0 16h-16v16a8 8 0 0 1-16 0V48h-16a8 8 0 0 1-8-8m104 48a8 8 0 0 1-8 8h-8v8a8 8 0 0 1-16 0v-8h-8a8 8 0 0 1 0-16h8v-8a8 8 0 0 1 16 0v8h8a8 8 0 0 1 8 8"
+                    ></path></g
+                  ></svg
+                >
+              </div><h3
+                class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
+              >
+                创新
+              </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
+                天苏的核心竞争力来自于STEM（科学、技术、工程和数学）领域的专业人才。我们致力于建立一个以工程师文化为核心的企业环境，鼓励创新和技术进步，不断推动企业在能源技术领域的前沿发展。
+              </p>
+            </div><div
+              class="group flex-1 bg-inherit dark:bg-muted-800 border border-muted-200 dark:border-muted-700 text-center px-6 py-10"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                role="img"
-                width="1em"
-                height="1em"
-                viewBox="0 0 256 256"
-                data-icon="ph:handshake-duotone"
-                class="block mx-auto iconify w-8 h-8 iconify--ph"
-                ><g fill="currentColor"
+              <div
+                class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-emerald-100 text-emerald-500 dark:bg-emerald-500/20 dark:text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  role="img"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  data-icon="ph:handshake-duotone"
+                  class="block mx-auto iconify w-8 h-8 iconify--ph"
+                  ><g fill="currentColor"
+                    ><path
+                      d="m200 152l-40 40l-64-16l-56-40l32.68-65.37L128 56l55.32 14.63l.28 1.37H144l-45.66 44.29a8 8 0 0 0 1.38 12.42C117.23 139.9 141 139.13 160 120Z"
+                      opacity=".2"></path><path
+                      d="m254.3 107.91l-25.52-51.06a16 16 0 0 0-21.47-7.15l-24.87 12.43l-52.39-13.86a8.14 8.14 0 0 0-4.1 0L73.56 62.13L48.69 49.7a16 16 0 0 0-21.47 7.15L1.7 107.9a16 16 0 0 0 7.15 21.47l27 13.51l55.49 39.63a8.1 8.1 0 0 0 2.71 1.25l64 16a8 8 0 0 0 7.6-2.1l55.07-55.08l26.42-13.21a16 16 0 0 0 7.15-21.46Zm-54.89 33.37L165 113.72a8 8 0 0 0-10.68.61C136.51 132.27 116.66 130 104 122l43.24-42h31.81l27.21 54.41ZM41.53 64L62 74.22l-25.57 51.05L16 115.06Zm116 119.13l-58.11-14.52l-49.2-35.14l28-56L128 64.28l9.8 2.59l-45 43.68l-.08.09a16 16 0 0 0 2.72 24.81c20.56 13.13 45.37 11 64.91-5L188 152.66Zm62-57.87l-25.52-51L214.47 64L240 115.06Zm-87.75 92.67a8 8 0 0 1-7.75 6.06a8 8 0 0 1-1.95-.24l-41.67-10.42a7.9 7.9 0 0 1-2.71-1.25l-26.35-18.82a8 8 0 0 1 9.3-13l25.11 17.94L126 208.24a8 8 0 0 1 5.82 9.7Z"
+                    ></path></g
+                  ></svg
+                >
+              </div><h3
+                class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
+              >
+                专业
+              </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
+                我们强调实干精神和专业素养，天苏坚信，只有脚踏实地、依靠专业技术，才能在激烈的市场竞争中立足并取得成功。
+                <!-- 目标是在2024年实现稳定的收益增长，并为未来的发展奠定坚实的基础。 -->
+              </p>
+            </div><div
+              class="group flex-1 bg-inherit dark:bg-muted-800 border border-muted-200 dark:border-muted-700 text-center px-6 py-10"
+            >
+              <div
+                class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-emerald-100 text-emerald-500 dark:bg-emerald-500/20 dark:text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  role="img"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                  data-icon="game-icons:peace-dove"
+                  class="block mx-auto iconify w-8 h-8 iconify--game-icons"
                   ><path
-                    d="m200 152l-40 40l-64-16l-56-40l32.68-65.37L128 56l55.32 14.63l.28 1.37H144l-45.66 44.29a8 8 0 0 0 1.38 12.42C117.23 139.9 141 139.13 160 120Z"
-                    opacity=".2"></path><path
-                    d="m254.3 107.91l-25.52-51.06a16 16 0 0 0-21.47-7.15l-24.87 12.43l-52.39-13.86a8.14 8.14 0 0 0-4.1 0L73.56 62.13L48.69 49.7a16 16 0 0 0-21.47 7.15L1.7 107.9a16 16 0 0 0 7.15 21.47l27 13.51l55.49 39.63a8.1 8.1 0 0 0 2.71 1.25l64 16a8 8 0 0 0 7.6-2.1l55.07-55.08l26.42-13.21a16 16 0 0 0 7.15-21.46Zm-54.89 33.37L165 113.72a8 8 0 0 0-10.68.61C136.51 132.27 116.66 130 104 122l43.24-42h31.81l27.21 54.41ZM41.53 64L62 74.22l-25.57 51.05L16 115.06Zm116 119.13l-58.11-14.52l-49.2-35.14l28-56L128 64.28l9.8 2.59l-45 43.68l-.08.09a16 16 0 0 0 2.72 24.81c20.56 13.13 45.37 11 64.91-5L188 152.66Zm62-57.87l-25.52-51L214.47 64L240 115.06Zm-87.75 92.67a8 8 0 0 1-7.75 6.06a8 8 0 0 1-1.95-.24l-41.67-10.42a7.9 7.9 0 0 1-2.71-1.25l-26.35-18.82a8 8 0 0 1 9.3-13l25.11 17.94L126 208.24a8 8 0 0 1 5.82 9.7Z"
-                  ></path></g
-                ></svg
+                    fill="currentColor"
+                    d="M372 22.41c-6.4 33.89 6.8 54.39 32.6 66.3c4.6 8.17 8.4 16.29 11.4 24.39c-15.3-17.02-33.3-25.31-58-13.12c14.1 27.62 35.6 32.42 61.5 23.42c6.2 21 7.7 41.6 6.3 62.4c0 .2 0 .4-.1.6c1 .6 2 1.1 2.9 1.7c4.9 2.9 9.7 5.9 14.3 8.9c.4-3.3.7-6.7.9-10c1.2-17.6.4-35.4-3.3-53.5c26.8 5.1 43-8.6 52.8-33.62c-24.2-2.6-44.9 1.22-55.3 22.92c-2.6-9.4-6-18.9-10.3-28.46c23.7-15.85 37.7-36.07 26-67.62c-22.5 8.53-33.5 22.13-36.3 39.47C412.8 44.33 400.3 28 372 22.41M190.7 62.63C183.4 82.89 176.4 110 172 136.8c-3.2 19.9-5.3 39.7-5.7 56.9c30.4 25.9 63.3 44.6 99.8 46.3c-33.2-52.5-63-120-75.4-177.37M56.82 102.2c3.08 75.4 32.03 178.7 110.68 233.2l5.5 3.8l-2 6.3c-3.2 10.1-7.8 19-15 25.8c-7.3 6.8-16.9 11.2-28.7 13.3c-22.5 4-54.14.8-101.89-7.7c-9.6 24.1-8.29 50.6.43 72.1c8.72 21.3 24.29 36.6 42.1 40.6c24.85-31.8 62.26-70.4 113.56-68.1c52 2.3 111.5-12.1 146.9-47.6c12.5-12.4 23.2-42.3 29.4-68.6s8.7-49 8.7-49l.6-6.1l6-1.6c21.6-5.6 47.6-10.7 76.7-25.4c-8.6-5.8-18.7-12.6-30.4-19.6c-17.9-10.6-37.6-19.8-47.3-20.9c-16.6-1.7-26 1.3-32.5 6.1c-6.4 4.8-10.6 12.2-14.3 21.1c-3.6 8.9-6.4 19-11.4 28.1c-5.1 9.2-14 17.8-26.8 19.2c-56 6.5-103.8-22.9-143.9-60.1c-33-30.6-61.58-66.8-86.38-94.9m376.08 148c-7.1 2.6-13.9 4.9-20.4 6.8c-1.8 6.9-3.7 13.8-5.6 20.7l17.4 4.8c3-10.7 5.9-21.5 8.6-32.3"
+                  ></path></svg
+                >
+              </div><h3
+                class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
               >
-            </div><h3
-              class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
-            >
-              专业
-            </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
-              我们强调实干精神和专业素养，天苏坚信，只有脚踏实地、依靠专业技术，才能在激烈的市场竞争中立足并取得成功。
-              <!-- 目标是在2024年实现稳定的收益增长，并为未来的发展奠定坚实的基础。 -->
-            </p>
-          </div><div
-            class="group flex-1 bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 text-center px-6 py-10"
-          >
-            <div
-              class="flex items-center justify-center w-6 h-6 mx-auto mask mask-deca mb-4 bg-emerald-100 text-emerald-500 dark:bg-emerald-500/20 dark:text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                role="img"
-                width="1em"
-                height="1em"
-                viewBox="0 0 512 512"
-                data-icon="game-icons:peace-dove"
-                class="block mx-auto iconify w-8 h-8 iconify--game-icons"
-                ><path
-                  fill="currentColor"
-                  d="M372 22.41c-6.4 33.89 6.8 54.39 32.6 66.3c4.6 8.17 8.4 16.29 11.4 24.39c-15.3-17.02-33.3-25.31-58-13.12c14.1 27.62 35.6 32.42 61.5 23.42c6.2 21 7.7 41.6 6.3 62.4c0 .2 0 .4-.1.6c1 .6 2 1.1 2.9 1.7c4.9 2.9 9.7 5.9 14.3 8.9c.4-3.3.7-6.7.9-10c1.2-17.6.4-35.4-3.3-53.5c26.8 5.1 43-8.6 52.8-33.62c-24.2-2.6-44.9 1.22-55.3 22.92c-2.6-9.4-6-18.9-10.3-28.46c23.7-15.85 37.7-36.07 26-67.62c-22.5 8.53-33.5 22.13-36.3 39.47C412.8 44.33 400.3 28 372 22.41M190.7 62.63C183.4 82.89 176.4 110 172 136.8c-3.2 19.9-5.3 39.7-5.7 56.9c30.4 25.9 63.3 44.6 99.8 46.3c-33.2-52.5-63-120-75.4-177.37M56.82 102.2c3.08 75.4 32.03 178.7 110.68 233.2l5.5 3.8l-2 6.3c-3.2 10.1-7.8 19-15 25.8c-7.3 6.8-16.9 11.2-28.7 13.3c-22.5 4-54.14.8-101.89-7.7c-9.6 24.1-8.29 50.6.43 72.1c8.72 21.3 24.29 36.6 42.1 40.6c24.85-31.8 62.26-70.4 113.56-68.1c52 2.3 111.5-12.1 146.9-47.6c12.5-12.4 23.2-42.3 29.4-68.6s8.7-49 8.7-49l.6-6.1l6-1.6c21.6-5.6 47.6-10.7 76.7-25.4c-8.6-5.8-18.7-12.6-30.4-19.6c-17.9-10.6-37.6-19.8-47.3-20.9c-16.6-1.7-26 1.3-32.5 6.1c-6.4 4.8-10.6 12.2-14.3 21.1c-3.6 8.9-6.4 19-11.4 28.1c-5.1 9.2-14 17.8-26.8 19.2c-56 6.5-103.8-22.9-143.9-60.1c-33-30.6-61.58-66.8-86.38-94.9m376.08 148c-7.1 2.6-13.9 4.9-20.4 6.8c-1.8 6.9-3.7 13.8-5.6 20.7l17.4 4.8c3-10.7 5.9-21.5 8.6-32.3"
-                ></path></svg
-              >
-            </div><h3
-              class="font-heading font-semibold text-xl relative text-muted-800 dark:text-white leading-tight mb-4"
-            >
-              可持续
-            </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
-              我们重视自然规律和因果关系，倡导在业务决策和技术开发中遵循自然法则和科学原理。天苏秉持可持续发展的理念，致力于将自然能源利用和环境保护完美结合，实现人与自然的和谐共存。
-            </p>
+                可持续
+              </h3><p class="text-sm text-muted-500 dark:text-muted-400 leading-relaxed mb-4">
+                我们重视自然规律和因果关系，倡导在业务决策和技术开发中遵循自然法则和科学原理。天苏秉持可持续发展的理念，致力于将自然能源利用和环境保护完美结合，实现人与自然的和谐共存。
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</WidgetWrapper>

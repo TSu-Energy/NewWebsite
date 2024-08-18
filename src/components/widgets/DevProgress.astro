@@ -1,10 +1,25 @@
 ---
 import Timeline from '~/react-components/Timeline';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  columns = 3,
+  defaultIcon,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
 ---
 
-<section>
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Timeline client:load />
-</section>
+</WidgetWrapper>
 
 <!-- ---
 // Timeline.astro

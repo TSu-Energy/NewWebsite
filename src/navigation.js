@@ -124,6 +124,35 @@ export const headerData = {
         // },
       ],
     },
+    {
+      text: '联系我们',
+      links: [
+        // {
+        //   text: '淘宝',
+        //   href: getPermalink('/landing/lead-generation'),
+        // },
+        {
+          text: '淘宝',
+          href: getPermalink('/landing/sales'),
+        },
+        // {
+        //   text: 'Click-Through',
+        //   href: getPermalink('/landing/click-through'),
+        // },
+        // {
+        //   text: 'Product Details (or Services)',
+        //   href: getPermalink('/landing/product'),
+        // },
+        // {
+        //   text: 'Coming Soon or Pre-Launch',
+        //   href: getPermalink('/landing/pre-launch'),
+        // },
+        // {
+        //   text: 'Subscription',
+        //   href: getPermalink('/landing/subscription'),
+        // },
+      ],
+    },
     // {
     //   text: 'Widgets',
     //   href: '#',
