@@ -1,5 +1,5 @@
 <!-- 1. scoll 方式 --><!-- ScrollContainer.astro -->
-<section>
+<section class="container">
   <div class="scroll-container">
     <div class="scrolling-wrapper">
       <img src="./images/clients/huawei-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
@@ -15,6 +15,11 @@
 </section>
 
 <style>
+  .container {
+    overflow: hidden;
+    max-width: none;
+    width: 100%;
+  }
   .scroll-container {
     overflow: hidden;
     width: 200%; /* 或根据需要调整 */
