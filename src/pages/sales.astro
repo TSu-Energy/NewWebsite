@@ -1,8 +1,17 @@
 ---
-import Layout from '~/layouts/LandingLayout.astro';
-
+// import Layout from '~/layouts/LandingLayout.astro';
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { headerData, footerData } from '~/navigation';
+
+import type { MetaData } from '~/types';
+
+export interface Props {
+  metadata?: MetaData;
+}
 
 const metadata = {
   title: 'Sales',
@@ -10,6 +19,9 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <slot name="header">
+    <Header {...headerData} isSticky showToggleTheme />
+  </slot>
   <!-- Hero2 Widget ******************* -->
 
   <Hero2

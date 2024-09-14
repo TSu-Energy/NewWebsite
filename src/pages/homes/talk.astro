@@ -1,0 +1,261 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Content2 from '~/components/widgets/Content2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials2 from '~/components/widgets/Testimonials2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+import Hero3 from '~/components/widgets/Hero3.astro';
+
+const metadata = {
+  title: '天苏纵论 - 首页',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#' },
+        { text: 'About', href: '#about' },
+        { text: 'Resume', href: '#resume' },
+        { text: 'Porfolio', href: '#porfolio' },
+        { text: 'Blog', href: '#blog' },
+        { text: 'Github', href: 'https://github.com/onwidget' },
+      ]}
+      actions={[
+        {
+          text: 'Hire me',
+          href: '#',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment> -->
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero3
+    id="hero"
+    title="天苏纵论"
+    subtitle='"十校十杰"访谈实录精选'
+    tagline="TSu Community"
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="subtitle"> </Fragment>
+  </Hero3>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-dribbble',
+        callToAction: {
+          target: '_blank',
+          text: '全文链接',
+          href: 'https://mp.weixin.qq.com/s/THn00jQ6c_Dxu2yWS29EGA',
+        },
+      },
+      // {
+      //   icon: 'tabler:brand-behance',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Behance',
+      //     href: '#',
+      //   },
+      // },
+      // {
+      //   icon: 'tabler:brand-pinterest',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Pinterest',
+      //     href: '#',
+      //   },
+      // },
+    ]}
+    image={{
+      src: '~/assets/images/talk/sucaifu20180725020_1k9j3ud23.jpg',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">最新信息</h2>
+      <p>
+        2024年7月28日，天苏能源成功举办了一场以能源未来发展为主题的圆桌会议，
+        与会者来自十所包括牛津大学、康奈尔大学、哥伦比亚大学、伦敦大学学院等著名高校的杰出青年博士学者。
+      </p>
+      <br />
+      <p>
+        这场别开生面的分享会议围绕能源领域的前沿研究、技术创新以及未来发展方向展开深入讨论。
+        与会者们不仅分享了各自的研究成果和见解，还探讨了如何通过培养和引进优秀人才来推动能源行业的共同发展。
+      </p>
+      <br />
+      <!-- <p>If you're curious to dive deeper into my work, you can follow me:</p> -->
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials2
+    title="经典摘录"
+    subtitle="以下是访谈嘉宾实录精选："
+    testimonials={[
+      {
+        testimonial: `碳汇项目的数据准确性依赖于专业公司的核算，资金主要来源于投资者，这些投资者可能是旅游项目的投资者，他们通过购买土地、维护森林、雇佣专业公司(如克莱美)进行碳核算和报告编写等方式来投入资金,其收益主要来自于将碳积分出售给需要减少碳排放的污染公司，如航空公司、石油公司等，这些公司购买碳积分以抵消其自身的碳排放。比如在加纳，当地公司通过与政府合作获得土地，并接收天使投资(如新加坡的投资)来执行种树和碳积分核算项目，除了投资者收益外，可能的收入来源还包括土地交易或房地产相关收益。`,
+        name: '章桓源',
+        job: '牛津大学地理系博士后',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `在托克马克装置上，高温超导体被用来产生极强磁场，以束缚等离子体，实现可控核聚变，这是其在能源领域的前沿应用之一，同时，高温超导体应用于MRI(磁共振成像)设备中的磁体，利用其极强的磁场能力，提高影像的清晰度和准确性，为医疗诊断提供强大工具。以及法国空客公司在2022年12月的一个项目中，尝试在飞机系统中使用高温超导材料，包括发动机、传输线和冷却系统，通过利用超导体的物理特性，经过合理的系统设计，验证并实现了运用，并且这个项目再次升级到2500kW，还有高温超导体在药物传输领域的探索性应用，通过超导体产生的磁场辅助药物精准定位至人体深层组织，例如用于治疗无法手术的胰腺癌等疾病。`,
+        name: '杜蕊',
+        job: '伦敦大学国王学院博士',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `研究方向是构建微生物联合培养体系，即将两种微生物置于同一体系中，使其能够协同将二氧化碳和有机废弃物转化为具有经济价值的能源物质，特别是中链脂肪酸，相较于短链脂肪酸乙酸，中链脂肪酸具有更高的经济价值，是当前研究的热点。相比单菌体系，希瓦氏菌和同型产乙酸菌共同培养时，中链脂肪酸的产量显著提高，并且促进了二氧化碳的利用，这与碳中和的主题相契合。博士期间，我在硕士研究的基础上进一步深入，探究两种微生物在共同培养过程中的相互作用机制，特别是物质传递或电子传递的过程。我使用量计算的分析方法来研究是否存在电子传递以及电子传递的机制，并会进行生命周期的计算，以评估该系统对环境和经济的影响。此外，如果两个微生物之间存在电子传递，这种机制理论上可以应用于微生物燃料电池系统中。`,
+        name: '殷玥',
+        job: '帝国理工大学博士',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
+      {
+        testimonial: `变储热技术的成本一直是一个挑战，目前通过探索不同的控制和运行方式，结合工业伙伴，尝试缩短投资回报期，，最好的案例可以达到45年。我的研究同时涉及与含水层和岩层结合的地下储能技术，并且丹麦在水槽储能方面较为领先，区域供暖系统中，丹麦拥有全球最多的水槽储能设施，而瑞典更多采用岩层储能技术。地下储能技术更适用于长期跨季节的应用，但也能用于日常基础的能源调节，如冬天利用后地下变得更冷，夏天再利用这冷能为建筑供冷。`,
+        name: '董浩洋',
+        job: '瑞典皇家理工大学博士',
+        image: {
+          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Alex Foster Image',
+        },
+      },
+      {
+        testimonial: `我所在的研究组专注于高温质子交换膜燃料电池技术，结合甲醇重整系统，将制氢过程与动力系统集成，以克服低温燃料电池系统对高纯氢的严格要求。采用甲醇作为燃料，因为它在常温常压下为液态，便于储存和运输等优势，且甲醇重整过程能耗较低，并且系统运行温度在100-200°C，允许一定程度的一氧化碳存在，减少水堵塞问题，并有效利用余热，整体提升系统效率。同时系统集成考虑余热利用，我目前研究了一个热力学集成系统，通过㶲分析能够识别效率低下的组件，再使用基于㶲的经济性分析来找出系统中效率低下的各部分运行成本。通过多目标优化，平衡效率、成本和排放，寻找参数最优值，采用遗传算法等工具进行优化分析，目标是提升效率、降低成本和减少二氧化碳排放。`,
+        name: '钟肇达',
+        job: '丹麦奥尔堡大学博士',
+        image: {
+          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
+          alt: 'Jessica Collins Image',
+        },
+      },
+      {
+        testimonial: `我在博士期间重点围绕氨燃料燃烧特性和污染物排放进行了一系列测量与诊断研究。氨气作为燃料，具有零碳排放的优势，被视为零碳能源体系中的重要燃料之一。氨气在燃烧过程中会产生较大的氮氧化物排放，且反应性较低，导致其应用受到一定限制。我的博士课题是结合激波管和激光吸收光谱测量技术，发展了一套适用于高温瞬态环境的实验测量系统，用于定量测量氨燃料反应过程中温度、组分浓度等关键参数的演化过程，通过实验结果验证了不同反应动力学模型的预测准确性，并分析模型预测偏差。课题通过对氨气、氨氢和氨醇混合燃料反应机排放特性的实验测量和理论研究，为掺氨燃料领域的光谱诊断方法和反应动力学模型的优化提供了实验基础和数据支撑。`,
+        name: '郑道',
+        job: '清华大学博士',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
+      {
+        testimonial: `我的研究方向聚焦于电力系统仿真模拟与资源优化，涉及容量扩展模型(Capacity Expansion Model)和直流最优潮流模型(DC Optimal Power Flow)。我参与的项目包括南美国家巴拉圭和美国纽约州的电网模拟，在巴拉圭项目中，我发现了一个有趣的现象，即当地存在普遍的电力偷窃现象，以及由于森林保护法执行不力导致的非法伐木问题，这对电网的可持续发展规划构成了挑战。目前，我正在进行的课题是利用数据驱动的方法来预测电气化对未来低碳电网的影响，研究结论表明，高度低碳化的电网需要大量低成本且可调度的发电站来维持供求平衡。我正在考虑利用需求侧响应和电动汽车与电网的双向充电(Vehicle-to-Grid, V2G)技术，通过提升电动车保有量和分布式直接控制，支持电网消纳可再生能源，实现供需平衡。并且对于纽约州而言，如果考虑电动车与电网的双向充电，每辆电动车在未来智能电网中每年可以节省数百美元的供应成本。在车辆的全寿命周期内，这一节省可以累积到五六千美元，对电网的经济效益具有显著贡献。`,
+        name: '胡胤博',
+        job: '哥伦比亚大学博士',
+        image: {
+          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael Carter Image',
+        },
+      },
+      {
+        testimonial: `我的研究专注于开发电化学储能系统的动态仿真模型，并结合数据驱动技术进行性能预测。主要研究领域包括质子交换膜水电解槽的高精度性能模型、苯基锂硫电池的多物理场建模、以及复合硅–石墨锂离子电池电极退化过程的综合建模。此外，我还对碱性水电解槽系统的长期储能经济性进行评估，旨在优化系统性能和决策过程。我参与了华为欧洲研究院的复合硅-石墨锂离子电池模型开发和全球能源互联网研究院的质子交换膜水电解槽电极增材制造研究。在科研过程中，我面临的最大挑战是平衡实验设计与仿真建模的互补需求。实验过程中，常常忽视了废弃数据中的潜在趋势，或受限于现有设备资源。仿真建模则需要全面、系统化的数据支持，而目前主要依赖开源文献资料，缺乏实际实验数据，难以提出合理的实验设计需求。目前，我的课题聚焦于利用数据驱动的方法，构建从需求侧到自上而下的电化学能源系统开发框架，以预测不同操作条件下的电化学系统性能。研究表明，通过构建可扩展迁移的数据驱动方法论，我们最大化了实验数据的潜力，实现了单次实验成本降低40%-60%、研发周期缩短逾2/3，同时模型精度保持在98%以上。这些改进节省了经费和时间，为行业标准化流程提供了数据基础，为支持动态工况下的能源电力系统变化提供了源侧帮助。`,
+        name: '马皓天',
+        job: '伦敦大学学院',
+        image: {
+          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael Carter Image',
+        },
+      },
+      {
+        testimonial: `我博士期间研究电网级储能系统的技术经济性，包括铅酸电池、镍镉电池、钠硫电池和锂离子电池。钠硫电池和锂离子电池在能量密度、循环寿命和效率方面具有显著优势。
+
+我在博士第三年开发了两套投资决策模型，分别评估在悉尼电力市场中应用钠硫电池和锂离子电池进行电网级储能的动态模型。第一个模型着眼于电力零售商利用电价套利的机会，安装钠硫电池系统。我发现目前钠硫电池的成本需要降低约30%，才能在悉尼的市场条件下具有经济竞争力，该模型目前已被澳大利亚国家电网采用。第二个模型评估了在客户侧安装锂离子电池系统的可行性，比如在工业设施中使用，目前锂离子电池系统的成本与收益之间存在显著的经济差距，成本需要降低一半，才能实现大规模应用。除了经济分析，我还探讨了电网级电池在悉尼的长期潜在收益。尽管目前的成本较高，这些系统在增强电网稳定性、支持可再生能源整合、推迟基础设施升级方面具有显著的长期优势。
+
+总的来说，虽然电网级电池储能系统目前的成本较高，但随着技术的进步和成本的下降，这些系统在不久的将来会在悉尼的能源市场中具有经济可行性。为了加速这些技术的部署，政府的支持和激励措施将起到关键作用。`,
+        name: '李天麒',
+        job: '康奈尔大学博士 谷歌DM高级工程师',
+        image: {
+          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael Carter Image',
+        },
+      },
+      {
+        testimonial: `我的主要研究方向为能源系统绿色转型和整合，特别关注氢气在其中的角色。我之前与天津大学、西安交通大学和浙江大学的老师合作，共同创建了能源领域的公众号，并制作了40多期相关讲座，内容涵盖能源转型的多个方面，视频总播放量达到十几万次。同时作为开发者之一，参与开发了开源的欧洲能源转型大模型(PyPSA-Eur)，该模型采用自下而上的方法，考虑了欧洲33个国家的各种能源技术和使用场景，包括风能、太阳能、地热、储能以及化石能源等,并得到了欧洲能源署(IEA)和壳牌等公司的认可和使用。博士期间，我更关注氢气在能源转型中的作用，特别是其作为储能和工业原料的潜力。作为博士第一阶段的工作, 探索了氢在能源转型过程中所起到的动态耦合作用。同时, 我也与DTU开展了合作研究，分析了农业能源转型失败与电转热失败等情景对整体能源系统的影响。当前正在探索氢气所面临的内部与外部挑战，包括氢气与直接电气化的竞争力、绿氢和蓝氢之间的竞争等。接下来会在波茨坦气候影响研究所进一步扩展模型, 尝试覆盖中国, 并回答有关中国的能源转型的相关问题。`,
+        name: '谢志远',
+        job: '丹麦奥胡斯大学博士',
+        image: {
+          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael Carter Image',
+        },
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content2 id="porfolio" title="总结" isReversed>
+    <Fragment slot="content">
+      <p>
+        能源系统的转型和绿色发展研究涵盖了众多领域，本次会议议题囊括了包括碳数据准确性保障、碳积分市场资金来源、高温超导、相变储热、燃料电池及氨燃料等新型技术的应用...所有这些研究共同致力于推动未来能源体系的低碳化和可持续发展。
+        通过跨学科的合作与创新，这些研究者及其背后所属的研究机构，为全球能源系统的绿色转型提供了坚实的科学依据和技术支持。
+      </p><br />
+      <p>
+        未来能源的发展不仅依赖于技术进步，更需要各方人才的积极参与与协作。
+        在此次会议上，天苏能源进一步加强了与学术界的联系，并期待与更多优秀的年轻学者携手，共同推动能源行业的可持续发展。
+      </p><br />
+      <p>
+        会议在积极的氛围中圆满结束，所有与会者对未来充满期待。 在新一代杰出人才的引领下，能源行业将迎来更加光明的前景。
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content2>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="More Reading"
+    subtitle="Want to read more about this activity?"
+    actions={[
+      {
+        variant: 'primary',
+        text: '全文链接',
+        href: 'https://mp.weixin.qq.com/s/THn00jQ6c_Dxu2yWS29EGA',
+      },
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts id="blog" title="天苏面板一览" information={``}>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

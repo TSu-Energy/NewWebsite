@@ -118,6 +118,10 @@ export const headerData = {
           text: '天苏辑录',
           href: getPermalink('tian1-su1-ji2-lu4','category'),
         },
+        {
+          text: '天苏纵论',
+          href: getPermalink('/homes/talk'),
+        },
         // {
         //   text: 'Tag Page',
         //   href: getPermalink('astro', 'tag'),
