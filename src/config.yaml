@@ -1,5 +1,5 @@
 site:
-  name: TSuEnergy
+  name: TSu-Energy
   site: 'https://tsuenergy.com'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: TSuEnergy
-    template: '%s — TSuEnergy'
+    default: TSu-Energy
+    template: '%s — TSu-Energy'
   description: "Electrochemistry Energy Storage Device Modelling and Management"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: TSuEnergy
+    site_name: TSu-Energy
     images:
       - url: '~/assets/images/logo/ts-logo.jpeg'
         width: 1200
