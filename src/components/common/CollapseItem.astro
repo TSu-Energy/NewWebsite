@@ -1,0 +1,21 @@
+---
+// CollapseItem.astro
+interface Props {
+  title: string;
+  logo?: string;
+  expanded?: boolean;
+}
+
+const { title, logo, expanded = false } = Astro.props;
+---
+
+<div class="border rounded-md">
+  <div class="flex items-center justify-between p-4">
+    <div>
+      <h5 class="font-bold">{title}</h5>
+      {logo && <img src={logo} alt={`${title} logo`} class="h-8" />}
+    </div>
+    <button class={`btn ${expanded ? 'btn-active' : ''}`}>Toggle</button>
+  </div>
+  {expanded && <div class="p-4">{Astro.slots.default()}</div>}
+</div>

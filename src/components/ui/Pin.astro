@@ -1,0 +1,25 @@
+---
+// Pin.astro
+interface Props {
+  location: string;
+  top: string;
+  left: string;
+  bgColor: string;
+  glowSize?: string;
+}
+
+const { location, top, left, bgColor, glowSize = '16px' } = Astro.props;
+---
+
+<div
+  class="absolute flex flex-col items-center text-center"
+  style={`top:${top};left:${left};transform:translate(-50%, -50%);`}
+>
+  <div class={`rounded-full ${bgColor}`} style={`width:16px;height:16px;`}></div>
+  <div
+    class="absolute rounded-full"
+    style={`width:${glowSize};height:${glowSize};background:radial-gradient(circle, var(--tw-color-opacity, 1) 0%, rgba(255, 255, 255, 0.4) 20%, rgba(255, 255, 255, 0) 90%);`}
+  >
+  </div>
+  <div class="text-sm mt-1">{location}</div>
+</div>

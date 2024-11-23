@@ -11,8 +11,9 @@ const ReactHeroCarousel = () => {
       background: '/public/images/resource/switch-zone-background.jpg',
       rightContent: {
         cards: [
-          { src: '/public/images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: 'w-fit', position: 'ml-0' },
-          { src: '/public/images/resource/demo-hvac.svg', alt: 'HVAC', width: 'w-1/3', position: 'top-5 left-[60%]' },
+          { src: '/public/images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: 'w-1/2', position: 'left-0 top-0' },
+          { src: '/public/images/resource/demo-hvac.svg', alt: 'HVAC', width: 'w-1/3', position: 'top-0 left-[60%]' },
+          { src: '/public/images/resource/demo-electricity.svg', alt: 'Electricity', width: 'w-2/3', position: 'top-1/2 left-[10%]' },
         ],
         description: `产业园区是经济发展的重要载体，通过智能化管理和数据分析，我们助力园区优化资源配置，推动绿色和可持续发展。`,
       },
@@ -37,7 +38,8 @@ const ReactHeroCarousel = () => {
       background: '/public/images/resource/switch-trade-background.jpg',
       rightContent: {
         cards: [
-          { src: '/public/images/resource/demo-trade-forecast.svg', alt: '贸易预测', width: 'w-4/5', position: 'mx-auto' },
+          { src: '/public/images/resource/demo-wegreenpass.svg', alt: '全球贸易', width: 'w-fit', position: 'left-[10%] mx-auto' },
+          { src: '/public/images/resource/demo-policy-tool.svg', alt: 'Policy', width: 'w-fit', position: 'top-[20%] mx-auto' },
         ],
         description: `全球贸易正在快速发展，我们通过智能分析和预测工具，为贸易决策提供深刻洞察与优化建议。`,
       },
@@ -49,7 +51,7 @@ const ReactHeroCarousel = () => {
       background: '/public/images/resource/switch-logistics-background.jpg',
       rightContent: {
         cards: [
-          { src: '/public/images/resource/demo-logistics.svg', alt: '物流示例', width: 'w-4/5', position: 'mx-auto' },
+          { src: '/public/images/resource/demo-shipping.svg', alt: '物流示例', width: 'w-1/2', position: 'mx-0' },
         ],
         description: `航运与物流是供应链的重要环节，我们的 AI 工具帮助企业优化路线、降低成本、提高效率。`,
       },
@@ -72,8 +74,12 @@ const ReactHeroCarousel = () => {
       <main className="relative z-10 flex flex-col md:flex-row items-center justify-between p-20 gap-8">
         {/* 左侧内容 */}
         <div className="left-hero space-y-4 max-w-1/2">
-          <h1 className="text-2xl font-bold text-yellow-50">我们使用领先 AI 技术</h1>
-          <h2 className="text-lg text-yellow-50">赋能全球供应链 ESG 建设和可持续发展</h2>
+          <div className='text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-3 font-heading dark:text-gray-200'>
+            TSu-Energy <span class="text-accent dark:text-white highlight"> 天苏能源 </span>
+          </div>
+
+          <h1 className="text-2xl font-bold ">我们使用领先 AI 技术</h1>
+          <h2 className="text-lg ">赋能全球供应链 ESG 建设和可持续发展</h2>
 
           {/* 按钮部分 */}
           <div className="button-grids grid grid-cols-2 gap-4">
@@ -99,7 +105,7 @@ const ReactHeroCarousel = () => {
               display: "grid",
               gridTemplateRows: "1fr auto",
               rowGap: "6rem",
-              height: "60%",
+              height: "80%",
               paddingBottom: "10vh",
               flexBasis: "50%",
               flexGrow: 0,
@@ -111,8 +117,8 @@ const ReactHeroCarousel = () => {
           <div className="relative flex flex-wrap gap-4 items-center justify-center">
             {activeButtonData.rightContent.cards.map((card, index) => (
               <div key={index} className={`${card.position} ${card.width} border border-solid border-gray-300/20 
-              bg-white 
-                p-6 
+              bg-white
+                p-2
                 rounded-lg 
                 shadow-lg 
                 shadow-gray-300/30 
@@ -126,10 +132,10 @@ const ReactHeroCarousel = () => {
           </div>
 
           {/* 描述文案 */}
-          <div className="bg-blue-900 text-white p-6 rounded shadow-md flex mt-20">
+          <div className="bg-blue-900 text-white p-6 rounded shadow-md mt-20 shadow-lime-50 overflow-hidden animate-fly-in opacity-85">
             <p className="mb-4 w-full">{activeButtonData.rightContent.description}</p>
-            <div className="flex">
-              <button className="flex gap-2 text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-900">
+            <div className="flex items-center justify-end">
+              <button className="flex gap-2 text-white border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-900">
                 <span>了解更多</span>
                 <svg className="w-4 h-4" viewBox="64 64 896 896" fill="currentColor" aria-hidden="true">
                   <path
