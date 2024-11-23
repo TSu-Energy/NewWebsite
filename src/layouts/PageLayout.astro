@@ -16,11 +16,12 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <slot name="announcement">
+  <!-- 必要时，可以释放annoucement -->
+  <!-- <slot name="announcement" class="z-1000">
     <Announcement />
-  </slot>
+  </slot> -->
   <slot name="header">
-    <Header {...headerData} isSticky showToggleTheme />
+    <Header {...headerData} isSticky showToggleTheme position='free'/>
   </slot>
   <main>
     <slot />

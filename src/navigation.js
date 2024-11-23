@@ -24,6 +24,46 @@ export const headerData = {
         // },
       ],
     },
+    {
+      text: '解决方案',
+      href: getPermalink('/solutions'),
+      links: [
+        {
+          text: '产业园区',
+          href: getPermalink('/solutions/industries'),
+        },
+        {
+          text: '实验室和认证机构',
+          href: getPermalink('/solutions/labs'),
+        },
+        {
+          text: '全球贸易',
+          href: getPermalink('/solutions/gl-bussiness'),
+        },
+        {
+          text: '航运与物流',
+          href: getPermalink('/solutions/transport'),
+        },
+      ],
+    },
+    {
+      text: '核心产品',
+      href: getPermalink('/products'),
+      links: [
+        {
+          text: '天苏云',
+          href: getPermalink('/products/ts-cloud'),
+        },
+        {
+          text: '绿境通',
+          href: getPermalink('/products/green-pass'),
+        },
+        {
+          text: 'AI 报告工具',
+          href: getPermalink('/products/ai-tools'),
+        },
+      ],
+    },
     // {
     //   text: 'Team',
     //   href: '',
@@ -32,35 +72,32 @@ export const headerData = {
     //   text: 'Pricing',
     //   href: getPermalink('/pricing'),
     // },
-    {
-      text: '关于',
-      links: [
-        // {
-        //   text: 'Features (Anchor Link)',
-        //   href: getPermalink('/#features'),
-        // },
-        // {
-        //   text: 'Services',
-        //   href: getPermalink('/services'),
-        // },
-        {
-          text: '关于我们',
-          href: getPermalink('/about'),
-        },
-        // {
-        //   text: 'Contact',
-        //   href: getPermalink('/contact'),
-        // },
-        // {
-        //   text: 'Terms',
-        //   href: getPermalink('/terms'),
-        // },
-        // {
-        //   text: 'Privacy policy',
-        //   href: getPermalink('/privacy'),
-        // },
-      ],
-    },
+    // {
+    //   text: '',
+    //   links: [
+    //     // {
+    //     //   text: 'Features (Anchor Link)',
+    //     //   href: getPermalink('/#features'),
+    //     // },
+    //     // {
+    //     //   text: 'Services',
+    //     //   href: getPermalink('/services'),
+    //     // },
+
+    //     // {
+    //     //   text: 'Contact',
+    //     //   href: getPermalink('/contact'),
+    //     // },
+    //     // {
+    //     //   text: 'Terms',
+    //     //   href: getPermalink('/terms'),
+    //     // },
+    //     // {
+    //     //   text: 'Privacy policy',
+    //     //   href: getPermalink('/privacy'),
+    //     // },
+    //   ],
+    // },
     // {
     //   text: 'Landing',
     //   links: [
@@ -139,6 +176,10 @@ export const headerData = {
           text: '淘宝',
           href: getPermalink('/sales'),
         },
+        {
+          text: '关于我们',
+          href: getPermalink('/about'),
+        },
         // {
         //   text: 'Click-Through',
         //   href: getPermalink('/landing/click-through'),
@@ -162,7 +203,7 @@ export const headerData = {
     //   href: '#',
     // },
   ],
-  actions: [{ text: 'Access', href: 'https://github.com/TS-energy', target: '_blank' }],
+  actions: [{ text: '立即咨询', href: 'https://github.com/TS-energy', target: '_blank' }],
 };
 
 export const footerData = {
