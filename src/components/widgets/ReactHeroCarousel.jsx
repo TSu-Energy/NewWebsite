@@ -7,13 +7,13 @@ const ReactHeroCarousel = () => {
   {
       id: 1,
       label: '产业园区',
-      image: '/public/images/resource/nav/industrial-park.png',
-      background: '/public/images/resource/switch-zone-background.jpg',
+      image: './images/resource/nav/industrial-park.png',
+      background: './images/resource/switch-zone-background.jpg',
       rightContent: {
         cards: [
-          { src: '/public/images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: 'w-1/2', position: 'left-0 top-0' },
-          { src: '/public/images/resource/demo-hvac.svg', alt: 'HVAC', width: 'w-1/3', position: 'top-0 left-[60%]' },
-          { src: '/public/images/resource/demo-electricity.svg', alt: 'Electricity', width: 'w-2/3', position: 'top-1/2 left-[10%]' },
+          { src: './images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: 'w-1/2', position: 'left-0 top-0' },
+          { src: './images/resource/demo-hvac.svg', alt: 'HVAC', width: 'w-1/3', position: 'top-0 left-[60%]' },
+          { src: './images/resource/demo-electricity.svg', alt: 'Electricity', width: 'w-2/3', position: 'top-1/2 left-[10%]' },
         ],
         description: `产业园区是经济发展的重要载体，通过智能化管理和数据分析，我们助力园区优化资源配置，推动绿色和可持续发展。`,
       },
@@ -21,12 +21,12 @@ const ReactHeroCarousel = () => {
     {
       id: 2,
       label: '实验室和认证机构',
-      image: '/public/images/resource/nav/labs-and-certification.png',
-      background: '/public/images/resource/switch-labs-background.png',
+      image: './images/resource/nav/labs-and-certification.png',
+      background: './images/resource/switch-labs-background.png',
       rightContent: {
         cards: [
-          { src: '/public/images/resource/demo-certification.svg', alt: '认证示例', width: 'w-3/5', position: 'ml-0' },
-          { src: '/public/images/resource/demo-ai-reporting.svg', alt: 'AI 报告', width: 'w-1/3', position: 'top-5 left-[60%]' },
+          { src: './images/resource/demo-certification.svg', alt: '认证示例', width: 'w-3/5', position: 'ml-0' },
+          { src: './images/resource/demo-ai-reporting.svg', alt: 'AI 报告', width: 'w-1/3', position: 'top-5 left-[60%]' },
         ],
         description: `我们为实验室和认证机构提供 AI 驱动的解决方案，从实验室管理到数据分析，提升效率与准确性。`,
       },
@@ -34,12 +34,12 @@ const ReactHeroCarousel = () => {
     {
       id: 3,
       label: '全球贸易',
-      image: '/public/images/resource/nav/global-trade.png',
-      background: '/public/images/resource/switch-trade-background.jpg',
+      image: './images/resource/nav/global-trade.png',
+      background: './images/resource/switch-trade-background.jpg',
       rightContent: {
         cards: [
-          { src: '/public/images/resource/demo-wegreenpass.svg', alt: '全球贸易', width: 'w-fit', position: 'left-[10%] mx-auto' },
-          { src: '/public/images/resource/demo-policy-tool.svg', alt: 'Policy', width: 'w-fit', position: 'top-[20%] mx-auto' },
+          { src: './images/resource/demo-wegreenpass.svg', alt: '全球贸易', width: 'w-fit', position: 'left-[10%] mx-auto' },
+          { src: './images/resource/demo-policy-tool.svg', alt: 'Policy', width: 'w-fit', position: 'top-[20%] mx-auto' },
         ],
         description: `全球贸易正在快速发展，我们通过智能分析和预测工具，为贸易决策提供深刻洞察与优化建议。`,
       },
@@ -47,11 +47,11 @@ const ReactHeroCarousel = () => {
     {
       id: 4,
       label: '航运与物流',
-      image: '/public/images/resource/nav/logistics.png',
-      background: '/public/images/resource/switch-logistics-background.jpg',
+      image: './images/resource/nav/logistics.png',
+      background: './images/resource/switch-logistics-background.jpg',
       rightContent: {
         cards: [
-          { src: '/public/images/resource/demo-shipping.svg', alt: '物流示例', width: 'w-1/2', position: 'mx-0' },
+          { src: './images/resource/demo-shipping.svg', alt: '物流示例', width: 'w-1/2', position: 'mx-0' },
         ],
         description: `航运与物流是供应链的重要环节，我们的 AI 工具帮助企业优化路线、降低成本、提高效率。`,
       },
