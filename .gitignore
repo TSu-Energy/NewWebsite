@@ -4,6 +4,8 @@ dist/
 
 src/demo/
 
+backup/
+
 # dependencies
 node_modules/
 

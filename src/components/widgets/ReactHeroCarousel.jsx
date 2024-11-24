@@ -11,9 +11,9 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-zone-background.jpg',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: 'w-1/2', position: 'left-0 top-0' },
-          { src: './images/resource/demo-hvac.svg', alt: 'HVAC', width: 'w-1/3', position: 'top-0 left-[60%]' },
-          { src: './images/resource/demo-electricity.svg', alt: 'Electricity', width: 'w-2/3', position: 'top-1/2 left-[10%]' },
+          { src: './images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: '', position: 'left-0 top-0' },
+          { src: './images/resource/demo-hvac.svg', alt: 'HVAC', width: '', position: 'top-0 left-[60%]' },
+          { src: './images/resource/demo-electricity.svg', alt: 'Electricity', width: '', position: 'top-1/2 left-[10%]' },
         ],
         description: `产业园区是经济发展的重要载体，通过智能化管理和数据分析，我们助力园区优化资源配置，推动绿色和可持续发展。`,
       },
@@ -25,8 +25,8 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-labs-background.png',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-certification.svg', alt: '认证示例', width: 'w-3/5', position: 'ml-0' },
-          { src: './images/resource/demo-ai-reporting.svg', alt: 'AI 报告', width: 'w-1/3', position: 'top-5 left-[60%]' },
+          { src: './images/resource/demo-certification.svg', alt: '认证示例', width: '', position: 'center top-0 ml-0' },
+          { src: './images/resource/demo-ai-reporting.svg', alt: 'AI 报告', width: '', position: 'top-1/3 left-[60%]' },
         ],
         description: `我们为实验室和认证机构提供 AI 驱动的解决方案，从实验室管理到数据分析，提升效率与准确性。`,
       },
@@ -38,8 +38,8 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-trade-background.jpg',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-wegreenpass.svg', alt: '全球贸易', width: 'w-fit', position: 'left-[10%] mx-auto' },
-          { src: './images/resource/demo-policy-tool.svg', alt: 'Policy', width: 'w-fit', position: 'top-[20%] mx-auto' },
+          { src: './images/resource/demo-wegreenpass.svg', alt: '全球贸易', width: 'w-fit', position: 'top-0 left-[10%] mx-auto' },
+          { src: './images/resource/demo-policy-tool.svg', alt: 'Policy', width: 'w-fit', position: 'center top-[20%] mx-auto' },
         ],
         description: `全球贸易正在快速发展，我们通过智能分析和预测工具，为贸易决策提供深刻洞察与优化建议。`,
       },
@@ -51,7 +51,7 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-logistics-background.jpg',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-shipping.svg', alt: '物流示例', width: 'w-1/2', position: 'mx-0' },
+          { src: './images/resource/demo-shipping.svg', alt: '物流示例', width: 'w-1/2', position: 'center mx-0' },
         ],
         description: `航运与物流是供应链的重要环节，我们的 AI 工具帮助企业优化路线、降低成本、提高效率。`,
       },
@@ -71,10 +71,10 @@ const ReactHeroCarousel = () => {
       ></div>
 
       {/* 主体内容 */}
-      <main className="relative z-10 flex flex-col md:flex-row items-center justify-between p-20 gap-8">
+      <main className="relative z-10 flex flex-col md:flex-row items-center justify-between m-20">
         {/* 左侧内容 */}
         <div className="left-hero space-y-4 max-w-1/2">
-          <div className='text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-3 font-heading dark:text-gray-200'>
+          <div className='text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-3 font-heading dark:text-gray-100'>
             TSu-Energy <span class="text-accent dark:text-white highlight"> 天苏能源 </span>
           </div>
 
@@ -87,8 +87,8 @@ const ReactHeroCarousel = () => {
               <button
                 key={button.id}
                 onClick={() => setActiveButton(button.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded transition ${
-                  activeButton === button.id ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'
+                className={`text-blue-600 flex items-center gap-2 px-4 py-2 rounded transition ${
+                  activeButton === button.id ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-500 text-blue-600'
                 }`}
               >
                 {button.label}
@@ -100,12 +100,12 @@ const ReactHeroCarousel = () => {
 
         {/* 右侧内容 */}
         <div
-            className="space-y-4"
+            className="space-y-4 overflow-hidden"
             style={{
               display: "grid",
               gridTemplateRows: "1fr auto",
               rowGap: "6rem",
-              height: "80%",
+              height: "60vh",
               paddingBottom: "10vh",
               flexBasis: "50%",
               flexGrow: 0,

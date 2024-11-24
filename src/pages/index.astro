@@ -1,17 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Features2 from '~/components/widgets/Features2.astro';
-// import { onVisible } from 'astro/client';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import BrandsGray from '~/components/widgets/BrandsGray.astro';
-
 import RollingViews from '~/components/widgets/RollingViews.astro';
 import ProductsPre from '~/components/widgets/ProductsPre.astro';
 import IntroPre from '~/components/widgets/IntroPre.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
-// import type { loadAll } from 'js-yaml';
-import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
 import AiSwitchedHeroCarousel from '~/components/widgets/AiSwitchedHeroCarousel.astro';
 import Service1 from '~/components/widgets/Service1.astro';
 
@@ -30,48 +25,16 @@ const stats = [
 
 <Layout metadata={metadata}>
   <!-- HeroContainer ***************** -->
-
-  <!-- <HeroContainer /> -->
   <section class="full-screen-section">
     <AiSwitchedHeroCarousel />
   </section>
-  <!-- <section class="hero-section">
-    <HeroCarousel
-      actions={[
-        {
-          variant: 'primary',
-          text: 'GitHub Repo',
-          href: 'https://github.com/TS-energy',
-          target: '_blank',
-          icon: 'tabler:link',
-        },
-        { text: '了解更多', href: '/about' },
-      ]}
-      image={{
-        src: '~/assets/images/hero/2.png',
-        alt: 'Hero Image',
-      }}
-    >
-      <Fragment slot="title">
-        电化学储能设备 <span class="text-accent dark:text-white highlight"> 建模与管理 </span>
-      </Fragment>
-
-      <Fragment slot="subtitle">
-        <span class="hidden sm:inline">
-          <span class="font-semibold">天苏能源（TSu-Energy）</span> 致力于通过开发创新和可持续的能源解决方案来彻底改变能源格局，使我们的客户和地球都受益。</span
-        >
-      </Fragment>
-    </HeroCarousel> -->
 
   <!-- 分割线 -->
   <!-- <hr class="relative mt-0 border-t border-gray-200 dark:border-gray-800" /> -->
-
   <!-- Note Widget ******************* -->
 
   <!-- <Note /> -->
-
   <!-- Intro Widget **************** -->
-
   <IntroPre
     isReversed
     tagline="Solutions Overview"
@@ -155,7 +118,6 @@ const stats = [
   <section class="bg-black justify-center" style="height: 100vh;">
     <Service1 />
   </section>
-
   <!--- Service 1 -->
 
   <!-- Product Nav Widget ************** -->
@@ -167,6 +129,7 @@ const stats = [
   </ProductsPre>
 
   <!-- Product Nav Widget ************** -->
+
   <!-- Stats Widget ****************** -->
   <Stats2
     tagline="our influence"
@@ -175,9 +138,6 @@ const stats = [
     stats={stats}
   />
 
-  <!-- <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment> -->
   <!-- 分割线 -->
   <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
 
@@ -189,118 +149,7 @@ const stats = [
 
   <!-- Steps Widget ****************** -->
 
-  <RollingViews id="news" tagline="News" title="TSu-Energy Broad">
-    <!-- <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment> -->
-  </RollingViews>
-
-  <!-- Features2 Widget ************** -->
-
-  <!-- <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2> -->
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <!-- FAQs Widget ******************* -->
-
-  <!-- <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  /> -->
+  <RollingViews id="news" tagline="News" title="TSu-Energy Broad"/>
 
   <!-- CallToAction Widget *********** -->
 
@@ -340,16 +189,3 @@ const stats = [
     scroll-snap-align: start; /* 配合滚动行为 */
   }
 </style>
-
-<!-- .hero-section::before {
-    content: '';
-    background: url('~/assets/images/hero/2.png') no-repeat center center;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-    z-index: -1;
-  } -->

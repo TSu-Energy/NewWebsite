@@ -6,27 +6,11 @@ export const headerData = {
       text: '主页',
       href: getPermalink('/'),
       links: [
-        // {
-        //   text: 'SaaS',
-        //   href: getPermalink('/homes/saas'),
-        // },
-        // {
-        //   text: 'Startup',
-        //   href: getPermalink('/homes/startup'),
-        // },
-        // {
-        //   text: 'Mobile App',
-        //   href: getPermalink('/homes/mobile-app'),
-        // },
-        // {
-        //   text: 'Personal',
-        //   href: getPermalink('/homes/personal'),
-        // },
       ],
     },
     {
       text: '解决方案',
-      href: getPermalink('/solutions'),
+      // href: getPermalink('/solutions'),
       links: [
         {
           text: '产业园区',
@@ -64,89 +48,10 @@ export const headerData = {
         },
       ],
     },
-    // {
-    //   text: 'Team',
-    //   href: '',
-    // },
-    // {
-    //   text: 'Pricing',
-    //   href: getPermalink('/pricing'),
-    // },
-    // {
-    //   text: '',
-    //   links: [
-    //     // {
-    //     //   text: 'Features (Anchor Link)',
-    //     //   href: getPermalink('/#features'),
-    //     // },
-    //     // {
-    //     //   text: 'Services',
-    //     //   href: getPermalink('/services'),
-    //     // },
-
-    //     // {
-    //     //   text: 'Contact',
-    //     //   href: getPermalink('/contact'),
-    //     // },
-    //     // {
-    //     //   text: 'Terms',
-    //     //   href: getPermalink('/terms'),
-    //     // },
-    //     // {
-    //     //   text: 'Privacy policy',
-    //     //   href: getPermalink('/privacy'),
-    //     // },
-    //   ],
-    // },
-    // {
-    //   text: 'Landing',
-    //   links: [
-    //     {
-    //       text: 'Lead Generation',
-    //       href: getPermalink('/landing/lead-generation'),
-    //     },
-    //     {
-    //       text: 'Long-form Sales',
-    //       href: getPermalink('/landing/sales'),
-    //     },
-    //     {
-    //       text: 'Click-Through',
-    //       href: getPermalink('/landing/click-through'),
-    //     },
-    //     {
-    //       text: 'Product Details (or Services)',
-    //       href: getPermalink('/landing/product'),
-    //     },
-    //     {
-    //       text: 'Coming Soon or Pre-Launch',
-    //       href: getPermalink('/landing/pre-launch'),
-    //     },
-    //     {
-    //       text: 'Subscription',
-    //       href: getPermalink('/landing/subscription'),
-    //     },
-    //   ],
-    // },
     {
       text: '天苏面板',
       href: getBlogPermalink(),
       links: [
-        // {
-        //   text: '',
-        //   href: getBlogPermalink(),
-        // },
-        // {
-        //   text: '',
-        //   href: getProjPermalink(),
-        // },
-        // {
-        //   text: 'Article',
-        //   href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        // },
-        // {
-        //   text: 'Article (with MDX)',
-        //   href: getPermalink('markdown-elements-demo-post', 'post'),
-        // },
         {
           text: '天苏十条',
           href: getPermalink('tian1-su1-shi2-tiao2','category'),
@@ -159,19 +64,11 @@ export const headerData = {
           text: '天苏纵论',
           href: getPermalink('/homes/talk'),
         },
-        // {
-        //   text: 'Tag Page',
-        //   href: getPermalink('astro', 'tag'),
-        // },
       ],
     },
     {
       text: '联系我们',
       links: [
-        // {
-        //   text: '淘宝',
-        //   href: getPermalink('/landing/lead-generation'),
-        // },
         {
           text: '淘宝',
           href: getPermalink('/sales'),
@@ -180,28 +77,8 @@ export const headerData = {
           text: '关于我们',
           href: getPermalink('/about'),
         },
-        // {
-        //   text: 'Click-Through',
-        //   href: getPermalink('/landing/click-through'),
-        // },
-        // {
-        //   text: 'Product Details (or Services)',
-        //   href: getPermalink('/landing/product'),
-        // },
-        // {
-        //   text: 'Coming Soon or Pre-Launch',
-        //   href: getPermalink('/landing/pre-launch'),
-        // },
-        // {
-        //   text: 'Subscription',
-        //   href: getPermalink('/landing/subscription'),
-        // },
       ],
     },
-    // {
-    //   text: 'Widgets',
-    //   href: '#',
-    // },
   ],
   actions: [{ text: '立即咨询', href: 'https://github.com/TS-energy', target: '_blank' }],
 };
@@ -212,22 +89,14 @@ export const footerData = {
       title: 'Product',
       links: [
         { text: 'Features', href: '#' },
-        // { text: 'Security', href: '#' },
         { text: 'Team', href: '#' },
-        // { text: 'Enterprise', href: '#' },
-        // { text: 'Customer stories', href: '#' },
-        // { text: 'Pricing', href: '#' },
         { text: 'Resources', href: '#' },
       ],
     },
     {
       title: 'Platform',
       links: [
-        // { text: 'Developer API', href: '#' },
         { text: 'Partners', href: '#' },
-        // { text: 'Atom', href: '#' },
-        // { text: 'Electron', href: '#' },
-        // { text: 'AstroWind Desktop', href: '#' },
       ],
     },
     {
