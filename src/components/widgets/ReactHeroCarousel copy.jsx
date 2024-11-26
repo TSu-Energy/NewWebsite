@@ -15,8 +15,8 @@ const ReactHeroCarousel = () => {
       background: '/public/images/resource/switch-zone-background.jpg',
       rightContent: {
         cards: [
-          { src: '/image/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: 'w-1/2', position: 'top-10 left-0' },
-          { src: '/image/demo-hvac.svg', alt: 'HVAC', width: 'w-2/5', position: 'top-10 left-[60%]' },
+          { src: '/public/images/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: 'w-1/2', position: 'top-10 left-0' },
+          { src: '/public/images/demo-hvac.svg', alt: 'HVAC', width: 'w-2/5', position: 'top-10 left-[60%]' },
         ],
         description: `产业园区是经济发展的重要载体，通过智能化管理和数据分析，我们助力园区优化资源配置，推动绿色和可持续发展。`,
       },
@@ -28,8 +28,8 @@ const ReactHeroCarousel = () => {
       background: '/public/images/resource/switch-labs-background.png',
       rightContent: {
         cards: [
-          { src: '/image/demo-certification.svg', alt: '认证示例', width: 'w-3/5', position: 'ml-0' },
-          { src: '/image/demo-ai-reporting.svg', alt: 'AI 报告', width: 'w-1/3', position: 'ml-auto' },
+          { src: '/public/images/demo-certification.svg', alt: '认证示例', width: 'w-3/5', position: 'ml-0' },
+          { src: '/public/images/demo-ai-reporting.svg', alt: 'AI 报告', width: 'w-1/3', position: 'ml-auto' },
         ],
         description: `我们为实验室和认证机构提供 AI 驱动的解决方案，从实验室管理到数据分析，提升效率与准确性。`,
       },
@@ -41,7 +41,7 @@ const ReactHeroCarousel = () => {
       background: '/public/images/resource/switch-trade-background.jpg',
       rightContent: {
         cards: [
-          { src: '/image/demo-trade-forecast.svg', alt: '贸易预测', width: 'w-full', position: 'mx-auto' },
+          { src: '/public/images/demo-trade-forecast.svg', alt: '贸易预测', width: 'w-full', position: 'mx-auto' },
         ],
         description: `全球贸易正在快速发展，我们通过智能分析和预测工具，为贸易决策提供深刻洞察与优化建议。`,
       },
@@ -53,7 +53,7 @@ const ReactHeroCarousel = () => {
       background: '/public/images/resource/switch-logistics-background.jpg',
       rightContent: {
         cards: [
-          { src: '/image/demo-logistics.svg', alt: '物流示例', width: 'w-4/5', position: 'mx-auto' },
+          { src: '/public/images/demo-logistics.svg', alt: '物流示例', width: 'w-4/5', position: 'mx-auto' },
         ],
         description: `航运与物流是供应链的重要环节，我们的 AI 工具帮助企业优化路线、降低成本、提高效率。`,
       },
