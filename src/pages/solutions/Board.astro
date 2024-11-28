@@ -10,7 +10,7 @@ export interface HeroSectionProps {
   rightCards: { title: string; items: string[] }[];
 }
 
-const { leftTitle, leftCards, rightTitle, rightCards } = Astro.props as HeroSectionProps;
+const { leftTitle, leftCards=[], rightTitle, rightCards=[] } = Astro.props as HeroSectionProps;
 ---
 
 <section class="relative bg-cover bg-center min-h-screen">
@@ -33,7 +33,7 @@ const { leftTitle, leftCards, rightTitle, rightCards } = Astro.props as HeroSect
     <div>
       <SectionTitle text={leftTitle} />
       <div class="space-y-8">
-        {leftCards.map((card) => <Card title={card.title} items={card.items} />)}
+        {leftCards && leftCards.length > 0 && leftCards.map((card) => <Card title={card.title} items={card.items} />)}
       </div>
     </div>
 
@@ -41,7 +41,11 @@ const { leftTitle, leftCards, rightTitle, rightCards } = Astro.props as HeroSect
     <div>
       <SectionTitle text={rightTitle} />
       <div class="space-y-8">
-        {rightCards.map((card) => <Card title={card.title} items={card.items} />)}
+        {
+          rightCards &&
+            rightCards.length > 0 &&
+            rightCards.map((card) => <Card title={card.title} items={card.items} />)
+        }
       </div>
     </div>
   </div>
