@@ -1,0 +1,33 @@
+---
+const iconData = [
+  {
+    icon: "calendar-check",
+    description: "2023 年 10 月 1 日起法案正式实施",
+  },
+  {
+    icon: "magnifying-glass",
+    description: "针对境外进口特定产品按照碳足迹征收费用",
+  },
+  {
+    icon: "handshake",
+    description: "需要进口商按季度、出口商/生产商按年度提交生产、能源、原材料、碳排放等实测值数据及信息",
+  },
+  {
+    icon: "industry",
+    description: "覆盖 6 大行业，未来可能扩展到更多行业",
+  },
+];
+---
+<div class="space-y-6">
+  {iconData.map((item) => (
+    <div class="flex items-start gap-4">
+      <!-- 图标 -->
+      <div class="text-blue-500 w-8 h-8 flex items-center justify-center">
+        <i class={`fas fa-${item.icon} text-2xl`}></i>
+      </div>
+
+      <!-- 描述 -->
+      <p class="text-gray-700">{item.description}</p>
+    </div>
+  ))}
+</div>

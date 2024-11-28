@@ -1,0 +1,50 @@
+---
+const impacts = [
+  {
+    title: '成本上升与利润下滑',
+    description: '企业需要通过技术转型降低排放成本或支付碳税，利润空间被挤压。',
+  },
+  {
+    title: '市场竞争力下降',
+    description: '供应链企业面临欧标失踪的风险，市场竞争力受影响。',
+  },
+  {
+    title: '合规管理与风险',
+    description: 'CBAM 强制性规定下企业需应对不断变化的国际政策。',
+  },
+  {
+    title: '转型压力与不确定性',
+    description: '碳中和目标将增加企业转型压力，同时带来挑战。',
+  },
+  {
+    title: '第二发展曲线机遇',
+    description: '抓住机遇实现转型，有助于提升市场份额与竞争力。',
+  },
+];
+---
+
+<div class="space-y-6">
+  {
+    impacts.map((impact, index) => (
+      <div
+        class={`flex items-start gap-4 p-4 rounded-lg ${
+          index === impacts.length - 1 ? 'bg-green-100 border-l-4 border-green-500' : 'bg-white shadow'
+        }`}
+      >
+        <div class="flex-shrink-0">
+          <div
+            class={`w-10 h-10 rounded-full flex items-center justify-center ${
+              index === impacts.length - 1 ? 'bg-green-500' : 'bg-blue-500'
+            } text-white`}
+          >
+            {index + 1}
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-black">{impact.title}</h4>
+          <p class="text-gray-600">{impact.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

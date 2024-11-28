@@ -22,7 +22,7 @@ export const headerData = {
         },
         {
           text: '全球贸易',
-          href: getPermalink('/solutions/gl-bussiness'),
+          href: getPermalink('/solutions/trade'),
         },
         {
           text: '航运与物流',

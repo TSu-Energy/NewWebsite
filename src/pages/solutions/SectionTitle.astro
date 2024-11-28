@@ -1,0 +1,9 @@
+---
+export interface SectionTitleProps {
+  text: string;
+}
+
+const { text } = Astro.props as SectionTitleProps;
+---
+
+<h2 class="text-3xl font-bold mb-6">{text}</h2>

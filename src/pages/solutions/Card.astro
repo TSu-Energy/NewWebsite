@@ -1,0 +1,17 @@
+---
+export interface CardProps {
+  title: string;
+  items: string[];
+}
+
+const { title, items } = Astro.props as CardProps;
+---
+
+<div class="">
+  <h3 class="text-xl font-semibold text-blue-400 mb-3">{title}</h3>
+  <div class="bg-blue-400 bg-opacity-20 p-4 rounded-lg h-36">
+    <ul class="space-y-2 text-sm">
+      {items.map((item) => <li>• {item}</li>)}
+    </ul>
+  </div>
+</div>

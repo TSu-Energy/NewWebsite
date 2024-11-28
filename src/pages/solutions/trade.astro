@@ -1,0 +1,232 @@
+---
+import Image from '~/components/common/Image.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Board from './Board.astro';
+import IndustryGrid from './IndustryGrid.astro';
+import ImpactList from './ImpactList.astro';
+
+import NavigationModule from '~/components/widgets/NavigationModule';
+
+import type { Features as Props } from '~/types';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+
+const metadata = {
+  title: 'Trade - 跨境贸易绿色服务',
+};
+
+const leftCards = [
+  {
+    title: '绿色认证与跨境绿色合规',
+    items: [
+      '大型集团主打节能减碳力度大，要求碳足迹、环境友好、节能等项目认证。',
+      '欧盟等地区绿色新规出台频繁，标准复杂，强制性更强。',
+      '企业难以理解应对。',
+    ],
+  },
+  {
+    title: 'ESG 合规服务',
+    items: [
+      '大型链主对供应商披露 ESG 报告的要求不断增长。',
+      '大多数证券交易所对上市公司提出 ESG 合规要求。',
+      '企业时刻面临评级机构的 ESG 评价。',
+    ],
+  },
+  {
+    title: '绿色认证与跨境绿色合规',
+    items: ['需要以融资撬动公司的海外业务，特别是抓住海外供应链融资。', '利用好海内外绿色金融政策，减少融资成本。'],
+  },
+  {
+    title: '拓展更大的海外市场',
+    items: ['需要减少出海的不确定性，与中东、欧洲等热点地区建立联系，拓展更大的海外市场。'],
+  },
+];
+
+const rightCards = [
+  {
+    title: '绿色认证与合规支持',
+    items: [
+      '协助企业及早梳理绿色认证/跨境合规要求，提前准备。',
+      '提供系统性规划：认证、减排、抵消的工作。',
+      '提供数字化解决方案，达到事半功倍的效果。',
+    ],
+  },
+  {
+    title: 'ESG 合规服务',
+    items: [
+      '协助撰写 ESG 报告，提高评级和形象。',
+      '建立战略体系、健全管理机制，提供内部培训。',
+      '打造可持续优势，帮助企业稳健发展。',
+    ],
+  },
+  {
+    title: '绿色金融与贸易融',
+    items: [
+      '协助企业充分理解政策，选择最适合的金融机构和绿色金融产品。',
+      '按照绿色金融与贸易融资相关政策要求，协助企业以低成本取得必要认证并对接银行获取贸易融资。',
+    ],
+  },
+  {
+    title: '拓展更大的海外市场',
+    items: [
+      '打造海外客户青睐的绿色、可持续品牌形象。',
+      '协助企业与有影响力、有资源的渠道及平台建立联系，精准对接海外政府高层及大型企业资源，促进海外业务拓展与增长。',
+    ],
+  },
+];
+
+import Step from './step.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const steps = [
+  {
+    imageSrc: '~/assets/images/solutions/trade/declare-image.png',
+    altText: '报',
+    title: '报',
+    description:
+      '企业需要按照相关法规要求，采用正确的方法进行碳计算，并配合报送生产工艺、碳足迹等数据，否则可能被拒绝进口',
+    additionalInfo: '欧盟碳关税规定自 2023 年 10 月起要求位于欧盟之外的生产企业实施 CBAM 数据监测并向进口商报送数据',
+  },
+  {
+    imageSrc: '~/assets/images/solutions/trade/certificate-image.png',
+    altText: '证',
+    title: '证',
+    description:
+      '企业需要就产品碳足迹等维度取得指定国际认证机构的认证，否则企业的货物可能会被征收高额关税或无法进入欧盟销售',
+    additionalInfo: '欧盟碳关税将要求符合资格的指定认证机构对产品碳足迹的实测值进行认证，该认证是确定关税额的直接依据',
+  },
+  {
+    imageSrc: '~/assets/images/solutions/trade/reduce-image.png',
+    altText: '减',
+    title: '减',
+    description:
+      '企业需要规划工厂的碳中和转型路径，降低产品碳足迹，推动材料循环使用，从而避免过高关税成本或违反相关门槛限制',
+    additionalInfo: '降低产品碳足迹可以妥善降低欧盟碳关税的应税额度',
+  },
+  {
+    imageSrc: '~/assets/images/solutions/trade/offset-image.png',
+    altText: '抵',
+    title: '抵',
+    description:
+      '企业需要制定专业的碳抵消方案并购买相应资产，从而让企业的货物在抵达欧盟前以更低的价格实现碳中和，从而避免过高关税成本',
+    additionalInfo:
+      '欧盟碳关税对已征收碳税（carbon tax / carbon levy）、碳费或按照标准要求使用新能源电力的货物可按照相应额度减免碳关税',
+  },
+];
+
+const items = [
+  // 这里的图片地址是public下的地址
+  {
+    title: '生产过程识别',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '用户完成注册并开通「绿境通」后，填写生产商的基本信息和工厂类型；',
+      '根据用户输入的行业与产品类型，系统会自动识别生产工艺和流程。',
+    ],
+  },
+  {
+    title: '系统内置排放因子',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '用户填写原料消耗量、产品产量、排放源等数据；',
+      '用户可直接在平台内置的因子库中选择与企业最契合的直接、间接、电力、燃料等排放因子，省去检索的时间及人力成本。',
+    ],
+  },
+  {
+    title: '信息链接及碳关税核算',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '出口商用户根据指引分步填写货物、工厂信息；',
+      '系统可自动链接至同平台已注册的生产商所报送的数据；',
+      '用户填报更多信息后，系统将自动核算企业应当支付的碳关税。',
+    ],
+  },
+  {
+    title: '获取标准申报文件',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '完成所有信息填报后，系统将自动生成符合欧盟标准的申报表及报告文件；',
+      '进口商可要求我们协助提交，或自行提交表格到欧盟碳关税平台；出口商和生产商可在平台上一键发送邮件完成提交。',
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Global Trade"
+    title="跨境贸易绿色服务"
+    subtitle="您值得信赖的「跨境可持续发展协调中心」，助您轻松应对各类跨境绿色合规挑战"
+    actions={[{ variant: 'primary', target: '_blank', text: '联系我们', href: '/about' }]}
+    image={{
+      src: '~/assets/images/solutions/trade/switch-trade-background.jpeg',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <section class="bg-gray-50 py-12">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- 左侧内容 -->
+      <IndustryGrid />
+
+      <!-- 右侧内容 -->
+      <div class="space-y-8">
+        <!-- 企业影响列表 -->
+        <h4 class="font-semibold text-ellipsis text-blue-900">对您的企业意味着什么？</h4>
+        <ImpactList />
+      </div>
+    </div>
+  </section>
+
+  <Board leftTitle="企业面临什么" leftCards={leftCards} rightTitle="我们能提供什么" rightCards={rightCards} />
+
+  <section class="relative bg-gray-50 py-16">
+    <div class="absolute inset-0 bg-white"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="text-center text-2xl font-bold text-gray-800 mb-10">
+        蔚碳科技推出「WeGreenPass绿境通」，通过“报、证、减、抵”四步走，协助企业轻松应对欧盟碳关税等跨境绿色合规要求
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {
+          steps.map((step, index) => (
+            <>
+              <Step {...step} />
+              {index < steps.length - 1 && (
+                <div class="flex justify-center items-center">
+                  <span class="text-gray-400">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              )}
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+    <Headline
+      title="主要功能"
+      classes={{
+        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+        title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
+        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+      }}
+    />
+    <NavigationModule items={items} client:load />
+  </WidgetWrapper>
+</Layout>

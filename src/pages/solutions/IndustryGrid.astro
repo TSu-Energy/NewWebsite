@@ -1,0 +1,57 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const industries = [
+  { name: '钢铁', image: '~/assets/images/solutions/trade/amir-balam-nKRpkdffykk-unsplash.jpeg' },
+  { name: '水泥', image: '~/assets/images/solutions/trade/jakub-zerdzicki-QGylj777rww-unsplash.jpeg' },
+  { name: '化肥', image: '~/assets/images/solutions/trade/agriculture-4974615_1280.jpeg' },
+  { name: '铝', image: '~/assets/images/solutions/trade/nikhil-L8e22nEUpoM-unsplash.jpeg' },
+  { name: '氢能', image: '~/assets/images/solutions/trade/chuttersnap-5v9S6Rw02Lw-unsplash.jpeg' },
+  { name: '电力', image: '~/assets/images/solutions/trade/fre-sonneveld-q6n8nIrDQHE-unsplash.jpeg' },
+  { name: '塑料', image: '', placeholder: true },
+  { name: '有机化学品', image: '', placeholder: true },
+];
+---
+
+<div class="space-y-4">
+  <!-- EU 标志 -->
+  <Image src="~/assets/images/solutions/trade/eu-flag.png" alt="EU Flag" class="w-32 h-auto mx-auto lg:mx-0" />
+
+  <!-- 列表描述 -->
+  <ul class="space-y-4 text-black">
+    <li class="flex items-start gap-4">
+      <i class="fas fa-calendar-check text-blue-500 text-xl"></i>
+      <p>2023 年 10 月 1 日起法案正式实施</p>
+    </li>
+    <li class="flex items-start gap-4">
+      <i class="fas fa-magnifying-glass text-blue-500 text-xl"></i>
+      <p>针对境外进口特定产品按照碳足迹征收费用</p>
+    </li>
+    <li class="flex items-start gap-4">
+      <i class="fas fa-handshake text-blue-500 text-xl"></i>
+      <p>需要进口商按季度、出口商/生产商按年度提交生产、能源、原材料等数据</p>
+    </li>
+    <li class="flex items-start gap-4">
+      <i class="fas fa-industry text-blue-500 text-xl"></i>
+      <p>覆盖 6 大行业，未来可能扩展到更多行业</p>
+    </li>
+  </ul>
+
+  <div class="grid grid-cols-2 gap-4">
+    {
+      industries.map((industry) => (
+        <div
+          class={`aspect-w-1 aspect-h-1 rounded-lg flex overflow-hidden shadow ${
+            industry.placeholder ? 'bg-gray-200' : 'bg-gray-50'
+          } flex items-center justify-center`}
+        >
+          {industry.image ? (
+            <Image src={industry.image} alt={industry.name} class="w-32 h-32"/>
+          ) : (
+            <p class="text-gray-600 z-30">{industry.name}</p>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</div>

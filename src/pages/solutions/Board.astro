@@ -1,0 +1,48 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import Card from './Card.astro';
+import Image from '~/components/common/Image.astro';
+
+export interface HeroSectionProps {
+  leftTitle: string;
+  leftCards: { title: string; items: string[] }[];
+  rightTitle: string;
+  rightCards: { title: string; items: string[] }[];
+}
+
+const { leftTitle, leftCards, rightTitle, rightCards } = Astro.props as HeroSectionProps;
+---
+
+<section class="relative bg-cover bg-center min-h-screen">
+  <!-- 背景 -->
+  <div class="absolute inset-0">
+    <Image
+      alt="Background"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-full object-cover"
+      src="~/assets/images/solutions/trade/image-from-rawpixel-id-440239-jpeg.jpeg"
+    />
+    <div class="absolute inset-0 bg-gray-800 opacity-30"></div>
+  </div>
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <!-- 内容 -->
+  <div class="relative z-10 max-w-screen-xl mx-auto py-16 px-8 grid grid-cols-2 gap-8 text-white">
+    <!-- 左侧 -->
+    <div>
+      <SectionTitle text={leftTitle} />
+      <div class="space-y-8">
+        {leftCards.map((card) => <Card title={card.title} items={card.items} />)}
+      </div>
+    </div>
+
+    <!-- 右侧 -->
+    <div>
+      <SectionTitle text={rightTitle} />
+      <div class="space-y-8">
+        {rightCards.map((card) => <Card title={card.title} items={card.items} />)}
+      </div>
+    </div>
+  </div>
+</section>
