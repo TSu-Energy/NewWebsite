@@ -80,7 +80,7 @@ export const headerData = {
       ],
     },
   ],
-  actions: [{ text: '立即咨询', href: 'https://github.com/TS-energy', target: '_blank' }],
+  actions: [{ text: '立即咨询', href: '/about', target: '_blank' }],
 };
 
 export const footerData = {
