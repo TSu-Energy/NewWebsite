@@ -1,0 +1,39 @@
+---
+import Content from '~/components/widgets/Content.astro';
+---
+
+<Content
+  isReversed
+  items={[
+    {
+      title: '具有高精准度和专业能力的垂类智能解决方案',
+      description:
+        '市面上 AI 泛用性强，但缺少深刻垂类知识和专业能力。我们为产业提供高精准度和专业性智能解决方案，定向融入垂直领域的专业知识，在基本没有人力干预的情况下，独立完成垂直领域的特定细分任务',
+      icon: 'tabler:wand',
+    },
+    {
+      title: '与产业数据和场景实现互联互通',
+      description:
+        '在生产、计量、检测认证和信息披露等关键场景中，我们的智能解决方案可以自主处理物联网、生产控制器、检测图表等多种复杂格式的数据，以实现这些场景的融合和互联',
+      icon: 'tabler:settings',
+    },
+    {
+      title: '安全、可靠、高效读取和检索私域数据',
+      description:
+        '为了让 Al 真正发挥作用，必然需要读取企业的内部文件和生产数据。我们的产品建立安全、可靠且高效的架构，不仅能为企业的智能化提升质量和效率，还能规避数据泄漏或模型风险对企业的影响',
+      icon: 'tabler:lock',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/solutions/labs/ai-zh.png',
+    alt: 'Features Image',
+    style: 'object-fit:contain',
+    class: '',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      新兴人工智能技术深刻影响各产业领域，我们主要解决三个与产业人工智能转型相关的关键问题
+    </h3>
+  </Fragment>
+</Content>

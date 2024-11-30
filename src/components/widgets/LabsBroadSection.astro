@@ -1,0 +1,62 @@
+---
+const sectionTitle = '我们为实验室实现产品组件测试的自动化，最小化人力投入';
+const features = [
+  {
+    title: '数据分析自动化',
+    description:
+      '实验室全自动完成数据分析流程，从而在数秒钟至数分钟内完成数据分析。实时在线服务器自动整理检测仪器生成的数据，自动生成数据结果。数据处理逻辑灵活，通过领先技术，确保在标准变化或引入新仪器时数据流水线仍然可用。',
+  },
+  {
+    title: '任务调度自动化',
+    description:
+      '实验室全自动完成任务调度，根据任务自动生成优先队列并排期，使多个任务化整为零并行开展。不同仪器可以处理不同任务环节，避免仪器停等，增强设备响应效率。',
+  },
+  {
+    title: '检测设备控制自动化',
+    description: '实验室全自动设备控制，通过 PLC 控制样品连接。任务完成后，设备自动断电，保护设备并防止安全隐患。',
+  },
+  {
+    title: '认证管理',
+    description:
+      '实验室自动分析结果并生成报告。所有客户数据、原始结果、分析结果和最终报告自动存档，方便工程师查询和检索。',
+  },
+  {
+    title: '客户响应',
+    description: '提供线上平台，客户可提交信息，实时查看排队位置和预估报告时间，提升计量检测可预期性，形成差异优势。',
+  },
+];
+---
+
+<section class="bg-gray-100 py-16 px-4">
+  <!-- Section Heading -->
+  <div class="max-w-4xl mx-auto text-center mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">{sectionTitle}</h2>
+  </div>
+
+  <!-- Automation Features -->
+  <div class="max-w-5xl mx-auto space-y-8">
+    <!-- Row 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        features.slice(0, 2).map((feature) => (
+          <div class="p-6 bg-white shadow rounded-lg">
+            <h4 class="text-lg font-semibold text-gray-800 mb-4">{feature.title}</h4>
+            <p class="text-sm text-gray-600">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        features.slice(2).map((feature) => (
+          <div class="p-6 bg-white shadow rounded-lg">
+            <h4 class="text-lg font-semibold text-gray-800 mb-4">{feature.title}</h4>
+            <p class="text-sm text-gray-600">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

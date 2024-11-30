@@ -44,7 +44,7 @@ export const headerData = {
         },
         {
           text: 'AI 报告工具',
-          href: getPermalink('/products/ai-tools'),
+          href: getPermalink('/products/ai-tool'),
         },
       ],
     },
