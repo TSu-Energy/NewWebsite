@@ -78,14 +78,14 @@ const ReactHeroCarousel = () => {
       ></div>
 
       {/* 主体内容 */}
-      <main className="relative z-10 flex flex-col md:flex-row items-center justify-between m-20">
+      <main className="relative z-10 flex flex-col md:flex-row items-center justify-between m-32">
         {/* 左侧内容 */}
         <div className="left-hero space-y-4 max-w-1/2">
           <div className='text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-3 font-heading dark:text-gray-100'>
             TSu-Energy <span class="text-accent dark:text-white highlight"> 天苏能源 </span>
           </div>
 
-          <h1 className="text-2xl font-bold ">我们使用领先 AI 技术</h1>
+          <h1 className="text-2xl font-bold">我们使用领先 AI 技术</h1>
           <h2 className="text-lg ">赋能全球供应链 ESG 建设和可持续发展</h2>
 
           {/* 按钮部分 */}
