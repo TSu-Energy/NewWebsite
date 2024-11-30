@@ -8,8 +8,126 @@ import CollapseList from '../common/CollapseList.astro';
   <!-- 背景 -->
   <div class="absolute inset-0 bg-cover bg-center"></div>
 
-  <!-- 地图图片 -->
-  <div class="relative flex justify-center items-center">
+  <!-- 地图背景 -->
+  <div
+    class="relative bg-cover bg-center h-full"
+    style="background-image: url('./images/resource/image-from-rawpixel-id-440239-jpeg.jpeg'); 
+            width=:3500;
+            height:1750;"
+  >
+    <div class="container mx-auto px-6 py-12 relative z-10">
+      <!-- 图钉 -->
+      <!-- <div class="absolute" style="top:33%;left:84%;margin-left:-16px;margin-top:-16px">
+        <div class="w-4 h-4 rounded-full bg-[#23b375] relative"></div>
+        <div
+          class="absolute top-1/2 left-1/2 w-4 h-4 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-transparent via-[#23b37533] to-[#23b37500]"
+        >
+        </div>
+      </div>
+
+      <div class="absolute" style="top:24%;left:53%;margin-left:-16px;margin-top:-16px">
+        <div class="w-4 h-4 rounded-full bg-[#3bbeee] relative"></div>
+        <div
+          class="absolute top-1/2 left-1/2 w-4 h-4 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-transparent via-[#23b37533] to-[#23b37500]"
+        >
+        </div>
+      </div>
+
+      <div class="absolute" style="top:31%;left:81%;margin-left:-16px;margin-top:-16px">
+        <div class="w-4 h-4 rounded-full bg-[#d9c61e] relative"></div>
+        <div
+          class="absolute top-1/2 left-1/2 w-4 h-4 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-transparent via-[#23b37533] to-[#23b37500]"
+        >
+        </div>
+      </div>
+
+      <div class="absolute" style="top:21%;left:50%;margin-left:-16px;margin-top:-16px">
+        <div class="w-4 h-4 rounded-full bg-[#ff29b4] relative"></div>
+        <div
+          class="absolute top-1/2 left-1/2 w-4 h-4 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-transparent via-[#23b37533] to-[#23b37500]"
+        >
+        </div>
+      </div> -->
+
+      <!-- 文本标题 -->
+      <div class="text-center bg-black bg-opacity-50 p-6 mt-20 rounded-md">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">跨境贸易绿色服务</h1>
+        <p class="text-lg mb-4">您值得信赖的「跨境可持续发展协调中心」</p>
+        <p class="text-sm text-gray-400">
+          相比自行设立或贸易公司部门及扩张人员，将跨境绿色合规相关各类需求交给我们，
+          为您提供省时、省力、专业的服务和相关资源保障。
+        </p>
+      </div>
+
+      <!-- 地点标记 -->
+      <div class="relative mt-12">
+        <div
+          class="absolute top-1/3 left-1/4 transform -translate-y-1/2 bg-green-500 text-white text-xs py-1 px-3 rounded shadow-lg"
+        >
+          中国上海
+        </div>
+        <div
+          class="absolute top-1/4 left-2/3 transform -translate-y-1/2 bg-blue-500 text-white text-xs py-1 px-3 rounded shadow-lg"
+        >
+          德国慕尼黑
+        </div>
+        <div
+          class="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 bg-pink-500 text-white text-xs py-1 px-3 rounded shadow-lg"
+        >
+          英国伦敦
+        </div>
+      </div>
+    </div>
+
+    <!-- 内容部分 -->
+    <div class="container mx-auto px-6 py-12">
+      <!-- 卡片部分 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div class="bg-gray-800 p-6 rounded-md shadow-md text-center">
+          <h2 class="text-lg font-bold mb-2">线上平台</h2>
+          <ul class="space-y-2">
+            <li class="text-sm text-gray-300">「绿通」CBAM 线上申报平台</li>
+            <li class="text-sm text-gray-300">跨境合规政策自测工具</li>
+          </ul>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-md shadow-md text-center">
+          <h2 class="text-lg font-bold mb-2">绿色金融</h2>
+          <ul class="space-y-2">
+            <li class="text-sm text-gray-300">绿色供应链金融</li>
+            <li class="text-sm text-gray-300">贸易融资</li>
+          </ul>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-md shadow-md text-center">
+          <h2 class="text-lg font-bold mb-2">跨境服务</h2>
+          <ul class="space-y-2">
+            <li class="text-sm text-gray-300">企业出海咨询</li>
+            <li class="text-sm text-gray-300">海外品牌建设及业务拓展对接</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 专业服务 -->
+      <div class="mt-12 text-center">
+        <h2 class="text-2xl font-bold mb-4">专业服务</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-gray-700 py-4 px-6 rounded-md shadow-md">
+            <p class="text-sm text-gray-300">组织碳盘查</p>
+          </div>
+          <div class="bg-gray-700 py-4 px-6 rounded-md shadow-md">
+            <p class="text-sm text-gray-300">产品碳足迹</p>
+          </div>
+          <div class="bg-gray-700 py-4 px-6 rounded-md shadow-md">
+            <p class="text-sm text-gray-300">CSRD/CSDDD/ESPR 合规</p>
+          </div>
+          <div class="bg-gray-700 py-4 px-6 rounded-md shadow-md">
+            <p class="text-sm text-gray-300">供应链全碳咨询</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="relative flex justify-center items-center">
     <img
       alt="地图的背景图片"
       loading="lazy"
@@ -20,7 +138,6 @@ import CollapseList from '../common/CollapseList.astro';
       src="./images/resource/image-from-rawpixel-id-440239-jpeg.jpeg"
     />
 
-    <!-- 图钉 -->
     <div class="absolute" style="top:33%;left:84%;margin-left:-16px;margin-top:-16px">
       <div class="w-4 h-4 rounded-full bg-[#23b375] relative"></div>
       <div
@@ -53,57 +170,4 @@ import CollapseList from '../common/CollapseList.astro';
       </div>
     </div>
   </div>
-
-  <!-- 
-  <section class="relative">
-  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-from-rawpixel-id-440239-jpeg.440940af.jpg&amp;w=3840&amp;q=75');"></div>
-  <div class="relative z-10 space-y-8 p-8">
-    <div class="relative">
-      <Pin location="中国上海" top="33%" left="84%" bgColor="bg-green-500" />
-      <Pin location="法国巴黎" top="23%" left="51%" bgColor="bg-green-500" />
-      <Pin location="中东及北非 (MENA)" top="40%" left="64%" bgColor="bg-blue-700" glowSize="120px" />
-    </div> 
-
-    <div class="text-center text-white">
-      <h5 class="text-lg">跨境贸易绿色服务</h5>
-      <h3 class="text-2xl font-bold">您值得信赖的「跨境可持续发展协调中心」</h3>
-      <p class="text-base">
-        相比自行设立外贸合规部门及扩张人员，将跨境绿色合规相关各类需求交给我们，为您提供省时、省力、专业的服务和相关资源保障。
-      </p>
-    </div>
-
-    <CollapseList>
-      <CollapseItem title="上海亿通国际有限公司及上海电子口岸" logo="/image/logo/shep.png">
-        <p>上海亿通国际有限公司是上海大口岸物流信息系统的建设和运营实体，覆盖上海及长三角共 31 个港口。</p>
-      </CollapseItem>
-      <CollapseItem title="上海气候周" logo="/image/logo/shcw.png" expanded>
-        <p>上海气候周是全球生态伙伴联合打造的气候合作平台，旨在促进双碳目标的达成。</p>
-      </CollapseItem>
-      <CollapseItem title="FCPAE 欧洲论坛">
-        <p>FCPAE 欧洲论坛致力于深化中欧合作，共创美好未来。</p>
-      </CollapseItem>
-    </CollapseList>
-
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <Card title="线上平台" items={['「绿境通」CBAM 线上申报平台', '跨境合规政策自测工具']} />
-      <Card title="绿色金融" items={['绿色供应链金融', '贸易融资']} />
-      <Card title="跨境服务" items={['企业出海咨询', '海外品牌建设及业务拓展对接']} />
-      <Card
-        title="专业服务"
-        items={[
-          '组织碳盘查',
-          '产品碳足迹',
-          'CSRD/CSDDD/ESPR 合规',
-          '供应链合规咨询',
-          'ESG 披露报告',
-          'ESG 战略咨询',
-          '可持续供应链管理',
-        ]}
-      />
-    </div>
-
-    <div class="text-center">
-      <a href="/zh-CN/global-trade" class="btn btn-outline">了解更多</a>
-    </div>
-  </div> -->
-</section>
+</section> -->
