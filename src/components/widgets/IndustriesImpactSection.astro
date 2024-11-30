@@ -1,0 +1,18 @@
+---
+import IndustryGrid from '~/components/widgets/IndustryGrid.astro';
+import ImpactList from '~/components/widgets/ImpactList.astro';
+---
+
+<section class="bg-gray-50 py-12">
+  <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <!-- 左侧内容 -->
+    <IndustryGrid />
+
+    <!-- 右侧内容 -->
+    <div class="space-y-8">
+      <!-- 企业影响列表 -->
+      <h4 class="font-semibold text-ellipsis text-blue-900">对您的企业意味着什么？</h4>
+      <ImpactList />
+    </div>
+  </div>
+</section>

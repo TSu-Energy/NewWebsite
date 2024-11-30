@@ -1,0 +1,42 @@
+---
+import Card from './TSuPassCard.astro';
+
+const leftCardData = {
+  title: '通过「绿境通」平台进行申报',
+  items: [
+    '人工咨询服务：价格昂贵，服务周期长，出错率高，导致企业合规成本成倍增加；',
+    '政策和表单填写培训服务：申报表格清单冗长，内容复杂，数据收集耗时费力，企业难以迅速学以致用。',
+  ],
+//   bgGradient: 'from-blue-100 to-blue-50',
+  blogGradient: '',
+  borderColor: 'border-blue-300',
+  imagePosition: 'top',
+  imageUrl: '~/assets/images/products/ts-pass/CbamArduousPictures.png',
+};
+
+const rightCardData = {
+  title: '通过「绿境通」平台进行申报',
+  items: [
+    '全球首批数字化跨境绿色合规方案，对比海外竞品，大幅降低企业合规成本；',
+    '可自动识别生产流程、内置六大行业需要填报的数据分类，自动对齐至用户需求，无需费力拆解;',
+    '系统界面支持多国语言，内置官方认可因子库，用户可通过勾选快速完成碳排放数据核算；',
+    '人工及智能客服保驾护航，助力企业一站式完成申报工作。',
+  ],
+  bgGradient: 'bg-blue-200 opacity-70',
+  borderColor: 'border-green-300',
+  imagePosition: 'top',
+  imageUrl: '~/assets/images/products/ts-pass/filing-screenshot.png',
+};
+---
+
+<section class="bg-gray-50 py-12 px-6">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">
+      相比直接向欧盟申报，「绿境通」快捷可靠、轻松流畅、用户友好，为企业节省高达 60% 的申报时间及成本
+    </h2>
+    <div class="flex flex-col md:flex-row justify-center gap-6">
+      <Card {...leftCardData} />
+      <Card {...rightCardData} />
+    </div>
+  </div>
+</section>

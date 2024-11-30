@@ -40,7 +40,7 @@ export const headerData = {
         },
         {
           text: '绿境通',
-          href: getPermalink('/products/green-pass'),
+          href: getPermalink('/products/ts-pass'),
         },
         {
           text: 'AI 报告工具',

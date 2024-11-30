@@ -1,0 +1,72 @@
+---
+import Step from '~/components/widgets/Step.astro';
+
+const steps = [
+  {
+    imageSrc: '~/assets/images/solutions/trade/declare-image.png',
+    altText: '报',
+    title: '报',
+    description:
+      '企业需要按照相关法规要求，采用正确的方法进行碳计算，并配合报送生产工艺、碳足迹等数据，否则可能被拒绝进口',
+    additionalInfo: '欧盟碳关税规定自 2023 年 10 月起要求位于欧盟之外的生产企业实施 CBAM 数据监测并向进口商报送数据',
+  },
+  {
+    imageSrc: '~/assets/images/solutions/trade/certificate-image.png',
+    altText: '证',
+    title: '证',
+    description:
+      '企业需要就产品碳足迹等维度取得指定国际认证机构的认证，否则企业的货物可能会被征收高额关税或无法进入欧盟销售',
+    additionalInfo: '欧盟碳关税将要求符合资格的指定认证机构对产品碳足迹的实测值进行认证，该认证是确定关税额的直接依据',
+  },
+  {
+    imageSrc: '~/assets/images/solutions/trade/reduce-image.png',
+    altText: '减',
+    title: '减',
+    description:
+      '企业需要规划工厂的碳中和转型路径，降低产品碳足迹，推动材料循环使用，从而避免过高关税成本或违反相关门槛限制',
+    additionalInfo: '降低产品碳足迹可以妥善降低欧盟碳关税的应税额度',
+  },
+  {
+    imageSrc: '~/assets/images/solutions/trade/offset-image.png',
+    altText: '抵',
+    title: '抵',
+    description:
+      '企业需要制定专业的碳抵消方案并购买相应资产，从而让企业的货物在抵达欧盟前以更低的价格实现碳中和，从而避免过高关税成本',
+    additionalInfo:
+      '欧盟碳关税对已征收碳税（carbon tax / carbon levy）、碳费或按照标准要求使用新能源电力的货物可按照相应额度减免碳关税',
+  },
+];
+---
+
+<section class="relative bg-gray-50 py-16">
+  <div class="absolute inset-0 bg-white"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <h2 class="text-center text-2xl font-bold text-gray-800 mb-10">
+      蔚碳科技推出「WeGreenPass绿境通」，通过“报、证、减、抵”四步走，协助企业轻松应对欧盟碳关税等跨境绿色合规要求
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      {
+        steps.map((step, index) => (
+          <>
+            <Step {...step} />
+            {index < steps.length - 1 && (
+              <div class="flex justify-center items-center">
+                <span class="text-gray-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            )}
+          </>
+        ))
+      }
+    </div>
+  </div>
+</section>

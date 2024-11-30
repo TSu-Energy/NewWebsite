@@ -1,0 +1,58 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import type { Features as Props } from '~/types';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import NavigationModule from '~/components/widgets/NavigationModule';
+
+const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+
+
+const items = [
+  // 这里的图片地址是public下的地址
+  {
+    title: '生产过程识别',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '用户完成注册并开通「绿境通」后，填写生产商的基本信息和工厂类型；',
+      '根据用户输入的行业与产品类型，系统会自动识别生产工艺和流程。',
+    ],
+  },
+  {
+    title: '系统内置排放因子',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '用户填写原料消耗量、产品产量、排放源等数据；',
+      '用户可直接在平台内置的因子库中选择与企业最契合的直接、间接、电力、燃料等排放因子，省去检索的时间及人力成本。',
+    ],
+  },
+  {
+    title: '信息链接及碳关税核算',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '出口商用户根据指引分步填写货物、工厂信息；',
+      '系统可自动链接至同平台已注册的生产商所报送的数据；',
+      '用户填报更多信息后，系统将自动核算企业应当支付的碳关税。',
+    ],
+  },
+  {
+    title: '获取标准申报文件',
+    imageUrl: '/images/resource/trade/process-screenshot.png',
+    content: [
+      '完成所有信息填报后，系统将自动生成符合欧盟标准的申报表及报告文件；',
+      '进口商可要求我们协助提交，或自行提交表格到欧盟碳关税平台；出口商和生产商可在平台上一键发送邮件完成提交。',
+    ],
+  },
+];
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline
+    title="主要功能"
+    classes={{
+      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+      title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
+      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+    }}
+  />
+  <NavigationModule items={items} client:load />
+</WidgetWrapper>

@@ -1,0 +1,40 @@
+---
+import Image from '~/components/common/Image.astro';
+
+export interface Props {
+  title: string;
+  items: Array<string>;
+  bgGradient: string; // 背景渐变颜色
+  borderColor: string; // 边框颜色
+  imagePosition: 'top' | 'bottom' | 'left' | 'right'; // 图片位置
+  imageUrl: string; // 图片链接
+}
+
+const { title, items, bgGradient, borderColor, imagePosition, imageUrl } = Astro.props;
+---
+
+<div
+  class={`flex-1 bg-gradient-to-r ${bgGradient} rounded-[50px] p-8 flex flex-col items-center shadow-lg border-2 ${borderColor}`}
+>
+  <h3 class="text-xl font-semibold text-gray-800 mb-4">{title}</h3>
+
+  <div
+    class={`flex items-center ${imagePosition === 'left' || imagePosition === 'right' ? 'flex-row' : 'flex-col'} mb-4`}
+  >
+    {
+      imagePosition === 'top' || imagePosition === 'left' ? (
+        <Image class="object-cover mb-4 md:mb-0 md:ml-4" src={imageUrl} alt="Image" width={300} />
+      ) : null
+    }
+
+    <ul class="text-left text-gray-700 space-y-4">
+      {items.map((item) => <li>{item}</li>)}
+    </ul>
+
+    {
+      imagePosition === 'bottom' || imagePosition === 'right' ? (
+        <Image class="object-cover mb-4 md:mb-0 md:ml-4" src={imageUrl} alt="Image" width={300} />
+      ) : null
+    }
+  </div>
+</div>
