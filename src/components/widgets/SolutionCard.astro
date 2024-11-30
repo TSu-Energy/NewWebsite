@@ -1,0 +1,20 @@
+---
+// SolutionCard.astro
+export interface Props {
+  icon: string;
+  title: string;
+  items: Array<string>;
+}
+
+const { icon, title, items } = Astro.props;
+---
+
+<div class="flex flex-col items-start">
+  <div class="flex items-center space-x-2 mb-4">
+    <svg class="w-8 h-8 text-blue-500" innerHTML={icon}></svg>
+    <h4 class="font-bold text-lg">{title}</h4>
+  </div>
+  <ul class="list-disc list-inside text-gray-600">
+    {items.map((item) => <li innerHTML={item} />)}
+  </ul>
+</div>

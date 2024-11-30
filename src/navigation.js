@@ -24,10 +24,10 @@ export const headerData = {
           text: '全球贸易',
           href: getPermalink('/solutions/trade'),
         },
-        {
-          text: '航运与物流',
-          href: getPermalink('/solutions/transport'),
-        },
+        // {
+        //   text: '航运与物流',
+        //   href: getPermalink('/solutions/transport'),
+        // },
       ],
     },
     {

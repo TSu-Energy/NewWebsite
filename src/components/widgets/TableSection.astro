@@ -1,0 +1,63 @@
+---
+// 接收props，定义表格内容和标题
+interface Card {
+  title: string;
+  content: string[];
+}
+
+interface Row {
+  header: string;
+  cards: Card[];
+}
+
+export interface TableSectionProps {
+  title: string;
+  rows: Row[];
+}
+
+const { title, rows } = Astro.props;
+---
+
+<section class="relative bg-gray-50 py-12">
+  <div class="absolute inset-0 bg-cover bg-center opacity-10"></div>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <h2 class="text-2xl font-bold text-gray-800 text-center mb-8">{title}</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white shadow-lg border border-gray-200">
+        <tbody>
+          {
+            rows.map((row) => (
+              <tr class="bg-gray-100 border-b">
+                <th class="text-left p-4 text-lg font-medium text-gray-700">{row.header}</th>
+                {row.cards.map((card, index) => (
+                  <>
+                    <td class="p-4">
+                      <h4 class="text-lg font-semibold text-gray-800">{card.title}</h4>
+                      <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                        {card.content.map((item) => (
+                          <li set:html={item} />
+                        ))}
+                      </ul>
+                    </td>
+                    {index < row.cards.length - 1 && (
+                      <td class="p-4 text-center text-gray-400">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-6 w-6 inline"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M14 5l7 7-7 7M5 5l7 7-7 7" />
+                        </svg>
+                      </td>
+                    )}
+                  </>
+                ))}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
