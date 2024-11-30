@@ -1,17 +1,15 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import BrandsGray from '~/components/widgets/BrandsGray.astro';
 import RollingViews from '~/components/widgets/RollingViews.astro';
-import ProductsPre from '~/components/widgets/ProductsPre.astro';
-import IntroPre from '~/components/widgets/IntroPre.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
 import AiSwitchedHeroCarousel from '~/components/widgets/AiSwitchedHeroCarousel.astro';
 import Service1 from '~/components/widgets/Service1.astro';
+import IntroValueSection from '~/components/sections/IntroValueSection.astro';
 
 const metadata = {
-  title: 'TSu Energy — Electrochemistry Energy Storage Device Modelling and Management',
+  title: 'TSu-Energy — 天苏能源',
   ignoreTitleTemplate: true,
 };
 
@@ -29,127 +27,33 @@ const stats = [
     <AiSwitchedHeroCarousel />
   </section>
 
-  <!-- 分割线 -->
-  <!-- <hr class="relative mt-0 border-t border-gray-200 dark:border-gray-800" /> -->
-  <!-- Note Widget ******************* -->
-
-  <!-- <Note /> -->
-  <!-- Intro Widget **************** -->
-  <IntroPre
-    isReversed
-    tagline="Solutions Overview"
-    title="解决方案总览"
-    items={[
-      {
-        title: '电池管理系统（BMS）优化服务',
-        description:
-          '全球对电动汽车的需求正在增长，同时预计到2025年，新安装的储能容量将超过300GWh。这表明电动汽车和储能系统将成为能源行业的重要组成部分。',
-      },
-      {
-        title: '数字化低碳园区解决方案',
-        description:
-          '随着锂离子电池在电动汽车和储能系统中的广泛应用，电池安全问题，尤其是热失控现象，已成为行业发展的关键关注点。电池制造商和研究机构正在投入资源开发更安全的电池技术和管理系统。',
-      },
-      {
-        title: '电池安全评估服务',
-        description:
-          '从单电池到电池系统的多尺度建模表明，理解和预测电池行为需要考虑不同尺度下的物理过程。这种综合方法对于设计更高效、更安全的电池系统至关重要。',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/analystics/battery.png',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">我们提供全面的解决方案</h3>
-      能源行业是一个复杂且不断变化的领域，涉及到多个方面，包括但不限于政策、技术、市场、环境和社会因素。能源行业在电池技术、安全性和计算方法方面的快速发展。
-    </Fragment>
-
-    <Fragment>
-      <!-- // slot="bg" -->
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </IntroPre>
-
-  <!-- Intro Widget **************** -->
-
-  <!-- Services Widget ************** -->
-
-  <Features2
-    tagline="Our Services"
-    title="我们的产品与服务"
-    subtitle=""
-    items={[
-      {
-        title: '电池安全评估服务',
-        description: [
-          '提供全面的锂离子电池安全评估，包括热失控风险分析和事故原因调查; 利用数值模拟和实验测试，帮助客户优化电池设计，提高电池系统的安全性。',
-          '利用数值模拟和实验测试，帮助客户优化电池设计，提高电池系统的安全性。',
-        ],
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: '电池管理系统（BMS）优化服务',
-        description: [
-          '根据电池热失控模型，为电池管理系统提供定制化的优化方案; 通过实时监控和预警机制，提高电池运行的安全性和效率。',
-          '通过实时监控和预警机制，提高电池运行的安全性和效率。',
-        ],
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: '储能系统安全设计咨询',
-        description: [
-          '针对储能系统特有的安全要求，提供专业的安全设计咨询服务。结合电池热失控传播和气体扩散模型，帮助客户设计更安全的储能解决方案。',
-          '结合电池热失控传播和气体扩散模型，帮助客户设计更安全的储能解决方案。',
-        ],
-        icon: 'flat-color-icons:voice-presentation',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- Services Widget ************** -->
-
-  <!-- Service 1 -->
-  <section class="bg-black justify-center" style="height: 100vh;">
-    <Service1 />
-  </section>
-  <!--- Service 1 -->
-
-  <!-- Product Nav Widget ************** -->
-
-  <ProductsPre>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </ProductsPre>
-
-  <!-- Product Nav Widget ************** -->
-
-  <!-- Stats Widget ****************** -->
   <Stats2
     tagline="our influence"
     title="我们的影响力"
     subtitle="以下数字反映了用户对我们的信任以及我们帮助他们取得的卓越成果。"
     stats={stats}
   />
-
+  <!-- 分割线 -->
+  <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
+  <IntroValueSection />
   <!-- 分割线 -->
   <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
 
   <!-- Brands Gray Widget ************ -->
-  <BrandsGray />
+  <BrandsGray
+    tagline="our clients"
+    title="客户与合作伙伴"
+    subtitle="我们与全球领先企业和机构建立长期服务与合作关系，共同塑造可持续未来"
+  />
 
   <!-- 分割线 -->
   <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
 
-  <!-- Steps Widget ****************** -->
+  <!-- <section class="bg-black justify-center" style="height: 100vh;">
+    <Service1 />
+  </section> -->
 
-  <RollingViews id="news" tagline="News" title="TSu-Energy Broad"/>
+  <RollingViews id="news" tagline="News" title="天苏最新咨询" />
 
   <!-- CallToAction Widget *********** -->
 

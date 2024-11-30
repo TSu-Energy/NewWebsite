@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FlyInCardContainer from './ReactWidgets/FlyInCardContainer';
 
+
 const ReactHeroCarousel = () => {
   const [activeButton, setActiveButton] = useState(1);
 
@@ -8,6 +9,7 @@ const ReactHeroCarousel = () => {
   {
       id: 1,
       label: '产业园区',
+      page: '/solutions/industries',
       image: './images/resource/nav/industrial-park.png',
       background: './images/resource/switch-zone-background.jpg',
       rightContent: {
@@ -22,6 +24,7 @@ const ReactHeroCarousel = () => {
     {
       id: 2,
       label: '实验室和认证机构',
+      page: '/solutions/labs',
       image: './images/resource/nav/labs-and-certification.png',
       background: './images/resource/switch-labs-background.png',
       rightContent: {
@@ -35,6 +38,7 @@ const ReactHeroCarousel = () => {
     {
       id: 3,
       label: '全球贸易',
+      page: '/solutions/trade',
       image: './images/resource/nav/global-trade.png',
       background: './images/resource/switch-trade-background.jpg',
       rightContent: {
@@ -47,14 +51,15 @@ const ReactHeroCarousel = () => {
     },
     {
       id: 4,
-      label: '航运与物流',
+      label: '电池与建模',
+      page: '/solutions/batteries',
       image: './images/resource/nav/logistics.png',
       background: './images/resource/switch-logistics-background.jpg',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-shipping.svg', alt: '物流示例', width: 'w-1/2', position: 'center mx-0' },
+          { src: './images/resource/demo-batteries.jpg', alt: '物流示例', width: 'w-1/2', position: 'center mx-0' },
         ],
-        description: `航运与物流是供应链的重要环节，我们的 AI 工具帮助企业优化路线、降低成本、提高效率。`,
+        description: `能源行业在电池技术、安全性和计算方法方面的快速发展。`,
       },
     },  
   ];
@@ -66,9 +71,10 @@ const ReactHeroCarousel = () => {
       {/* 动态背景 */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
-        style={{ backgroundImage: `url(${activeButtonData.background})`, opacity: 0.6,
-      backgroundSize: 'cover',
-    backgroundPosition: 'center', }}
+        style={{ 
+          backgroundImage: `url(${activeButtonData.background})`, opacity: 0.6,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center', }}
       ></div>
 
       {/* 主体内容 */}
@@ -121,14 +127,16 @@ const ReactHeroCarousel = () => {
           <div className="bg-blue-900 text-white p-6 rounded shadow-md mt-20 shadow-lime-50 overflow-hidden animate-fly-in opacity-85">
             <p className="mb-4 w-full">{activeButtonData.rightContent.description}</p>
             <div className="flex items-center justify-end">
-              <button className="flex gap-2 text-white border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-900">
-                <span>了解更多</span>
-                <svg className="w-4 h-4" viewBox="64 64 896 896" fill="currentColor" aria-hidden="true">
-                  <path
-                    d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 000-48.4z"
-                  ></path>
-                </svg>
-              </button>
+              <a href={activeButtonData.page}>
+                <button className="flex gap-2 text-white border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-900">
+                  <span>了解更多</span>
+                  <svg className="w-4 h-4" viewBox="64 64 896 896" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 000-48.4z"
+                    ></path>
+                  </svg>
+                </button>
+              </a>
             </div>
           </div>
         </div>

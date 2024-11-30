@@ -24,10 +24,10 @@ export const headerData = {
           text: '全球贸易',
           href: getPermalink('/solutions/trade'),
         },
-        // {
-        //   text: '航运与物流',
-        //   href: getPermalink('/solutions/transport'),
-        // },
+        {
+          text: '电池与建模',
+          href: getPermalink('/solutions/batteries'),
+        },
       ],
     },
     {
@@ -91,8 +91,10 @@ export const footerData = {
         { text: '数字化绿色园区解决方案', href: '/solutions/industries' },
         { text: '实验室与认证 AI 解决方案', href: '/solutions/labs' },
         { text: '跨境贸易绿色解决方案', href: '/solutions/trade' },
+        { text: '电池与建模', href: '/solutions/batteries' },
         { text: '绿境通 TSu-Pass™', href: '/products/ts-pass' },
         { text: '天苏云 TSu-Cloud', href: '/products/ts-cloud' },
+        { text: 'AI 报告工具', href: '/products/ai-tool' },
       ],
     },
     {

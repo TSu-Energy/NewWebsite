@@ -1,5 +1,29 @@
-<!-- 1. scoll 方式 --><!-- ScrollContainer.astro -->
+---
+import Headline from '../ui/Headline.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<!-- 1. scoll 方式 -->
 <section class="container">
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+      title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
+      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+    }}
+  />
   <div class="scroll-container">
     <div class="scrolling-wrapper">
       <img src="./images/clients/huawei-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
@@ -8,7 +32,7 @@
       <img src="./images/clients/huawei-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
       <img src="./images/clients/stategr-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
       <img src="./images/clients/xiaopeng-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
-      
+
       <!-- 可以添加更多logo -->
     </div>
   </div>

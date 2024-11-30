@@ -1,0 +1,81 @@
+---
+const sectionTitle = '领先气候科技和可持续解决方案提供商';
+const sectionDescription =
+  '我们致力于以先进技术赋能全球供应链从合规、制造、认证、跨境贸易到 ESG 管理等各个环节的可持续发展，推动企业创造实际价值和商业影响力，加速全球供应链绿色转型。';
+const buttonText = '了解更多';
+const valuePropositions = [
+  {
+    title: 'AI 解决方案',
+    description: '我们通过创新技术，实现自动化的计量检测认证、碳排放管理、航运物流优化，构建面向未来的全球供应链。',
+    position: { top: '30%', right: '5%' },
+  },
+  {
+    title: 'ESG 咨询服务',
+    description:
+      '我们以技术赋能、政策前瞻、专业服务、资源网络四大优势为抓手，通过一站式高效服务，协助您在公司治理、日常运营和投融资等关键环节中，收获 ESG 建设成果，提升您在 ESG 和可持续发展领域的行业领导地位。',
+    position: { top: '50%', right: '10%' },
+  },
+  {
+    title: '跨境贸易绿色服务',
+    description:
+      '依托于蔚碳科技不断壮大的生态圈，我们将为您的跨境绿色合规与全球重要市场联系建立全流程保驾护航，促进海外业务拓展与增长。',
+    position: { top: '70%', right: '15%' },
+  },
+];
+---
+
+<section class="relative min-h-[880px]">
+  <!-- Section Background -->
+  <div
+    class="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
+    style={{
+      backgroundImage: './images/resourece/rainbow-earth-background.png',
+      opacity: 0.6,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+  >
+  </div>
+
+  <div class="relative z-10 py-16 px-4">
+    <!-- Section Content -->
+    <div class="max-w-4xl mx-40">
+      <h5 class="text-lg font-semibold">关于天苏能源</h5>
+      <h2 class="text-3xl md:text-3xl font-bold mt-2">{sectionTitle}</h2>
+      <p class="text-xl mt-4">{sectionDescription}</p>
+
+      <!-- Learn More Button -->
+      <div class="mt-6">
+        <a
+          href="/about"
+          class="inline-flex items-center px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-200 transition"
+        >
+          <span>{buttonText}</span>
+          <svg
+            class="ml-2 w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M8 1a7 7 0 1 0 7 7 7.007 7.007 0 0 0-7-7zm0 14A7 7 0 1 1 8 1a7.007 7.007 0 0 1 7 7zM8 2a6 6 0 1 1 6 6 6.007 6.007 0 0 1-6-6zm2 6H6a1 1 0 0 0-1 1v1h4v-1a1 1 0 0 0-1-1z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Value Propositions -->
+  {
+    valuePropositions.map((prop, index) => (
+      <div
+        class="absolute bg-gray-800 text-white p-4 rounded-lg shadow-lg bg-opacity-70"
+        style={`top: ${prop.position.top}; right: ${prop.position.right};`}
+      >
+        <h5 class="text-lg font-semibold">{prop.title}</h5>
+        <p class="text-sm mt-2">{prop.description}</p>
+      </div>
+    ))
+  }
+</section>
