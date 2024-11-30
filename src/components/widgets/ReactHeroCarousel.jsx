@@ -61,7 +61,7 @@ const ReactHeroCarousel = () => {
   const activeButtonData = buttons.find((button) => button.id === activeButton);
 
   return (
-    <div className="react-hero-carousel grid">
+    <div className="grid w-full">
       {/* 动态背景 */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
@@ -100,7 +100,7 @@ const ReactHeroCarousel = () => {
 
         {/* 右侧内容 */}
         <div
-            className="space-y-4 overflow-hidden"
+            className="space-y-4 overflow-hidden max-w-1/2"
             style={{
               display: "grid",
               gridTemplateRows: "1fr auto",

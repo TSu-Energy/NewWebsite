@@ -1,10 +1,11 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Board from './Board.astro';
-import IndustryGrid from './IndustryGrid.astro';
-import ImpactList from './ImpactList.astro';
-
+import Board from '~/components/widgets/Board.astro';
+import IndustryGrid from '~/components/widgets/IndustryGrid.astro';
+import ImpactList from '~/components/widgets/ImpactList.astro';
+import Step from '~/components/widgets/Step.astro';
+import Headline from '~/components/ui/Headline.astro';
 import NavigationModule from '~/components/widgets/NavigationModule';
 
 import type { Features as Props } from '~/types';
@@ -75,9 +76,6 @@ const rightCards = [
     ],
   },
 ];
-
-import Step from './step.astro';
-import Headline from '~/components/ui/Headline.astro';
 
 const steps = [
   {
@@ -181,7 +179,7 @@ const items = [
     </div>
   </section>
 
-  <!-- <Board leftTitle="企业面临什么" leftCards={leftCards} rightTitle="我们能提供什么" rightCards={rightCards} /> -->
+  <Board leftTitle="企业面临什么" leftCards={leftCards} rightTitle="我们能提供什么" rightCards={rightCards} />
 
   <section class="relative bg-gray-50 py-16">
     <div class="absolute inset-0 bg-white"></div>
