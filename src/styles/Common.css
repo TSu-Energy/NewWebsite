@@ -12,3 +12,20 @@
     display: flex;
     scroll-snap-align: start; /* 配合滚动行为 */
 }
+
+.outer-wrapper {
+  border: 2px solid #D3D3D3; /* 边框颜色 */
+  border-radius: 12px; /* 让边框有圆角 */
+  padding: 12px; /* 在外部增加一点额外的内边距 */
+  /* background-color: #f9f9f9; */
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1), 
+              0 4px 8px rgba(0, 0, 0, 0.05); /* 内部的下凹效果和外部的微阴影效果 */
+  position: relative;
+}
+
+.outer-wrapper:hover {
+  box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.15), 
+              0 6px 12px rgba(0, 0, 0, 0.1); /* 鼠标悬停效果，稍微加深 */
+  transition: box-shadow 0.3s ease-in-out;
+}
+

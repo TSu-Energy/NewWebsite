@@ -2,12 +2,12 @@
 import Layout from '~/layouts/PageLayout.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import BrandsGray from '~/components/widgets/BrandsGray.astro';
-import RollingViews from '~/components/widgets/RollingViews.astro';
+import RollingViews from '~/components/sections/RollingViews.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
-import Service1 from '~/components/widgets/Service1.astro';
 import IntroValueSection from '~/components/sections/IntroValueSection.astro';
 import FrontHeroContainer from '~/components/sections/FrontHeroContainer.astro';
 import GlobalService from '~/components/sections/GlobalService.astro';
+import CallForAction from '~/components/widgets/CallForAction.astro';
 
 const metadata = {
   title: 'TSu-Energy — 天苏能源',
@@ -50,42 +50,11 @@ const stats = [
 
   <RollingViews id="news" tagline="News" title="天苏最新咨询" />
 
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get Contact',
-        href: '/about',
-        target: '_blank',
-        icon: 'tabler:mail',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      TSu-Energy = 能源&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">科技</span>
+  <CallForAction>
+    <Fragment slot="title"> TSu-Energy = 能源 + 科技</Fragment>
+    <Fragment slot="description">
+      让我们帮助您打造可持续优势、增强气候和供应链风险韧性，为您的可持续发展道路保驾护航。 —— 欢迎联系我们，Don't waste
+      more time!
     </Fragment>
-
-    <Fragment slot="subtitle">
-      欢迎联系我们 <br class="hidden md:inline" />Don't waste more time! :P
-    </Fragment>
-  </CallToAction>
+  </CallForAction>
 </Layout>
-
-<style>
-  .hero-section {
-    /* height: 100vh; */
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .full-screen-section {
-    height: 100vh; /* 设置每个 section 的高度为视口高度 */
-    width: 100vw;
-    display: flex;
-    scroll-snap-align: start; /* 配合滚动行为 */
-  }
-</style>
