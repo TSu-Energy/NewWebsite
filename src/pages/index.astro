@@ -4,9 +4,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import BrandsGray from '~/components/widgets/BrandsGray.astro';
 import RollingViews from '~/components/widgets/RollingViews.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
-import AiSwitchedHeroCarousel from '~/components/widgets/AiSwitchedHeroCarousel.astro';
 import Service1 from '~/components/widgets/Service1.astro';
 import IntroValueSection from '~/components/sections/IntroValueSection.astro';
+import FrontHeroContainer from '~/components/sections/FrontHeroContainer.astro';
+import GlobalService from '~/components/sections/GlobalService.astro';
 
 const metadata = {
   title: 'TSu-Energy — 天苏能源',
@@ -23,9 +24,7 @@ const stats = [
 
 <Layout metadata={metadata}>
   <!-- HeroContainer ***************** -->
-  <section class="full-screen-section">
-    <AiSwitchedHeroCarousel />
-  </section>
+  <FrontHeroContainer />
 
   <Stats2
     tagline="our influence"
@@ -33,16 +32,13 @@ const stats = [
     subtitle="以下数字反映了用户对我们的信任以及我们帮助他们取得的卓越成果。"
     stats={stats}
   />
-  
+
   <!-- 分割线 -->
   <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
   <IntroValueSection />
 
-  <section class="bg-black justify-center mb-20" style="height: 100vh;">
-    <Service1 />
-  </section>
+  <GlobalService />
 
-  <!-- Brands Gray Widget ************ -->
   <BrandsGray
     tagline="our clients"
     title="客户与合作伙伴"

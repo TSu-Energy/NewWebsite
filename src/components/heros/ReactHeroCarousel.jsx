@@ -75,7 +75,7 @@ const ReactHeroCarousel = () => {
       
       <main className={`relative z-10 flex flex-col ${width > 768 ? 'md:flex-row justify-between' : 'flex-col justify-center'} items-center p-8`}>
         <div className="left-hero space-y-6 max-w-1/2">
-          <h1 className="text-4xl font-bold before:text-white">TSu-Energy <span class="text-accent before:text-white"></span>天苏能源</h1>
+          <h1 className="text-5xl font-bold before:text-white">TSu-Energy <span class="text-accent before:text-white"></span>天苏能源</h1>
           <ButtonGrid 
             buttons={buttons} 
             activeButton={activeButton} 

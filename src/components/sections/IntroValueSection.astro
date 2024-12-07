@@ -7,26 +7,26 @@ const valuePropositions = [
   {
     title: 'AI 解决方案',
     description: '我们通过创新技术，实现自动化的计量检测认证、碳排放管理、航运物流优化，构建面向未来的全球供应链。',
-    position: { top: '30%', right: '5%' },
+    icon: '🌐',
   },
   {
     title: 'ESG 咨询服务',
     description:
       '我们以技术赋能、政策前瞻、专业服务、资源网络四大优势为抓手，通过一站式高效服务，协助您在公司治理、日常运营和投融资等关键环节中，收获 ESG 建设成果，提升您在 ESG 和可持续发展领域的行业领导地位。',
-    position: { top: '50%', right: '10%' },
+    icon: '📘',
   },
   {
     title: '跨境贸易绿色服务',
     description:
       '依托于蔚碳科技不断壮大的生态圈，我们将为您的跨境绿色合规与全球重要市场联系建立全流程保驾护航，促进海外业务拓展与增长。',
-    position: { top: '70%', right: '15%' },
+    icon: '🚀',
   },
 ];
 ---
 
-<section class="relative min-h-[880px] m-10">
-  <!-- Section Background -->
-  <div
+<section class="relative min-h-screen">
+  <!-- 背景图片 -->
+  <!-- <div
     class="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
     style={{
       backgroundImage: './images/resourece/rainbow-earth-background.png',
@@ -35,20 +35,18 @@ const valuePropositions = [
       backgroundPosition: 'center',
     }}
   >
-  </div>
+  </div> -->
 
-  <div class="relative z-10 py-16 px-4">
-    <!-- Section Content -->
-    <div class="max-w-4xl mx-40">
-      <h5 class="text-lg font-semibold">关于天苏能源</h5>
-      <h2 class="text-3xl md:text-3xl font-bold mt-2">{sectionTitle}</h2>
-      <p class="text-xl mt-4">{sectionDescription}</p>
+  <div class="relative z-10 px-6 py-20 md:px-12 lg:px-32">
+    <div class="text-center max-w-3xl mx-auto">
+      <h5 class="text-lg font-semibold text-blue-600">About Us</h5>
+      <h2 class="text-4xl md:text-5xl font-extrabold mt-4">{sectionTitle}</h2>
+      <p class="text-lg mt-6 leading-relaxed">{sectionDescription}</p>
 
-      <!-- Learn More Button -->
-      <div class="mt-6">
+      <div class="mt-8">
         <a
           href="/about"
-          class="inline-flex items-center px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-200 transition"
+          class="inline-flex items-center justify-center px-8 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
         >
           <span>{buttonText}</span>
           <svg
@@ -65,17 +63,22 @@ const valuePropositions = [
         </a>
       </div>
     </div>
+
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        valuePropositions.map((prop, index) => (
+          <div
+            key={index}
+            class="relative bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition transform hover:-translate-y-2"
+          >
+            <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full text-2xl mb-4">
+              {prop.icon}
+            </div>
+            <h5 class="text-lg font-semibold dark:text-blue-700">{prop.title}</h5>
+            <p class="text-sm mt-3 text-gray-700">{prop.description}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
-  <!-- Value Propositions -->
-  {
-    valuePropositions.map((prop, index) => (
-      <div
-        class="absolute bg-gray-800 text-white p-4 rounded-lg shadow-lg bg-opacity-70"
-        style={`top: ${prop.position.top}; right: ${prop.position.right};`}
-      >
-        <h5 class="text-lg font-semibold">{prop.title}</h5>
-        <p class="text-sm mt-2">{prop.description}</p>
-      </div>
-    ))
-  }
 </section>

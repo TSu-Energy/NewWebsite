@@ -1,0 +1,14 @@
+.hero-section {
+    /* height: 100vh; */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.full-screen-section {
+    height: 100vh; /* 设置每个 section 的高度为视口高度 */
+    width: 100vw;
+    display: flex;
+    scroll-snap-align: start; /* 配合滚动行为 */
+}
