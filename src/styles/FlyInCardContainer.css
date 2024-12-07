@@ -1,0 +1,40 @@
+/* 卡片飞入效果 */
+@keyframes fly-in {
+  from {
+    transform: translateY(50px) scale(0.9); 
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1); 
+    opacity: 1;
+  }
+}
+
+.animate-fly-in {
+  animation: fly-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* 卡片浮动效果 (小幅度的上下浮动) */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-effect {
+  animation: float 3s ease-in-out infinite; 
+}
+
+@media (max-width: 768px) {
+  .float-effect {
+    animation: none; /* 取消浮动动画 */
+  }
+}
+
+.float-effect:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
