@@ -17,9 +17,9 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-zone-background.jpg',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: '', position: 'left-[20%] top-[10%]' },
-          { src: './images/resource/demo-hvac.svg', alt: 'HVAC', width: '', position: 'top-[5%] left-[50%]' },
-          { src: './images/resource/demo-electricity.svg', alt: 'Electricity', width: '', position: 'top-1/2 left-[30%]' },
+          { src: './images/resource/demo-co2-emission-forecast.svg', alt: 'CO2 预测', width: '', position: 'left-[5%] top-[10%]' },
+          { src: './images/resource/demo-hvac.svg', alt: 'HVAC', width: '', position: 'top-[5%] left-[40%]' },
+          { src: './images/resource/demo-electricity.svg', alt: 'Electricity', width: '', position: 'top-1/2 left-[15%]' },
         ],
         description: `产业园区是经济发展的重要载体，通过智能化管理和数据分析，我们助力园区优化资源配置，推动绿色和可持续发展。`,
       },
@@ -32,8 +32,8 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-labs-background.png',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-certification.svg', alt: '认证示例', width: '', position: 'center top-[10%] ml-0' },
-          { src: './images/resource/demo-ai-reporting.svg', alt: 'AI 报告', width: '', position: 'top-1/3 left-[60%]' },
+          { src: './images/resource/demo-certification.svg', alt: '认证示例', width: '', position: 'left-[20%] top-[10%] ml-0' },
+          { src: './images/resource/demo-ai-reporting.svg', alt: 'AI 报告', width: '', position: 'top-1/3 left-[50%]' },
         ],
         description: `我们为实验室和认证机构提供 AI 驱动的解决方案，从实验室管理到数据分析，提升效率与准确性。`,
       },
@@ -46,7 +46,7 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-trade-background.jpg',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-wegreenpass.svg', alt: '全球贸易', width: 'w-fit', position: 'top-[20%] left-[30%] mx-auto' },
+          { src: './images/resource/demo-wegreenpass.svg', alt: '全球贸易', width: 'w-fit', position: 'top-[20%] left-[20%] mx-auto' },
           { src: './images/resource/demo-policy-tool.svg', alt: 'Policy', width: 'w-fit', position: 'center top-[50%] mx-auto' },
         ],
         description: `全球贸易正在快速发展，我们通过智能分析和预测工具，为贸易决策提供深刻洞察与优化建议。`,
@@ -60,7 +60,7 @@ const ReactHeroCarousel = () => {
       background: './images/resource/switch-logistics-background.jpg',
       rightContent: {
         cards: [
-          { src: './images/resource/demo-batteries.jpg', alt: '物流示例', width: 'w-1/2', position: 'center mx-0 top-[10%]' },
+          { src: './images/resource/demo-batteries.jpg', alt: '物流示例', width: 'w-1/2', position: 'center mx-0 top-[30%]' },
         ],
         description: `能源行业在电池技术、安全性和计算方法方面的快速发展。`,
       },
@@ -75,7 +75,7 @@ const ReactHeroCarousel = () => {
       
       <main className={`relative z-10 flex flex-col ${width > 768 ? 'md:flex-row justify-between' : 'flex-col justify-center'} items-center p-8`}>
         <div className="left-hero space-y-6 max-w-1/2">
-          <h1 className="text-5xl font-bold before:text-white">TSu-Energy <span class="text-accent before:text-white"></span>天苏能源</h1>
+          <h1 className="text-4xl font-bold before:text-white">TSu-Energy <span class="text-accent before:text-white"></span>天苏能源</h1>
           <ButtonGrid 
             buttons={buttons} 
             activeButton={activeButton} 
