@@ -1,5 +1,6 @@
 ---
 import Headline from '../ui/Headline.astro';
+import Image from '../common/Image.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -25,14 +26,30 @@ const {
   />
   <div class="scroll-container">
     <div class="scrolling-wrapper">
-      <img src="./images/clients/huawei-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
-      <img src="./images/clients/stategr-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
-      <img src="./images/clients/xiaopeng-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
-      <img src="./images/clients/huawei-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
-      <img src="./images/clients/stategr-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
-      <img src="./images/clients/xiaopeng-2.svg" class="h-20 w-full mx-auto" alt="client logo" width="" height="" />
-
-      <!-- 可以添加更多logo -->
+      <div class="logo">
+        <Image src="~/assets/images/clients/huawei-2.svg" class="m-80" alt="client logo" />
+      </div>
+      <div class="logo">
+        <Image src="~/assets/images/clients/stategr-2.svg" alt="client logo" />
+      </div>
+      <div class="logo">
+        <Image src="~/assets/images/clients/xiaopeng-2.svg" alt="client logo" />
+      </div>
+      <div class="logo">
+        <Image src="~/assets/images/clients/google.svg" class="m-80" alt="client logo" />
+      </div>
+      <div class="logo">
+        <Image src="~/assets/images/clients/huawei-2.svg" class="m-80" alt="client logo" />
+      </div>
+      <div class="logo">
+        <Image src="~/assets/images/clients/stategr-2.svg" alt="client logo" />
+      </div>
+      <div class="logo">
+        <Image src="~/assets/images/clients/xiaopeng-2.svg" alt="client logo" />
+      </div>
+      <div class="logo">
+        <Image src="~/assets/images/clients/google.svg" class="m-80" alt="client logo" />
+      </div>
     </div>
   </div>
 </section>
@@ -44,8 +61,8 @@ const {
     width: 100%;
   }
   .scroll-container {
-    overflow: hidden;
-    width: 200%; /* 或根据需要调整 */
+    overflow: visible;
+    width: 200%;
     height: auto;
     display: flex;
   }
@@ -56,15 +73,22 @@ const {
     animation: scroll-left 10s linear infinite;
   }
 
-  .scrolling-wrapper2 {
-    white-space: nowrap;
+  .logo {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
     display: flex;
-    animation: scroll-right 10s linear infinite;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* 可选的背景颜色 */
+    border-radius: 50%; /* 使其看起来像图标容器 */
+    margin: auto;
   }
 
-  .scrolling-wrapper .logo {
-    height: 80px; /* 根据需求调整 */
-    margin-right: 30%; /* logo之间的间隔 */
+  .logo img {
+    /* max-width: 70px;
+    max-height: 100%; */
+    object-fit: contain;
   }
 
   @keyframes scroll-left {
@@ -72,7 +96,7 @@ const {
       transform: translateX(0%);
     }
     to {
-      transform: translateX(-50%); /* 滚动至第一组logo的末尾 */
+      transform: translateX(-50%);
     }
   }
 
