@@ -6,7 +6,7 @@ import Board from '~/components/widgets/Board.astro';
 import IndustriesImpactSection from '~/components/widgets/IndustriesImpactSection.astro';
 import TSuPassSteps from '~/components/widgets/TSuPassSteps.astro';
 import TSuPassFunctions from '~/components/widgets/TSuPassFunctions.astro';
-
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
 
 const metadata = {
   title: 'Trade - 跨境贸易绿色服务',
@@ -71,7 +71,6 @@ const rightCards = [
     ],
   },
 ];
-
 ---
 
 <Layout metadata={metadata}>
@@ -95,4 +94,6 @@ const rightCards = [
   <TSuPassSteps />
 
   <TSuPassFunctions />
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
 </Layout>

@@ -1,5 +1,5 @@
 import React from 'react';
-import FlyInCardContainer from './FlyInCardContainer';
+import FlyInCardContainer from '../widgets/ReactWidgets/FlyInCardContainer';
 
 const RightContent = ({ rightContent, page }) => {
   const { cards, description } = rightContent;

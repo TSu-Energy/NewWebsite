@@ -2,24 +2,15 @@
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import PropositionSection from '~/components/widgets/PropositionSection.astro';
-import FlyInCardContainer from '~/components/heros/FlyInCardContainer';
 import Features2 from '~/components/widgets/Features2.astro';
 import TableSection from '~/components/widgets/TableSection.astro';
+import TSuCloudSection2 from '~/components/sections/TSuCloudSection2.astro';
+import CallForAction from '~/components/widgets/CallForAction.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
 
 const metadata = {
   title: 'Cloud - 天苏云',
 };
-
-const Cards = [
-  {
-    src: '../images/resource/demo-co2-emission-forecast.svg',
-    alt: 'CO2 预测',
-    width: '',
-    position: 'left-[10%] top-20',
-  },
-  { src: '../images/resource/demo-hvac.svg', alt: 'HVAC', width: '', position: 'top-20 left-[60%]' },
-  { src: '../images/resource/demo-electricity.svg', alt: 'Electricity', width: '', position: 'top-48 left-[20%]' },
-];
 
 const techData = [
   {
@@ -145,37 +136,7 @@ const tableData = {
 
   <PropositionSection />
 
-  <section class="bg-gray-50 py-12 px-6">
-    <div class="container mx-auto flex flex-col lg:flex-row gap-12">
-      <!-- Left Content -->
-      <div class="lg:w-1/2 text-left">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">天苏云 TSu-Cloud™</h2>
-
-        <p class="text-gray-700 mb-6 leading-relaxed">
-          天苏能源自主研发了「天苏云」碳中和管理平台及配套人工智能核心产品，立足于客户在双碳和 ESG
-          领域「披露合规」和「价值创造」两大痛点，致力于为重点行业双碳建设的中央大脑，实现披露合规及绿色认证、绿色金融、碳能管理、碳资产及交易、ESG
-          管理五个应用场景的全流程管理，已获得碳中和领域多方认可及奖项荣誉。
-        </p>
-
-        <ul class="list-disc pl-6 space-y-4 text-gray-700">
-          <li>
-            <b>绿色园区规划：</b> 提供区域及园区规划咨询服务，并联合生态伙伴提供绿色规划及设计、新能源工程建设规划服务。
-          </li>
-          <li>
-            <b>数字化绿色企业园区：</b> 为园区提供一站式数字化解决方案，覆盖数据接入、量化测算、披露合规管理、碳排放大屏、价值实现等关键模块。
-          </li>
-          <li>
-            <b>区域碳管理解决方案：</b> 政府或区域独立单位，为政府提供碳排放检测、碳数据收集解决方案，明确「生态一本账」。
-          </li>
-        </ul>
-      </div>
-
-      <!-- Right Content -->
-      <div class="lg:w-1/2 relative">
-        <FlyInCardContainer cards={Cards} client:idle />
-      </div>
-    </div>
-  </section>
+  <TSuCloudSection2 />
 
   <Features2 title="技术优势" subtitle="" tagline="Tech advantages" items={techData}>
     <Fragment slot="bg">
@@ -184,4 +145,6 @@ const tableData = {
   </Features2>
 
   <TableSection {...tableData} />
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
 </Layout>

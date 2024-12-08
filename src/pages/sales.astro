@@ -8,6 +8,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import { headerData, footerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
 
 export interface Props {
   metadata?: MetaData;
@@ -19,7 +20,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
   <Hero2
     tagline="我们的服务"
     title="电池系统级 - 建模设计"
@@ -51,4 +51,6 @@ const metadata = {
       },
     ]}
   />
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
 </Layout>

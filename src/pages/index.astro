@@ -7,6 +7,7 @@ import IntroValueSection from '~/components/sections/IntroValueSection.astro';
 import FrontHeroContainer from '~/components/sections/FrontHeroContainer.astro';
 import GlobalService from '~/components/sections/GlobalService.astro';
 import CallForAction from '~/components/widgets/CallForAction.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
 
 const metadata = {
   title: 'TSu-Energy — 天苏能源',
@@ -49,11 +50,5 @@ const stats = [
 
   <RollingViews id="news" tagline="News" title="天苏最新咨询" />
 
-  <CallForAction>
-    <Fragment slot="title"> TSu-Energy = 能源 + 科技</Fragment>
-    <Fragment slot="description">
-      让我们帮助您打造可持续优势、增强气候和供应链风险韧性，为您的可持续发展道路保驾护航。 —— 欢迎联系我们，Don't waste
-      more time!
-    </Fragment>
-  </CallForAction>
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
 </Layout>

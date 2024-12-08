@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import "../../styles/FlyInCardContainer.css"; // 引入样式文件
+import "~/styles/FlyInCardContainer.css"; // 引入样式文件
 
 
 const FlyInCardContainer = ({ cards }) => {

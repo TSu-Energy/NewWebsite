@@ -1,0 +1,17 @@
+---
+import CallForAction from '../widgets/CallForAction.astro';
+
+export interface Props {
+  url?: string;
+}
+
+const { url = '' } = Astro.props;
+---
+
+<CallForAction backgroundImageUrl={url}>
+  <Fragment slot="title"> TSu-Energy = 能源 + 科技</Fragment>
+  <Fragment slot="description">
+    让我们帮助您打造可持续优势、增强气候和供应链风险韧性，为您的可持续发展道路保驾护航。 —— 欢迎联系我们，Don't waste
+    more time!
+  </Fragment>
+</CallForAction>

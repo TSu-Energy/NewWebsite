@@ -1,0 +1,40 @@
+---
+import FlyInCardContainer from "~/backup/FlyInCardContainer copy";
+
+export interface Features4Props {
+  title: string;
+  description: string;
+  listItems: Array<{ title: string; description: string }>;
+  cards: Array<{src: string;alt: string;width: string;position: string;}>;
+}
+
+const { title, description, listItems, Cards } = Astro.props;
+---
+
+<section class="bg-gray-50 py-12 px-6">
+  <div class="container mx-auto flex flex-col lg:flex-row gap-12">
+    <!-- Left Content -->
+    <div class="lg:w-1/2 text-left">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">{title}</h2>
+
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        {description}
+      </p>
+
+      <ul class="list-disc pl-6 space-y-4 text-gray-700">
+        {
+          listItems.map((item,_) => (
+            <li >
+              <b>{item.title}：</b> {item.description}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Right Content -->
+    <div class="lg:w-1/2 relative">
+      <FlyInCardContainer cards={Cards} />
+    </div>
+  </div>
+</section>

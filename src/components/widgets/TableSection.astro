@@ -33,7 +33,7 @@ const { title, rows } = Astro.props;
                   <>
                     <td class="p-4">
                       <h4 class="text-lg font-semibold text-gray-800">{card.title}</h4>
-                      <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                      <ul class="list-disc pl-6 space-y-2 text-gray-600 hidden md:block">
                         {card.content.map((item) => (
                           <li set:html={item} />
                         ))}
