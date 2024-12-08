@@ -30,6 +30,8 @@ const FlyInCardContainer = ({ cards }) => {
             overflow-hidden 
             animate-fly-in 
             float-effect
+            hidden
+            md:block
           `}
           style={{
             animationDelay: `${animationDelays[index] || 0}ms`, // 动态延迟
