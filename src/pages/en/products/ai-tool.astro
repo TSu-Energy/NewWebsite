@@ -1,0 +1,35 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import SolutionSection from '~/components/widgets/SolutionSection.astro';
+import LabsBroadSection from '~/components/widgets/LabsBroadSection.astro';
+import LabsPreSection from '~/components/sections/LabsPreSection.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
+
+const metadata = {
+  title: 'AI Tool - AI 报告助笔工具',
+};
+---
+
+<Layout metadata={metadata} lang="en">
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="AI Tool"
+    title="AI 报告助笔工具"
+    subtitle="我们协助提高报告撰写的效率和质量"
+    actions={[{ variant: 'primary', target: '_blank', text: '联系我们', href: '/about' }]}
+    image={{
+      src: '~/assets/images/products/ai-tool/future-7130603_1280.jpeg',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+  <SolutionSection />
+
+  <LabsPreSection />
+
+  <LabsBroadSection />
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
+</Layout>

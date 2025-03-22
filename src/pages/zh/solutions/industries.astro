@@ -1,0 +1,331 @@
+---
+import Image from '~/components/common/Image.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Zones - 数字化绿色产业园区',
+};
+
+const images = {
+  logo: '/path/to/logo.png',
+  heroImage: '/path/to/hero-image.jpg',
+  feature1: '/path/to/feature1.png',
+  feature2: '/path/to/feature2.png',
+  feature3: '/path/to/feature3.png',
+};
+
+const stages = [
+  {
+    title: '规划及设计阶段',
+    description: '天苏能源联合行业顶尖的建筑设计合作伙伴，为园区开发商提供“双碳+设计”一站式园区规划服务。',
+    sections: [
+      {
+        title: '低碳园区发展路径规划',
+        items: ['园区收益测算', '绿色低碳园区发展战略', '园区绿色金融/碳交易架构设计', '区域绿色发展战略规划'],
+      },
+      {
+        title: '低碳园区开发与建筑设计',
+        items: ['绿色城市规划', '近零排放建筑设计', '绿色设计与咨询', '设计管理与优化'],
+      },
+    ],
+  },
+  {
+    title: '建筑阶段',
+    description:
+      '通过碳盘查及碳预估，摸清园区碳排放数据家底，从而科学谋划园区碳中和路径；通过数字化低碳园区“中央大脑”建设，一站式整合园区碳数据及资产管理。',
+    sections: [
+      {
+        title: '碳盘查及碳预估',
+        items: ['园区碳盘查及预估', '低碳路径分析'],
+      },
+      {
+        title: '数字化低碳园区“中央大脑”建设',
+        items: ['工业互联网数据源规划', '碳数据收集与分析模块', '碳核证模块', '碳资产及交易模块', '碳中和仪表盘'],
+      },
+    ],
+  },
+  {
+    title: '运营管理阶段',
+    description: '天苏能源依托“蔚碳云”碳中和管理平台，为低碳园区提供数字化、自动化的运营服务。',
+    sections: [
+      {
+        title: '数字化低碳园区运营',
+        items: ['自动排放量报告', '自动碳数据分析', '自动碳价值实现'],
+      },
+    ],
+  },
+  {
+    title: '收益阶段',
+    description: '天苏能源联合行业领先的金融及证券合作伙伴，协助园区获取碳中和认证，实现碳交易、碳金融收益。',
+    sections: [
+      {
+        title: '园区收益实现',
+        items: ['提升 ESG 表现', '协助碳中和认证', '绿色金融及碳交易', '增强融资吸引力', '政府补贴'],
+      },
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata} lang="zh">
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Zones"
+    title="数字化绿色产业园区"
+    subtitle="用先进技术赋能低碳路径，构建净零减碳的中央大脑"
+    actions={[{ variant: 'primary', target: '_blank', text: '联系我们', href: '/about' }]}
+    image={{
+      src: '~/assets/images/solutions/industries/switch-zone-background.jpeg',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">解决方案结构</h3>
+      <div class="space-y-12">
+        {
+          stages.map((stage) => (
+            <div key={stage.title} class="space-y-6">
+              <h4 class="text-xl font-semibold text-green-600">{stage.title}</h4>
+              <p class="text-gray-600">{stage.description}</p>
+              <div class="grid md:grid-cols-2 gap-8">
+                {stage.sections.map((section) => (
+                  <div key={section.title} class="p-6 bg-white shadow rounded-lg">
+                    <h5 class="text-lg font-semibold text-gray-700 mb-4">{section.title}</h5>
+                    <ul class="space-y-2 text-gray-600">
+                      {section.items.map((item) => (
+                        <li key={item} class="flex items-center">
+                          <span class="w-2.5 h-2.5 bg-green-500 rounded-full mr-2" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: '在国家的环保政策激励下，产业园区建设开始依托数字科技向绿色产业转型升级',
+        description: '',
+        icon: 'tabler:wand',
+      },
+      {
+        title:
+          '需要产业园区从生产工艺、能源管理、设备设施到安全环保管理，利用物联网采集、分析、核算等进行全流程碳数据管理',
+        description: '',
+        icon: 'tabler:settings',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solutions/industries/potassium-salt-4549408_1280.jpeg',
+      alt: 'Features Image',
+      style: 'object-fit:contain',
+      class: '',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">政策端</h3>
+    </Fragment>
+  </Content>
+  <hr class="m-0 border-t border-gray-200 dark:border-gray-800" />
+
+  <Content
+    items={[
+      {
+        title: '绿色低碳成为产业园区发展的新竞争力来源，促使市场加速对数字化绿色建筑与园区发展的培育',
+        description: '',
+        icon: 'tabler:wand',
+      },
+      {
+        title:
+          '产业园区正积极探索利用绿色建筑、数字化碳管理等技术和工程作为支点，开展园区低碳化、节能减排、降本增效协同发展的先锋试点',
+        description: '',
+        icon: 'tabler:settings',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solutions/industries/photovoltaic-491702_1280.jpeg',
+      alt: 'Features Image',
+      style: 'object-fit:contain',
+      class: '',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">市场端</h3>
+    </Fragment>
+  </Content>
+  <hr class="m-0 border-t border-gray-200 dark:border-gray-800" />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title:
+          '碳达峰、碳中和的战略目标推动产业技术革新，催生新的投资机遇；在国家政策的指导下，金融机构纷纷通过绿色融资工具加大对低碳数字化产业园区的资金支持',
+        description: '',
+        icon: 'tabler:wand',
+      },
+      {
+        title: '绿色贷款、绿色债券等融资工具，逐渐在产业园区中占据重要位置，是产业园区发展的下一个“融资战场”',
+        description: '',
+        icon: 'tabler:settings',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/solutions/industries/money-2724241_1280.jpeg',
+      alt: 'Features Image',
+      style: 'object-fit:contain',
+      class: '',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">投资端</h3>
+    </Fragment>
+  </Content>
+
+  <section class="relative bg-gray-50 py-12">
+    <div class="absolute inset-0 bg-gray-200"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">
+        我们分阶段逐步推进绿色园区建设，覆盖从概念验证（POC）到全面开发的全流程
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Concept Validation (POC) Section -->
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-6" style="width: 400px; height: 300px;">
+            <Image
+              alt="poc-small"
+              loading="lazy"
+              width="300"
+              class="rounded-lg shadow-lg"
+              src="~/assets/images/solutions/industries/poc-small.png"
+            />
+          </div>
+          <div>
+            <h3 class="text-lg text-gray-600 font-semibold mb-2">概念验证（POC）阶段</h3>
+            <hr class="border-t-2 border-gray-300 my-4" />
+            <h5 class="text-sm font-medium text-gray-600 mb-3">核心目标</h5>
+            <ul class="list-disc list-inside text-left text-gray-600 space-y-2">
+              <li>根据关键利益相关方的期望，验证项目概念的可行性</li>
+              <li>结合当地气候特点、政策支持和实际需求，评估潜在招商项目的适宜性</li>
+              <li>明确与现有设施的连接方式，确保项目与现有设施顺利对接</li>
+              <li>明确项目投资规模和预期时间线，分析成本与收益</li>
+              <li>制定全面的开发计划，并明确所需的支持方式、策略及实施路径</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Full Development Section -->
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-6" style="width: 400px; height: 300px;">
+            <Image
+              alt="poc-large"
+              loading="lazy"
+              width="400"
+              class="rounded-lg shadow-lg"
+              src="~/assets/images/solutions/industries/poc-large.png"
+            />
+          </div>
+          <div>
+            <h3 class="text-lg text-gray-600 font-semibold mb-2">全面开发阶段</h3>
+            <hr class="border-t-2 border-gray-300 my-4" />
+            <h5 class="text-sm font-medium text-gray-600 mb-3">核心目标</h5>
+            <ul class="list-disc list-inside text-left text-gray-600 space-y-2">
+              <li>承担项目协调中心职能，协调具体的工程建设，指导及促进各方协作，推动项目的落地实施</li>
+              <li>结合园区现有设施及运营条件，提升整体运营效率，实现节能降碳</li>
+              <li>实现项目的具体成果，并为投资者带来可量化的回报</li>
+              <li>依托园区的绿色可持续特性，开展招商工作，吸引大型企业及创新企业入驻</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative before:bg-gray-100 py-16">
+    <div class="absolute inset-0"></div>
+    <div class="relative mx-auto max-w-7xl px-6 text-center lg:text-left">
+      <h2 class="text-3xl font-bold before:text-gray-900 lg:text-4xl">
+        在传统基础设施之上，天苏能源通过引入人工智能等创新技术，支持工业园区内的多样化智能管理需求
+      </h2>
+      <div class="mt-12 space-y-10">
+        <!-- Row 1 -->
+        <div class="flex flex-col items-center gap-6 lg:flex-row">
+          <div class="relative aspect-square w-48 flex-shrink-0">
+            <Image
+              src="~/assets/images/solutions/industries/ai-infra-1.png"
+              alt="ai-infra"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold before:text-gray-800">绿色可追溯基础设施</h3>
+            <p class="mt-2 before:text-gray-600">
+              通过将标识符芯片（RFID）引入工厂流程，实现绿色标准全面可追溯，数据覆盖原材料来源、能源消耗及排放情况
+            </p>
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="flex flex-col items-center gap-6 lg:flex-row">
+          <div class="relative aspect-square w-48 flex-shrink-0">
+            <Image
+              src="~/assets/images/solutions/industries/ai-infra-2.png"
+              alt="ai-infra"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold before:text-gray-800">AI 驱动的控制中心</h3>
+            <p class="mt-2 before:text-gray-600">
+              为制造工厂引入 AI 驱动的控制中心，能够集中高效地管理能源、排放、温度、工艺及安全等各个方面
+            </p>
+          </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="flex flex-col items-center gap-6 lg:flex-row">
+          <div class="relative aspect-square w-48 flex-shrink-0">
+            <Image
+              src="~/assets/images/solutions/industries/ai-infra-3.png"
+              alt="ai-infra"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold before:text-gray-800">绿色算力中心</h3>
+            <p class="mt-2 before:text-gray-600">
+              利用实时数据分析，通过优化资源配置，最大限度地减少水、废物、能源及原材料的使用；此外，该中心还可赋能园区企业
+              AI 能力的提升
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
+</Layout>

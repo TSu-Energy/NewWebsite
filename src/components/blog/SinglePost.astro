@@ -13,9 +13,10 @@ import type { Post } from '~/types';
 export interface Props {
   post: Post;
   url: string | URL;
+  lang?: string;
 }
 
-const { post, url } = Astro.props;
+const { post, url, lang } = Astro.props;
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">

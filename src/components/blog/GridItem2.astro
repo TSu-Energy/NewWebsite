@@ -37,7 +37,7 @@ const image = await findImage(post.image);
     <div class="w-px h-full bg-black/10 dark:bg-slate-400/50"></div>
   </div>
   <div class={twMerge('w-full max-w-[90vw] md:max-w-[75vw] lg:max-w-[60vw] xl:max-w-[1200px] box-border grid md:grid-cols-2 gap-6', panelClass)}>
-    <a href={getPermalink(post.permalink, 'post')}>
+    <a href={getPermalink(post.permalink, 'en', 'post')}>
       {post.title && <p class={twMerge('text-primary text-xl font-bold', titleClass)} set:html={post.title} />}
       {
         post.publishDate && (
@@ -52,7 +52,7 @@ const image = await findImage(post.image);
 
     {
       image && (
-        <a href={getPermalink(post.permalink, 'post')} class="relative md:basis-1/2">
+        <a href={getPermalink(post.permalink, 'en', 'post')} class="relative md:basis-1/2">
           <div class={twMerge(imageClass)}>
             <Image
               class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"

@@ -1,0 +1,40 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import IndustriesImpactSection from '~/components/widgets/IndustriesImpactSection.astro';
+import TSuPassSteps from '~/components/widgets/TSuPassSteps.astro';
+import TSuPassFunctions from '~/components/widgets/TSuPassFunctions.astro';
+import TSuPassComparison from '~/components/widgets/TSuPassComparison.astro';
+import CallForAction from '~/components/widgets/CallForAction.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
+
+const metadata = {
+  title: 'Pass - 绿境通',
+};
+---
+
+<Layout metadata={metadata} lang="en">
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Pass"
+    title="绿境通 TSu-Pass™"
+    subtitle="专属于您的一站式跨境绿色合规平台，助您轻松应对欧盟碳关税等跨境绿色合规的挑战"
+    actions={[{ variant: 'primary', target: '_blank', text: '联系我们', href: '/about' }]}
+    image={{
+      src: '~/assets/images/products/ts-pass/wegreenpass-background.jpeg',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <IndustriesImpactSection />
+
+  <TSuPassSteps />
+
+  <TSuPassFunctions />
+
+  <TSuPassComparison />
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
+</Layout>

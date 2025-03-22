@@ -10,6 +10,7 @@ const createPath = (...params: string[]) => {
     .map((el) => trimSlash(el))
     .filter((el) => !!el)
     .join('/');
+  // console.log("--------------------------------\n",paths);
   return '/' + paths + (SITE.trailingSlash && paths ? '/' : '');
 };
 
@@ -39,9 +40,9 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+export const getPermalink = (slug = '', lang: 'en' | 'zh' = 'en', type = 'page'): string => {
   let permalink: string;
-
+  console.log("in func:",lang)
   if (
     slug.startsWith('https://') ||
     slug.startsWith('http://') ||
@@ -54,15 +55,16 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 
   switch (type) {
     case 'home':
-      permalink = getHomePermalink();
+      permalink = getHomePermalink(lang);
       break;
 
     case 'blog':
-      permalink = getBlogPermalink();
+      permalink = getBlogPermalink(lang);
       break;
 
     case 'projects':
-      permalink = getProjPermalink();
+      // permalink = getProjPermalink();
+      permalink = ""
       break;
 
     case 'asset':
@@ -70,7 +72,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'category':
-      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
+      permalink = createPath(lang, CATEGORY_BASE, trimSlash(slug));
       break;
 
     case 'tag':
@@ -83,21 +85,23 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 
     case 'page':
     default:
-      permalink = createPath(slug);
+      // permalink = createPath(slug);
+      permalink = createPath(lang, slug);
       break;
   }
-
   return definitivePermalink(permalink);
 };
 
 /** */
-export const getHomePermalink = (): string => getPermalink('/');
+export const getHomePermalink = (lang: 'en' | 'zh' = 'en'): string => 
+  // lang === 'en' ? definitivePermalink('/') : definitivePermalink('/zh/');
+  definitivePermalink(`/${lang}/`)
+/** */
+export const getBlogPermalink = (lang: 'en' | 'zh' = 'en'): string =>
+  createPath(lang, BLOG_BASE);
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
-
-/** */
-export const getProjPermalink = (): string => getPermalink(PROJ_BASE);
+// export const getProjPermalink = (): string => getPermalink(PROJ_BASE);
 
 /** */
 export const getAsset = (path: string): string =>
@@ -111,7 +115,7 @@ export const getAsset = (path: string): string =>
 const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
 
 /** */
-export const applyGetPermalinks = (menu: object = {}) => {
+export const applyGetPermalinks = (menu: object = {}, lang: 'en' | 'zh' = 'en') => {
   if (Array.isArray(menu)) {
     return menu.map((item) => applyGetPermalinks(item));
   } else if (typeof menu === 'object' && menu !== null) {
@@ -119,14 +123,14 @@ export const applyGetPermalinks = (menu: object = {}) => {
     for (const key in menu) {
       if (key === 'href') {
         if (typeof menu[key] === 'string') {
-          obj[key] = getPermalink(menu[key]);
+          obj[key] = getPermalink(menu[key],lang);
         } else if (typeof menu[key] === 'object') {
           if (menu[key].type === 'home') {
-            obj[key] = getHomePermalink();
-          } else if (menu[key].type === 'blog') {
-            obj[key] = getBlogPermalink();
+            obj[key] = getHomePermalink(lang);
+          } else if (menu[key].type === 'blog',lang) {
+            obj[key] = getBlogPermalink(lang);
           } else if (menu[key].type === 'projects') {
-            obj[key] = getProjPermalink();
+            obj[key] = "";//getProjPermalink();
           } else if (menu[key].type === 'asset') {
             obj[key] = getAsset(menu[key].url);
           } else if (menu[key].url) {
@@ -134,7 +138,7 @@ export const applyGetPermalinks = (menu: object = {}) => {
           }
         }
       } else {
-        obj[key] = applyGetPermalinks(menu[key]);
+        obj[key] = applyGetPermalinks(menu[key],lang);
       }
     }
     return obj;

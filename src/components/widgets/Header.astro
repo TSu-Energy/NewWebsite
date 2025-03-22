@@ -32,6 +32,7 @@ export interface Props {
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
   position?: string;
+  lang?: string;
 }
 
 const {
@@ -44,9 +45,18 @@ const {
   showToggleTheme = false,
   showRssFeed = false,
   position = 'center',
+  lang = 'zh',
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+// Determine if the current path is Chinese (starts with '/zh')
+const isChinese = lang === 'zh';
+//currentPath.startsWith('/zh');
+
+// Determine the language switch URL
+const switchLangUrl = isChinese
+  ? currentPath.replace(/^\/zh/, '') || '/' // Switch to English (remove /zh)
+  : `/zh${currentPath === '/' ? '' : currentPath}`; // Switch to Chinese (add /zh)
 ---
 
 <header
@@ -149,6 +159,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             )
           }
         </div>
+        <!-- Language Switch Button -->
+        <a
+          href={switchLangUrl}
+          class="ml-4 px-4 py-2 text-sm font-semibold bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md transition"
+        >
+          {isChinese ? 'English' : '中文'}
+        </a>
+
         {
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">

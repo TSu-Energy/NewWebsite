@@ -1,0 +1,114 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import IntroPre from '~/components/widgets/IntroPre.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import ProductsPre from '~/components/widgets/ProductsPre.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
+
+const metadata = {
+  title: 'Labs - 实验室和认证机构',
+};
+---
+
+<Layout metadata={metadata} lang="zh">
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Batteries"
+    title="电池系统与建模"
+    subtitle="我们提供全面的电池安全评估和系统优化服务"
+    actions={[{ variant: 'primary', target: '_blank', text: '联系我们', href: '/about' }]}
+    image={{
+      src: '~/assets/images/solutions/batteries/e3cb642c-bf5b-48c2-947f-7c44ef435f09.png',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <IntroPre
+    isReversed
+    tagline="Solutions Overview"
+    title="解决方案总览"
+    items={[
+      {
+        title: '电池管理系统（BMS）优化服务',
+        description:
+          '全球对电动汽车的需求正在增长，同时预计到2025年，新安装的储能容量将超过300GWh。这表明电动汽车和储能系统将成为能源行业的重要组成部分。',
+      },
+      {
+        title: '数字化低碳园区解决方案',
+        description:
+          '随着锂离子电池在电动汽车和储能系统中的广泛应用，电池安全问题，尤其是热失控现象，已成为行业发展的关键关注点。电池制造商和研究机构正在投入资源开发更安全的电池技术和管理系统。',
+      },
+      {
+        title: '电池安全评估服务',
+        description:
+          '从单电池到电池系统的多尺度建模表明，理解和预测电池行为需要考虑不同尺度下的物理过程。这种综合方法对于设计更高效、更安全的电池系统至关重要。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/analystics/battery.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">我们提供全面的解决方案</h3>
+      能源行业是一个复杂且不断变化的领域，涉及到多个方面，包括但不限于政策、技术、市场、环境和社会因素。能源行业在电池技术、安全性和计算方法方面的快速发展。
+    </Fragment>
+
+    <Fragment>
+      <!-- // slot="bg" -->
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </IntroPre>
+
+  <!-- Intro Widget **************** -->
+
+  <!-- Services Widget ************** -->
+
+  <Features2
+    tagline="Our Services"
+    title="我们的产品与服务"
+    subtitle=""
+    items={[
+      {
+        title: '电池安全评估服务',
+        description: [
+          '提供全面的锂离子电池安全评估，包括热失控风险分析和事故原因调查; 利用数值模拟和实验测试，帮助客户优化电池设计，提高电池系统的安全性。',
+          '利用数值模拟和实验测试，帮助客户优化电池设计，提高电池系统的安全性。',
+        ],
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: '电池管理系统（BMS）优化服务',
+        description: [
+          '根据电池热失控模型，为电池管理系统提供定制化的优化方案; 通过实时监控和预警机制，提高电池运行的安全性和效率。',
+          '通过实时监控和预警机制，提高电池运行的安全性和效率。',
+        ],
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: '储能系统安全设计咨询',
+        description: [
+          '针对储能系统特有的安全要求，提供专业的安全设计咨询服务。结合电池热失控传播和气体扩散模型，帮助客户设计更安全的储能解决方案。',
+          '结合电池热失控传播和气体扩散模型，帮助客户设计更安全的储能解决方案。',
+        ],
+        icon: 'flat-color-icons:voice-presentation',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Product Nav Widget ************** -->
+
+  <ProductsPre>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ProductsPre>
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
+</Layout>

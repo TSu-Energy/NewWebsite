@@ -1,0 +1,150 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import PropositionSection from '~/components/widgets/PropositionSection.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import TableSection from '~/components/widgets/TableSection.astro';
+import TSuCloudSection2 from '~/components/sections/TSuCloudSection2.astro';
+import CallForAction from '~/components/widgets/CallForAction.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
+
+const metadata = {
+  title: 'Cloud - 天苏云',
+};
+
+const techData = [
+  {
+    title: '量化模型更精确',
+    description: '实现金融和交易级别精准度的碳排放计算',
+    icon: 'flat-color-icons:template',
+  },
+  {
+    title: '部署适配更灵活',
+    description: '低代码化、模块化部署架构，灵活适应各种场景',
+    icon: 'flat-color-icons:gallery',
+  },
+  {
+    title: '应用赋能更通畅',
+    description: '各项明星应用，便捷数据连接',
+    icon: 'flat-color-icons:approval',
+  },
+  {
+    title: '完整准确的计算模型',
+    description: '通过模块市场和 AI 驱动的报告解决方案，高效、高质量完成专家水平报告写作',
+    icon: 'flat-color-icons:document',
+  },
+  {
+    title: '增强的应用支持',
+    description: '通过各项应用支持，保持绿色合规，提升金融和能源管理相关能力',
+    icon: 'flat-color-icons:advertising',
+  },
+  {
+    title: '获得碳中和领域多方市场认可',
+    description: '在 ESG 和碳管理方面，我们的系统获得了多方市场认可',
+    icon: 'flat-color-icons:voice-presentation',
+  },
+];
+
+const tableData = {
+  title: '无论企业处于“双碳”转型的哪个阶段，“天苏云”都可以协助企业充分满足其核心绿色痛点',
+  rows: [
+    {
+      header: '您的潜在需求',
+      cards: [
+        {
+          title: '应对合规压力',
+          content: [
+            "链主/监管/资本市场绿色合规要求<b class='text-gray-800'>越来越严格</b>，怎么办？",
+            "如何用<b class='text-gray-800'>最低成本</b>先达标，避免影响生产？",
+          ],
+        },
+        {
+          title: '进行绿色转型',
+          content: [
+            "我需要做绿色低碳转型，<b class='text-gray-800'>要花多少钱，怎么做？</b>",
+            "相关的数据和流程太多，如何<b class='text-gray-800'>直观简单</b>进行管理？",
+          ],
+        },
+        {
+          title: '取得绿色优势',
+          content: [
+            "绿色是我的亮点，如何借此做出<b class='text-gray-800'>政绩和品牌</b>？",
+            "如何借助绿色成果，取得<b class='text-gray-800'>供应链</b>优势？",
+          ],
+        },
+        {
+          title: '收获绿色价值',
+          content: [
+            "绿色低碳转型需要<b class='text-gray-800'>资金</b>，从哪里来？",
+            "如何利用绿色开辟<b class='text-gray-800'>新商业模式和收入来源</b>？",
+          ],
+        },
+      ],
+    },
+    {
+      header: '我们的解决方案',
+      cards: [
+        {
+          title: '低成本、高效的披露合规',
+          content: [
+            '自动化碳盘查、产品碳足迹，<b>省人力</b>',
+            'AI 自动写报告，<b>省时间</b>',
+            '披露结果受权威机构认可，<b>省资源</b>',
+          ],
+        },
+        {
+          title: '简单易用开放的双碳·ESG 管理平台',
+          content: [
+            '<b>中央大屏</b>，一站式管理碳能、ESG 等关键数据',
+            '<b>丰富碳减排模型</b>，直观测算成本收益，轻松规划碳中和路径',
+            '<b>开放平台</b>，无缝对接企业已有系统',
+          ],
+        },
+        {
+          title: '绿色认证管理平台，满足各项所需',
+          content: [
+            '对接<b>国家级权威认证机构</b>，多快好省取得绿色认证',
+            '陪跑全程，打通<b>政绩、品牌、供应链效应</b>',
+          ],
+        },
+        {
+          title: '通过绿色金融·碳交易进行价值创造',
+          content: [
+            '通过数据对接，企业<b>加快获取低息贷款</b>，金融机构获取优质客户、控制风险',
+            '与碳资产核证及交易机构合作，一站式快捷开展<b>碳资产开发、碳交易</b>',
+          ],
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout metadata={metadata} lang="en">
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Cloud"
+    title="天苏云"
+    subtitle="用先进技术赋能低碳路径，构建净零减碳的中央大脑"
+    actions={[{ variant: 'primary', target: '_blank', text: '联系我们', href: '/about' }]}
+    image={{
+      src: '~/assets/images/products/ts-cloud/nasa-Q1p7bh3SHj8-unsplash.jpeg',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <PropositionSection />
+
+  <TSuCloudSection2 />
+
+  <Features2 title="技术优势" subtitle="" tagline="Tech advantages" items={techData}>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <TableSection {...tableData} />
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
+</Layout>

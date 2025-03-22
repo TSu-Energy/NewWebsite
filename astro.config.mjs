@@ -31,6 +31,13 @@ const whenExternalScripts = (items = []) =>
 export default defineConfig({
   site: LIVE_URL,
   output: 'static',
+  i18n: {
+    locales: ["zh", "en"],
+    defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: false   
+    },
+  },
   renderers: ['@astrojs/renderer-react'],
   integrations: [
     tailwind({
@@ -97,4 +104,26 @@ export default defineConfig({
       },
     },
   },
+  // redirects: {
+    // "/": "/en",
+    // "/about": "/en/about",
+    // "/products": "/en/products",
+    // "/contact": "/en/contact",
+    // "/solutions": "/en/solutions",
+    // "/solutions/industries": "/en/solutions/industries",
+    // "/solutions/labs": "/en/solutions/labs",
+    // "/solutions/trade": "/en/solutions/trade",
+    // "/solutions/batteries": "/en/solutions/batteries",
+    // "/products/ts-cloud": "/en/products/ts-cloud",
+    // "/products/ts-pass": "/en/products/ts-pass",
+    // "/products/ai-tool": "/en/products/ai-tool",
+    // "/blog": "/en/blog",
+    // "/category/tian1-su1-shi2-tiao2": "/en/category/tian1-su1-shi2-tiao2",
+    // "/category/tian1-su1-ji2-lu4": "/en/category/tian1-su1-ji2-lu4",
+    // "/homes/talk": "/en/homes/talk",
+    // "/sales": "/en/sales",
+    // "/terms": "/en/terms",
+    // "/privacy": "/en/privacy",
+    // "/talk": "/en/talk",
+  // },
 });

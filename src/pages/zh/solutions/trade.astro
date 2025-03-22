@@ -1,0 +1,99 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Board from '~/components/widgets/Board.astro';
+
+import IndustriesImpactSection from '~/components/widgets/IndustriesImpactSection.astro';
+import TSuPassSteps from '~/components/widgets/TSuPassSteps.astro';
+import TSuPassFunctions from '~/components/widgets/TSuPassFunctions.astro';
+import CallForActionSection from '~/components/sections/CallForActionSection.astro';
+
+const metadata = {
+  title: 'Trade - 跨境贸易绿色服务',
+};
+
+const leftCards = [
+  {
+    title: '绿色认证与跨境绿色合规',
+    items: [
+      '大型集团主打节能减碳力度大，要求碳足迹、环境友好、节能等项目认证。',
+      '欧盟等地区绿色新规出台频繁，标准复杂，强制性更强。',
+      '企业难以理解应对。',
+    ],
+  },
+  {
+    title: 'ESG 合规服务',
+    items: [
+      '大型链主对供应商披露 ESG 报告的要求不断增长。',
+      '大多数证券交易所对上市公司提出 ESG 合规要求。',
+      '企业时刻面临评级机构的 ESG 评价。',
+    ],
+  },
+  {
+    title: '绿色认证与跨境绿色合规',
+    items: ['需要以融资撬动公司的海外业务，特别是抓住海外供应链融资。', '利用好海内外绿色金融政策，减少融资成本。'],
+  },
+  {
+    title: '拓展更大的海外市场',
+    items: ['需要减少出海的不确定性，与中东、欧洲等热点地区建立联系，拓展更大的海外市场。'],
+  },
+];
+
+const rightCards = [
+  {
+    title: '绿色认证与合规支持',
+    items: [
+      '协助企业及早梳理绿色认证/跨境合规要求，提前准备。',
+      '提供系统性规划：认证、减排、抵消的工作。',
+      '提供数字化解决方案，达到事半功倍的效果。',
+    ],
+  },
+  {
+    title: 'ESG 合规服务',
+    items: [
+      '协助撰写 ESG 报告，提高评级和形象。',
+      '建立战略体系、健全管理机制，提供内部培训。',
+      '打造可持续优势，帮助企业稳健发展。',
+    ],
+  },
+  {
+    title: '绿色金融与贸易融',
+    items: [
+      '协助企业充分理解政策，选择最适合的金融机构和绿色金融产品。',
+      '按照绿色金融与贸易融资相关政策要求，协助企业以低成本取得必要认证并对接银行获取贸易融资。',
+    ],
+  },
+  {
+    title: '拓展更大的海外市场',
+    items: [
+      '打造海外客户青睐的绿色、可持续品牌形象。',
+      '协助企业与有影响力、有资源的渠道及平台建立联系，精准对接海外政府高层及大型企业资源，促进海外业务拓展与增长。',
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata} lang="zh">
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Global Trade"
+    title="跨境贸易绿色服务"
+    subtitle="您值得信赖的「跨境可持续发展协调中心」，助您轻松应对各类跨境绿色合规挑战"
+    actions={[{ variant: 'primary', target: '_blank', text: '联系我们', href: '/about' }]}
+    image={{
+      src: '~/assets/images/solutions/trade/switch-trade-background.jpeg',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <IndustriesImpactSection />
+
+  <Board leftTitle="企业面临什么" leftCards={leftCards} rightTitle="我们能提供什么" rightCards={rightCards} />
+
+  <TSuPassSteps />
+
+  <TSuPassFunctions />
+
+  <CallForActionSection url="~/assets/images/resource/wegreenpass-background.jpeg" />
+</Layout>
