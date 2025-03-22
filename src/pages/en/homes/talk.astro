@@ -1,16 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Header from '~/components/widgets/Header.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Content2 from '~/components/widgets/Content2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials2 from '~/components/widgets/Testimonials2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import { getPermalink } from '~/utils/permalinks';
 import Hero3 from '~/components/widgets/Hero3.astro';
 
 const metadata = {
@@ -18,7 +13,7 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} lang='en'>
   <!-- <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
