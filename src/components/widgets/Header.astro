@@ -55,8 +55,8 @@ const isChinese = lang === 'zh';
 
 // Determine the language switch URL
 const switchLangUrl = isChinese
-  ? currentPath.replace(/^\/zh/, '') || '/' // Switch to English (remove /zh)
-  : `/zh${currentPath === '/' ? '' : currentPath}`; // Switch to Chinese (add /zh)
+  ? currentPath.replace(/^\/zh/, '/en') || '/en' // Switch to English (change /zh to /en)
+  : currentPath.replace(/^\/en/, '/zh') || '/zh'; // Switch to Chinese (change /en to /zh)
 ---
 
 <header
