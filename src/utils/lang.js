@@ -35,7 +35,7 @@ export const translations = {
     tianSuJilu: { en: 'TSu Collection', zh: '天苏辑录' },
     tsMall: { en: 'TSu Mall', zh: '天苏商城' },
     consultNow: { en: 'Consult Now', zh: '立即咨询' },
-    email: { en: 'Email: tsuenergy@outlook.com', zh: '电子邮件： tsuenergy@outlook.com' },
+    email: { en: 'Email: haotian-ma@outlook.com', zh: '电子邮件： haotian-ma@outlook.com' },
     terms: { en: 'Terms', zh: '条款' },
     privacyPolicy: { en: 'Privacy Policy', zh: '隐私政策' },
     github: { en: 'GitHub', zh: 'GitHub' },
