@@ -1,20 +1,16 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Features2 from '~/components/widgets/Features2.astro';
-import { onVisible } from 'astro/client';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import BrandsGray from '~/components/widgets/BrandsGray.astro';
-
-import RollingViews from '~/components/widgets/RollingViews.astro';
-import ProductsPre from '~/components/widgets/ProductsPre.astro';
-import IntroPre from '~/components/widgets/IntroPre.astro';
-import Stats2 from '~/components/widgets/Stats2.astro';
-import type { loadAll } from 'js-yaml';
 import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import BrandsGray from '~/components/widgets/BrandsGray.astro';
+import IntroPre from '~/components/widgets/IntroPre.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import ProductsPre from '~/components/widgets/ProductsPre.astro';
+import RollingViews from '~/components/widgets/RollingViews.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'TSuEnergy — Electrochemistry Energy Storage Device Modelling and Management',
   ignoreTitleTemplate: true,
 };
 
@@ -27,39 +23,7 @@ const stats = [
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroContainer ***************** -->
-
-  <!-- <HeroContainer /> -->
-  <!-- <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'GitHub Repo',
-        href: 'https://github.com/TS-energy',
-        target: '_blank',
-        icon: 'tabler:link',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{
-      src: '~/assets/images/hero/Future-Energy-System.png',
-      alt: 'AstroWind Hero Image',
-    }}
-  >
-    <Fragment slot="title">
-      Electrochemistry Energy Storage Device <span class="text-accent dark:text-white highlight">
-        Modelling and Management
-      </span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">TSuEnergy</span> is committed to revolutionizing the energy landscape by developing innovative
-        and sustainable energy solutions that benefit both our customers and the planet.</span
-      >
-    </Fragment>
-  </Hero> -->
-
+  <!-- Hero -->
   <HeroCarousel
     actions={[
       {
@@ -73,7 +37,7 @@ const stats = [
     ]}
     image={{
       src: '~/assets/images/hero/2.png',
-      alt: 'AstroWind Hero Image',
+      alt: 'TSuEnergy Hero Image',
     }}
   >
     <Fragment slot="title">
@@ -81,7 +45,6 @@ const stats = [
         Modelling and Management
       </span>
     </Fragment>
-
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
         <span class="font-semibold">TSuEnergy</span> is committed to revolutionizing the energy landscape by developing innovative
@@ -90,49 +53,23 @@ const stats = [
     </Fragment>
   </HeroCarousel>
 
-  <!-- 分割线 -->
-  <hr class="mt-12 border-t border-gray-200 dark:border-gray-800" />
-  <!-- Stats Widget ****************** -->
+  <!-- Stats -->
+  <div class="section-divider"></div>
 
   <Stats2
     title="Discover the impressive impact"
     subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
     stats={stats}
-  >
-    <!-- <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment> -->
-  </Stats2>
+  />
 
-  <!-- 分割线 -->
-  <hr class="mb-12 border-t border-gray-200 dark:border-gray-800" />
+  <div class="section-divider"></div>
 
-  <!-- Brands Gray Widget ************ -->
+  <!-- Brands -->
   <BrandsGray />
 
-  <!-- 分割线 -->
-  <hr class="my-12 border-t border-gray-200 dark:border-gray-800" />
-  <!-- <Carousel2 /> -->
+  <div class="section-divider"></div>
 
-  <!-- Note Widget ******************* -->
-
-  <!-- <Note /> -->
-
-  <!-- Intro Widget **************** -->
-
-  <!-- 电动汽车和储能系统的快速增长：
-  文件显示全球对电动汽车的需求正在增长，同时预计到2025年，新安装的储能容量将超过300GWh。这表明电动汽车和储能系统将成为能源行业的重要组成部分。
-  电池安全性的重点关注：
-  随着锂离子电池在电动汽车和储能系统中的广泛应用，电池安全问题，尤其是热失控现象，已成为行业发展的关键关注点。电池制造商和研究机构正在投入资源开发更安全的电池技术和管理系统。
-  多尺度和多物理场建模的重要性：
-  文件中提到的从单电池到电池系统的多尺度建模表明，理解和预测电池行为需要考虑不同尺度下的物理过程。这种综合方法对于设计更高效、更安全的电池系统至关重要。
-  数值模拟在电池设计中的应用：
-  数值模拟和计算流体动力学（CFD）模型在电池设计和安全评估中发挥着越来越重要的作用。这些工具可以帮助研究人员和工程师在实际制造之前预测电池的性能和潜在风险。
-  热失控管理和缓解策略的发展：
-  文件中讨论了热失控的传播、气体扩散和火灾管理等问题，这表明行业正在寻求更有效的热失控管理和缓解策略，以提高电池系统的安全性和可靠性。
-  对高效计算方法的需求增加：
-  随着电池模型变得更加复杂，对高效计算方法的需求也在增加。文件中提到的模型加速、云计算和机器学习等技术，预示着能源行业将越来越多地依赖这些先进的计算技术来优化电池设计和操作。 -->
-
+  <!-- Analytics -->
   <IntroPre
     isReversed
     tagline="Analystics"
@@ -156,24 +93,16 @@ const stats = [
     ]}
     image={{
       src: '~/assets/images/analystics/battery.png',
-      alt: 'Colorful Image',
+      alt: 'Battery Analysis',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">能源行业未来研究和商业机会的潜在领域</h3>
       能源行业是一个复杂且不断变化的领域，涉及到多个方面，包括但不限于政策、技术、市场、环境和社会因素。能源行业在电池技术、安全性和计算方法方面的快速发展。
     </Fragment>
-
-    <Fragment>
-      <!-- // slot="bg" -->
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </IntroPre>
 
-  <!-- Intro Widget **************** -->
-
-  <!-- Services Widget ************** -->
-
+  <!-- Services -->
   <Features2
     tagline="Our Services"
     title="我们的产品与服务"
@@ -210,146 +139,27 @@ const stats = [
     </Fragment>
   </Features2>
 
-  <!-- Services Widget ************** -->
-
-  <!-- Product Nav Widget ************** -->
-
+  <!-- Products -->
   <ProductsPre>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </ProductsPre>
 
-  <!-- Product Nav Widget ************** -->
-
-  <!-- Steps Widget ****************** -->
-
+  <!-- News -->
   <RollingViews
     id="news"
     tagline="News"
     title="TSuEnergy Broad"
-  >
-    <!-- <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment> -->
-  </RollingViews>
+  />
 
-  <!-- Features2 Widget ************** -->
-
-  <!-- <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2> -->
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <!-- FAQs Widget ******************* -->
-
-  <!-- <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  /> -->
-
-  <!-- CallToAction Widget *********** -->
-
+  <!-- CTA -->
   <CallToAction
     actions={[
       {
         variant: 'primary',
         text: 'Get Contact',
-        href: 'https://',
-        target: '_blank',
+        href: '/contact',
         icon: 'tabler:mail',
       },
     ]}
@@ -357,9 +167,8 @@ const stats = [
     <Fragment slot="title">
       TSuEnergy = 能源&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">科技</span>
     </Fragment>
-
     <Fragment slot="subtitle">
-      欢迎联系我们 <br class="hidden md:inline" />Don't waste more time! :P
+      欢迎联系我们
     </Fragment>
   </CallToAction>
 </Layout>

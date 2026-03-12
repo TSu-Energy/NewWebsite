@@ -73,12 +73,12 @@ const {
         <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
           {
             image && (
-              <div class="relative m-auto max-w-4xl">
+              <div class="relative m-auto max-w-4xl group">
                 {typeof image === 'string' ? (
                   <Fragment set:html={image} />
                 ) : (
                   <Image
-                    class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                    class="mx-auto w-full rounded-2xl shadow-elevated transition-all duration-500 group-hover:shadow-card-hover group-hover:-translate-y-1"
                     width={500}
                     height={500}
                     widths={[400, 768]}
